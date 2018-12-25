@@ -309,9 +309,9 @@
                     <li>
                         <a href="#"> 视频管理 <i class="ec-videos"></i></a>
                         <ul class="nav sub">
-                            <li><a href="forms.html"><i class="ec-list"></i> 视频列表</a>
+                            <li><a href="/admin/videos"><i class="ec-list"></i> 视频列表</a>
                             </li>
-                            <li><a href="form-validation.html"><i class="im-plus"></i> 视频添加</a>
+                            <li><a href="/admin/videos/create"><i class="im-plus"></i> 视频添加</a>
                             </li>
                             <li><a href="form-validation.html"><i class="ec-pencil2"></i> 视频评论</a>
                             </li>

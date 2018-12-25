@@ -18,3 +18,4 @@ Route::get('/', function () {
 
 Route::resource('admin/index','admin\IndexController');
 Route::resource('admin/users','admin\UsersController');
+Route::resource('admin/videos','admin\VideosController');
