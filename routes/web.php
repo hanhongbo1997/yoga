@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('admin/index','admin\IndexController');
+Route::resource('admin/users','admin\UsersController');
