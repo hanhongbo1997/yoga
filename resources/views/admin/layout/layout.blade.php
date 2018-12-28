@@ -351,12 +351,19 @@
                     <li>
                         <a href="#"> 瑜伽馆管理 <i class="im-office"></i></a>
                         <ul class="nav sub">
-                            <li><a href="forms.html"><i class="im-list"></i> 瑜伽馆列表</a>
+                             <li><a href=" "><i class="im-drawer"></i>瑜伽馆分类表</a>
                             </li>
-                            <li><a href="form-validation.html"><i class="im-plus"></i> 瑜伽馆添加</a>
+                            
+                        
+                            <li><a href="/admin/club/"><i class="im-list"></i>瑜伽馆列表</a>
+                            </li>
+                           
+                            
+                            <li><a href="/admin/club/"><i class="im-pencil2"></i>瑜伽馆详情</a>
                             </li>
                         </ul>
                     </li>
+
 
                     <li>
                         <a href="#"> 名师管理 <i class="fa-user"></i></a>
