@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Dashboard</title>
+        <title>后台管理</title>
         <!-- Mobile specific metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <!-- Force IE9 to render in normal mode -->
@@ -299,7 +299,7 @@
                     <li>
                         <a href="#"> 用户管理 <i class="ec-users"></i></a>
                         <ul class="nav sub">
-                            <li><a href="forms.html"><i class="ec-list"></i> 用户列表</a>
+                            <li><a href="/admin/users"><i class="ec-list"></i> 用户列表</a>
                             </li>
                             <li><a href="/admin/users/create"><i class="im-plus"></i> 用户添加</a>
                             </li>
@@ -309,9 +309,9 @@
                     <li>
                         <a href="#"> 视频管理 <i class="ec-videos"></i></a>
                         <ul class="nav sub">
-                            <li><a href="forms.html"><i class="ec-list"></i> 视频列表</a>
+                            <li><a href="/admin/videos"><i class="ec-list"></i> 视频列表</a>
                             </li>
-                            <li><a href="form-validation.html"><i class="im-plus"></i> 视频添加</a>
+                            <li><a href="/admin/videos/create"><i class="im-plus"></i> 视频添加</a>
                             </li>
                             <li><a href="form-validation.html"><i class="ec-pencil2"></i> 视频评论</a>
                             </li>
@@ -380,6 +380,16 @@
                             <li><a href="forms.html"><i class="im-list"></i> 资迅列表</a>
                             </li>
                             <li><a href="form-validation.html"><i class="im-plus"></i> 资迅添加</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"> 轮播图管理 <i class="im-paragraph-justify"></i></a>
+                        <ul class="nav sub">
+                            <li><a href="/admin/slideshow"><i class="ec-pencil2"></i> 轮播图列表</a>
+                            </li>
+                            <li><a href="/admin/slideshow/create"><i class="im-checkbox-checked"></i> 轮播图添加</a>
                             </li>
                         </ul>
                     </li>
@@ -543,7 +553,7 @@
                     <!-- Start .row -->
                     <!-- Start .page-header -->
                     <div class="col-lg-12 heading">
-                        <h1 class="page-header"><i class="im-screen"></i> Dashboard</h1>
+                        <h1 class="page-header"><i class="im-screen"></i> 网站后台</h1>
                         <!-- Start .bredcrumb -->
                         <ul id="crumb" class="breadcrumb">
                         </ul>
@@ -656,7 +666,7 @@
                 </div>
                 <!-- End .row -->
                 @section('content')
-            
+                   
             
                 @show
                 </div>
