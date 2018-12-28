@@ -100,3 +100,12 @@ Route::resource('admin/users','admin\UsersController');
 
 //会馆列表
 Route::resource('admin/club','admin\ClubController');
+//添加详情提交
+Route::post('admin/club/add/{id}','admin\ClubController@add');
+//查看详情
+Route::get('admin/club/details/{id}','admin\ClubController@details');
+
+//会馆分类列表
+Route::resource('admin/clubsort','admin\ClubsortController');
+//添加子类
+Route::get('admin/clubsort/create/{id}','admin\ClubsortController@create');
