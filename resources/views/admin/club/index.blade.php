@@ -28,13 +28,13 @@
              <!-- 搜索   -->
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 text-right" >
+          <div class="col-lg-6 col-md-6 col-sm-12 text-right" >
         <!-- 添加瑜伽馆 -->
-      <a href="/admin/club/create">
-        <button type="button" class="btn btn-success"><i class="im-plus"></i> 添加瑜伽馆</button>
-      </a>
-     </div>
-     <table class="table display dataTable" id="datatable" aria-describedby="datatable_info">
+          <a href="/admin/club/create">
+            <button type="button" class="btn btn-success"><i class="im-plus"></i> 添加瑜伽馆</button>
+         </a>
+        </div>
+        <table class="table display dataTable" id="datatable" aria-describedby="datatable_info">
       <thead>
         <tr role="row">
           <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">瑜伽馆ID</th>
@@ -79,14 +79,14 @@
       @endforeach
        
       </tbody>
-     </table>
-     <div class="row-">
+        </table>
+        <div class="row-">
       <div class="col-lg-6 col-md-6 col-sm-12">
        {!! $data->appends(['search_nname'=>$data->cname])->render() !!}
+        </div>
+      </div>
     </div>
-</div>
-</div>
-</div>
+  </div>
 </div>
 
 @endsection

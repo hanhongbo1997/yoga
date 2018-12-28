@@ -13,9 +13,9 @@ class NewinfoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(Request $request)
+    {   
+       
     }
 
     /**
@@ -36,7 +36,8 @@ class NewinfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //         
+
     }
 
     /**
@@ -60,7 +61,6 @@ class NewinfoController extends Controller
     {
         //
         $data = News::find($id);
-
         return view('admin.news.newsinfo',['data'=>$data]);
     }
 
@@ -73,7 +73,7 @@ class NewinfoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    
     }
 
     /**
@@ -85,5 +85,6 @@ class NewinfoController extends Controller
     public function destroy($id)
     {
         //
+        
     }
 }
