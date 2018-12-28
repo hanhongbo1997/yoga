@@ -351,6 +351,7 @@
                     <li>
                         <a href="#"> 瑜伽馆管理 <i class="im-office"></i></a>
                         <ul class="nav sub">
+
                              <li><a href=" "><i class="im-drawer"></i>瑜伽馆分类表</a>
                             </li>
                             
@@ -360,7 +361,7 @@
                            
                             
                             <li><a href="/admin/club/"><i class="im-pencil2"></i>瑜伽馆详情</a>
-                            </li>
+
                         </ul>
                     </li>
 
@@ -672,7 +673,10 @@
                         </div>
                     @endif
                 @section('content')
-            
+                
+                      
+                        
+                        
             
                 @show
                 </div>
