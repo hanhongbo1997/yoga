@@ -2,8 +2,6 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Dashboard</title>
-        <!-- Mobile specific metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <!-- Force IE9 to render in normal mode -->
         <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
@@ -331,9 +329,9 @@
                     <li>
                         <a href="#"> 课程管理 <i class="ec-bookmark"></i></a>
                         <ul class="nav sub">
-                            <li><a href="forms.html"><i class="im-list"></i> 课程列表</a>
+                            <li><a href="/admin/class"><i class="im-list"></i> 课程列表</a>
                             </li>
-                            <li><a href="form-validation.html"><i class="im-plus"></i> 课程添加</a>
+                            <li><a href="/admin/class/create"><i class="im-plus"></i> 课程添加</a>
                             </li>
                             <li><a href="form-validation.html"><i class="ec-pencil2"></i> 课程评论</a>
                             </li>
@@ -375,11 +373,11 @@
                     </li>
 
                     <li>
-                        <a href="#"> 资迅管理 <i class="im-earth"></i></a>
+                        <a href="#"> 资讯管理 <i class="im-earth"></i></a>
                         <ul class="nav sub">
-                            <li><a href="forms.html"><i class="im-list"></i> 资迅列表</a>
+                            <li><a href="/admin/news"><i class="im-list"></i> 资讯列表</a>
                             </li>
-                            <li><a href="form-validation.html"><i class="im-plus"></i> 资迅添加</a>
+                            <li><a href="/admin/news/create"><i class="im-plus"></i> 资讯添加</a>
                             </li>
                         </ul>
                     </li>
@@ -543,10 +541,9 @@
                     <!-- Start .row -->
                     <!-- Start .page-header -->
                     <div class="col-lg-12 heading">
-                        <h1 class="page-header"><i class="im-screen"></i> Dashboard</h1>
+                        <h1 class="page-header"><i class="im-home"></i>后台管理</h1>
                         <!-- Start .bredcrumb -->
-                        <ul id="crumb" class="breadcrumb">
-                        </ul>
+                        
                         <!-- End .breadcrumb -->
                         <!-- Start .option-buttons -->
                         <div class="option-buttons">
@@ -655,6 +652,18 @@
                     <!-- End .page-header -->
                 </div>
                 <!-- End .row -->
+                @if (session('success'))
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <strong>{{ session('success') }}</strong> 
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <strong>{{ session('error') }}</strong> 
+                        </div>
+                    @endif
                 @section('content')
             
             
@@ -682,6 +691,14 @@
         <script type="text/javascript" src="/admin/js/libs/respond.min.js"></script>
         <![endif]-->
         <!-- Bootstrap plugins -->
+        <script src="/admin/js/main.js" type="text/javascript"></script>
+        <style>
+        *{margin:0;padding:0;list-style-type:none;}
+        img,a{border:0;}
+        .piccon{height:75px;margin:100px 0 0 50px;}
+        .piccon li{float:left;padding:0 10px;}
+        #preview{position:absolute;border:1px solid #ccc;background:#333;padding:5px;display:none;color:#fff;}
+        </style>
         <script src="/admin/js/bootstrap/bootstrap.js"></script>
         <!-- Core plugins ( not remove ever) -->
         <!-- Handle responsive view functions -->
@@ -718,5 +735,8 @@
         <script src="/admin/js/jquery.sprFlat.js"></script>
         <script src="/admin/js/app.js"></script>
         <script src="/admin/js/pages/dashboard.js"></script>
+        <link rel="stylesheet" href="/admin/css/lightbox.css" media="screen"/>
+        <script src="/admin/js/lightbox-2.6.min.js"></script>
+
     </body>
 </html>

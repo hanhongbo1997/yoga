@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
-    //设置标明
+    //设置表名
     public $table = 'video';
+    public function videodetails()
+    {
+    	return $this->hasOne('App\Models\VideoDetails','vid');
+    }  
 
 }
