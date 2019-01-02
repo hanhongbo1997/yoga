@@ -38,7 +38,7 @@
                             <!-- col-lg-12 end here -->
                         </div>
 
-                                    <h4 class="panel-title">视频列表</h4>
+                                  
                                 </div>
                                 <div class="panel-body">
                                     <table class="table display" id="datatable">
@@ -49,8 +49,6 @@
                                                 <th>缩略图</th>
                                                 <th>热门程度</th>
                                                 <th>上线/下线</th>
-                                                <th>视频状态</th>
-                                                <th>视频时长</th>
                                                 <th>添加时间</th>
                                                 <th>操作</th>
                                             </tr>

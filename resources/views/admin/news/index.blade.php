@@ -70,8 +70,15 @@
             									</div>
 									
 	                            </td>
+
 	                            <td class="center ">
                                   <a href="/admin/newinfo/{{ $v->id }}/edit" class="btn btn-primary">查看文章内容</a>
+                                  <a href="/admin/news/{{ $v->id }}/edit" class="btn btn-warning">修改</a>
+                                  <form style="display: inline-block;" method="post" action="/admin/news/{{ $v->id }}">
+                                      {{ csrf_field() }}
+                                      {{ method_field('DELETE') }}
+                                      <input type="submit" value="删除"  class="btn btn-danger">
+                                  </form>
 	                            </td>
                         	</tr>
                           

@@ -60,45 +60,7 @@
                                 
                             
  
-                            <button type="button" id="j_upload_img_btn" class="btn btn-info fileinput-button">多图上传</button>
-                            <ul id="upload_img_wrap"></ul>
-                             
-                            <!-- 加载编辑器的容器 -->
-                            <textarea id="uploadEditor" style="display: none;"></textarea>
-                             
-                            <!-- 使用ue -->
-                            <script type="text/javascript">
-                             
-                             var uploadEditor = UE.getEditor("uploadEditor", {
-                                    isShow: false,
-                                    focus: false,
-                                    enableAutoSave: false,
-                                    autoSyncData: false,
-                                    autoFloatEnabled:false,
-                                    wordCount: false,
-                                    sourceEditor: null,
-                                    scaleEnabled:true,
-                                    toolbars: [["insertimage", "attachment"]]
-                                });
-                             
-                             uploadEditor.ready(function () {
-                                    uploadEditor.addListener("beforeInsertImage", _beforeInsertImage);
-                                });
-
-                             document.getElementById('j_upload_img_btn').onclick = function () {
-                                    var dialog = uploadEditor.getDialog("insertimage");
-                                    dialog.title = '多图上传';
-                                    dialog.render();
-                                    dialog.open();
-                                };
-                             function _beforeInsertImage(t, result) {
-                                    var imageHtml = '';
-                                    for(var i in result){
-                                        imageHtml += '<li><img src="'+result[i].src+'" alt="'+result[i].alt+'" height="150"></li>';
-                                    }
-                                    document.getElementById('upload_img_wrap').innerHTML = imageHtml;
-                                }
-                            </script>
+                            <input type="file" class="btn btn-info fileinput-button" name="img" value="上传">
 
                             </div>
                         </div>

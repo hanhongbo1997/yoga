@@ -22,6 +22,8 @@ Route::get('/', function () {
 Route::resource('admin/videos','admin\VideosController');
 //视频详情资源控制器
 Route::resource('admin/videoinfo','admin\VideoinfoController');
+//评论表控制器
+Route::resource('admin/videocomment','admin\VideocommentController');
 //课程资源控制器
 Route::resource('admin/class','admin\ClassController');
 //课程详情资源控制器
@@ -30,8 +32,15 @@ Route::resource('admin/classinfo','admin\ClassinfoController');
 Route::resource('admin/news','admin\NewsController');
 //课程详情资源控制器
 Route::resource('admin/newinfo','admin\NewinfoController');
+//视频分类资源控制器
+Route::resource('admin/videosort','admin\VideosortController');
+//添加視頻子分類
+Route::get('admin/videosort/create/{id}','admin\VideosortController@create');
+//課程分类资源控制器
+Route::resource('admin/lessonsort','admin\LessonsortController');
+//添加課程子分類
+Route::get('admin/lessonsort/create/{id}','admin\LessonsortController@create');
 
-Route::resource('admin/index','admin\IndexController');
 
 
 
@@ -64,7 +73,6 @@ Route::resource('admin/index','admin\IndexController');
 
 
 Route::resource('admin/users','admin\UsersController');
-Route::post('admin/users','admin\UsersController@index');
 Route::resource('admin/slideshow','admin\SlideshowController');
 
 

@@ -3,6 +3,7 @@
 @section('content')
 <!-- Start .outlet -->
     <!-- Page start here ( usual with .row ) -->
+   
 <ul class="breadcrumb"><li><i class="im-home"></i><a href="index.html">主页</a><i class="en-arrow-right7"></i></li><li><i class="im-plus"></i>视频添加</ul>       
     <div class="row">
         <!-- Start .row -->
@@ -29,12 +30,27 @@
                                 <input type="text" class="form-control" name="details" placeholder="请填写视频简介" autofocus="autofocus">
                             </div>
                         </div>
+
+                        
                        
                         <div class="form-group">
                             <label class="col-lg-2 col-md-2 col-sm-12 control-label">上传用户</label>
                             <div class="col-lg-10 col-md-10">
                                 <input type="text" class="form-control" name="writer" placeholder="请填写上传者" autofocus="autofocus">
                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">Inline Radios</label>
+                            <label class="radio-inline">
+                                <input type="radio" name="radio1" value="option1">unchecked
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="radio1" value="option2" checked="checked">checked
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="radio1" value="option3" disabled="disabled">disabled
+                            </label>
                         </div>
 
                         <div class="form-group">
@@ -58,7 +74,7 @@
                         		<input type="file" name="img">
                             </div>
                         </div>
-
+                        
                         <div class="form-group ">
                            
                         	<input type="submit" class="btn btn-success" style="width:100%" value="添加视频">

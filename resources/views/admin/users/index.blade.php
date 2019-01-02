@@ -25,7 +25,7 @@
                                     <h3 class="panel-title btn btn-success ml15"><a href="/admin/users/create">用户添加</a></h3>
                                 </div>
                                 <div class="panel-body">
-                                <form action="/admin/users" method="post">
+                                <form action="/admin/users" method="get">
                                 {{csrf_field()}}
                                     选择页数：<select name="limit" id="">
 

@@ -52,7 +52,6 @@ class NewsController extends Controller
         $news->nname = $request->nname;
         $news->nuser = $request->nuser;
         $img = $request->file('img');
-        dd($img);
         $ext = $img->extension('img');
         $filename = time().'.'.$ext;
         $res = $img->storeAs('images',$filename);
@@ -96,7 +95,9 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        //资讯修改
+        $data = News::find($id);
+        return view('admin.news.edit',['data'=>$data]);
     }
 
     /**
@@ -109,6 +110,21 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data = Newinfo::where('niid',$id)->first();
+        $data->abs = $request->input('abs','');
+        $data->ncontent = $request->input('ncontent','');
+        $res1 = $data->save();
+
+        $data = News::where('id',$id)->first();
+        $data->nname = $request->input('nname','');
+        $data->nuser = $request->input('nuser','');
+        $res2 = $data->save();
+        if($res1 && $res2){
+            return back()->with('success', '保存成功');
+         }else{
+             return back()->with('error', '保存失败');
+         
+        }
     }
 
     /**
@@ -120,5 +136,13 @@ class NewsController extends Controller
     public function destroy($id)
     {
         //
+        $res1 = News::destroy('id',$id);
+        $res2 = Newinfo::where('niid',$id)->delete();
+        if($res1 && $res2){
+             return back()->with('success', '删除成功');
+         }else{
+             return back()->with('error', '删除失败');
+         
+        }
     }
 }

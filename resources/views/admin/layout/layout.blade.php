@@ -313,7 +313,7 @@
                             </li>
                             <li><a href="/admin/videos/create"><i class="im-plus"></i> 视频添加</a>
                             </li>
-                            <li><a href="form-validation.html"><i class="ec-pencil2"></i> 视频评论</a>
+                            <li><a href="/admin/videocomment/getCommentList"><i class="ec-pencil2"></i> 视频评论</a>
                             </li>
                         </ul>
                     </li>
@@ -321,9 +321,9 @@
                     <li>
                         <a href="#"> 视频分类管理 <i class="im-paragraph-justify"></i></a>
                         <ul class="nav sub">
-                            <li><a href="forms.html"><i class="ec-pencil2"></i> 视频分类列表</a>
+                            <li><a href="/admin/videosort"><i class="ec-pencil2"></i> 视频分类列表</a>
                             </li>
-                            <li><a href="form-validation.html"><i class="im-checkbox-checked"></i> 视频分类添加</a>
+                            <li><a href="/admin/videosort/create"><i class="im-checkbox-checked"></i> 视频分类添加</a>
                             </li>
                         </ul>
                     </li>
@@ -343,9 +343,9 @@
                     <li>
                         <a href="#"> 课程分类管理 <i class="im-paragraph-justify"></i></a>
                         <ul class="nav sub">
-                            <li><a href="forms.html"><i class="ec-pencil2"></i> 课程分类列表</a>
+                            <li><a href="/admin/lessonsort"><i class="ec-pencil2"></i> 课程分类列表</a>
                             </li>
-                            <li><a href="form-validation.html"><i class="im-checkbox-checked"></i> 课程分类添加</a>
+                            <li><a href="/admin/lessonsort/create"><i class="im-checkbox-checked"></i> 课程分类添加</a>
                             </li>
                         </ul>
                     </li>
@@ -354,7 +354,7 @@
                         <a href="#"> 瑜伽馆管理 <i class="im-office"></i></a>
                         <ul class="nav sub">
 
-                             <li><a href=" "><i class="im-drawer"></i>瑜伽馆分类表</a>
+                             <li><a href="/admin/clubsort"><i class="im-drawer"></i>瑜伽馆分类表</a>
                             </li>
                             
                         
@@ -711,14 +711,7 @@
         <script type="text/javascript" src="/admin/js/libs/respond.min.js"></script>
         <![endif]-->
         <!-- Bootstrap plugins -->
-        <script src="/admin/js/main.js" type="text/javascript"></script>
-        <style>
-        *{margin:0;padding:0;list-style-type:none;}
-        img,a{border:0;}
-        .piccon{height:75px;margin:100px 0 0 50px;}
-        .piccon li{float:left;padding:0 10px;}
-        #preview{position:absolute;border:1px solid #ccc;background:#333;padding:5px;display:none;color:#fff;}
-        </style>
+        <!-- <script src="/admin/js/main.js" type="text/javascript"></script> -->
         <script src="/admin/js/bootstrap/bootstrap.js"></script>
         <!-- Core plugins ( not remove ever) -->
         <!-- Handle responsive view functions -->
@@ -733,6 +726,7 @@
         <!-- Bootbox confirm dialog for reset postion on panels -->
         <script src="/admin/plugins/ui/bootbox/bootbox.js"></script>
         <!-- Other plugins ( load only nessesary plugins for every page) -->
+        <script src="/admin/plugins/core/moment/moment.min.js"></script>
         <script src="/admin/plugins/charts/flot/jquery.flot.js"></script>
         <script src="/admin/plugins/charts/flot/jquery.flot.pie.js"></script>
         <script src="/admin/plugins/charts/flot/jquery.flot.resize.js"></script>
@@ -747,6 +741,18 @@
         <script src="/admin/plugins/forms/icheck/jquery.icheck.js"></script>
         <script src="/admin/plugins/forms/tags/jquery.tagsinput.min.js"></script>
         <script src="/admin/plugins/forms/tinymce/tinymce.min.js"></script>
+        <script src="/admin/plugins/forms/switch/jquery.onoff.min.js"></script>
+        <script src="/admin/plugins/forms/maxlength/bootstrap-maxlength.js"></script>
+        <!-- <script src="/admin/plugins/forms/bootstrap-filestyle/bootstrap-filestyle.js"></script> -->
+        <script src="/admin/plugins/forms/color-picker/spectrum.js"></script>
+        <script src="/admin/plugins/forms/daterangepicker/daterangepicker.js"></script>
+        <script src="/admin/plugins/forms/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+        <script src="/admin/plugins/forms/globalize/globalize.js"></script>
+        <script src="/admin/plugins/forms/maskedinput/jquery.maskedinput.js"></script>
+        <script src="/admin/plugins/forms/select2/select2.js"></script>
+        <script src="/admin/plugins/forms/dual-list-box/jquery.bootstrap-duallistbox.js"></script>
+        <script src="/admin/plugins/forms/password/jquery-passy.js"></script>
+        <script src="/admin/plugins/forms/checkall/jquery.checkAll.js"></script>
         <script src="/admin/plugins/misc/highlight/highlight.pack.js"></script>
         <script src="/admin/plugins/misc/countTo/jquery.countTo.js"></script>
         <script src="/admin/plugins/ui/weather/skyicons.js"></script>
@@ -755,6 +761,7 @@
         <script src="/admin/js/jquery.sprFlat.js"></script>
         <script src="/admin/js/app.js"></script>
         <script src="/admin/js/pages/dashboard.js"></script>
+        <script src="/admin/js/pages/forms.js"></script>
         <link rel="stylesheet" href="/admin/css/lightbox.css" media="screen"/>
         <script src="/admin/js/lightbox-2.6.min.js"></script>
 
