@@ -19,6 +19,24 @@
     <form  action="/admin/club/{{ $data->cid }}" method="post" enctype="multipart/form-data" class="form-horizontal group-border hover-stripped">
     {{ csrf_field() }}
     {{ method_field('PUT') }}
+    <div class="form-group">
+        <label class="col-lg-2 col-md-2 col-sm-12 control-label">会馆类型</label>
+        <div class="col-lg-10 col-md-10">
+          
+      
+
+          <select  class="form-control" style="width: 200px;margin-right: 20px; float: left;"  name="pid">
+                      <option value="0" selected="">请选择</option>    
+                   @foreach ($club as $k=>$v)                               
+                      <option value="{{ $v->id }}" id="sel1">{{ $v->crname }}</option>
+                    @endforeach
+                                                         
+         </select>
+      
+
+      </div>
+
+      </div>
       <div class="form-group">
         <label class="col-lg-2 col-md-2 col-sm-12 control-label">会馆名称</label>
         <div class="col-lg-10 col-md-10">

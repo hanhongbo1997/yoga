@@ -17,11 +17,9 @@
         <link rel='stylesheet' type='text/css' 
         <!--[if lt IE 9]>
 
-        <![endif]-->
-        <!-- Css files -->
+         <!-- Css files -->
         <!-- Icons -->
         <link href="/admin/css/icons.css" rel="stylesheet" />
-        <link href="/admin/css/slidebar.css" rel="stylesheet" />
         <!-- jQueryUI -->
         <link href="/admin/css/sprflat-theme/jquery.ui.all.css" rel="stylesheet" />
         <!-- Bootstrap stylesheets (included template modifications) -->
@@ -40,7 +38,7 @@
         <link rel="icon" href="/admin/img/ico/favicon.ico" type="image/png">
         <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
         <meta name="msapplication-TileColor" content="#3399cc" />
-    </head>
+    </head> 
     <body>
         <!-- Start #header -->
         <div id="header">
@@ -362,7 +360,7 @@
                             </li>
                            
                             
-                            <li><a href="/admin/club/"><i class="im-pencil2"></i>瑜伽馆详情</a>
+                            <li><a href="/admin/club/create"><i class="im-pencil2"></i>瑜伽馆添加</a>
 
                         </ul>
                     </li>
@@ -371,9 +369,9 @@
                     <li>
                         <a href="#"> 名师管理 <i class="fa-user"></i></a>
                         <ul class="nav sub">
-                            <li><a href="forms.html"><i class="im-list"></i> 名师列表</a>
+                            <li><a href="/admin/teacher/"><i class="im-list"></i> 名师列表</a>
                             </li>
-                            <li><a href="form-validation.html"><i class="im-plus"></i> 名师添加</a>
+                            <li><a href="/admin/teacher/create"><i class="im-plus"></i> 名师添加</a>
                             </li>
                         </ul>
                     </li>
@@ -385,9 +383,9 @@
                     <li>
                         <a href="#"> 资讯管理 <i class="im-earth"></i></a>
                         <ul class="nav sub">
-                            <li><a href="/admin/news"><i class="im-list"></i> 资讯列表</a>
+                            <li><a href="/admin/teacher/index"><i class="im-list"></i> 资讯列表</a>
                             </li>
-                            <li><a href="/admin/news/create"><i class="im-plus"></i> 资讯添加</a>
+                            <li><a href="/admin/teacher/create"><i class="im-plus"></i> 资讯添加</a>
                             </li>
                         </ul>
                     </li>
@@ -561,7 +559,7 @@
                     <!-- Start .row -->
                     <!-- Start .page-header -->
                     <div class="col-lg-12 heading">
-                        <h1 class="page-header"><i class="im-home"></i>后台管理</h1>
+                        <h1 class="page-header"><i class="im-home"></i>aaaaa</h1>
 
                         <!-- Start .bredcrumb -->
                         
@@ -694,8 +692,7 @@
         </div>
         <!-- End #content -->
         <!-- Javascripts -->
-        <!-- Load pace first -->
-        <script src="/admin/plugins/core/pace/pace.min.js"></script>
+       <script src="/admin/plugins/core/pace/pace.min.js"></script>
         <!-- Important javascript libs(put in all pages) -->
         <script src="/admin/js/jquery-1.8.3.min.js"></script>
         <script>
@@ -706,19 +703,11 @@
         window.jQuery || document.write('<script src="/admin/js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')
         </script>
         <!--[if lt IE 9]>
-        <script type="text/javascript" src="/admin/js/libs/excanvas.min.js"></script>
-        <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script type="text/javascript" src="/admin/js/libs/respond.min.js"></script>
-        <![endif]-->
+  <script type="text/javascript" src="/admin/js/libs/excanvas.min.js"></script>
+  <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <script type="text/javascript" src="/admin/js/libs/respond.min.js"></script>
+<![endif]-->
         <!-- Bootstrap plugins -->
-        <script src="/admin/js/main.js" type="text/javascript"></script>
-        <style>
-        *{margin:0;padding:0;list-style-type:none;}
-        img,a{border:0;}
-        .piccon{height:75px;margin:100px 0 0 50px;}
-        .piccon li{float:left;padding:0 10px;}
-        #preview{position:absolute;border:1px solid #ccc;background:#333;padding:5px;display:none;color:#fff;}
-        </style>
         <script src="/admin/js/bootstrap/bootstrap.js"></script>
         <!-- Core plugins ( not remove ever) -->
         <!-- Handle responsive view functions -->
@@ -755,8 +744,5 @@
         <script src="/admin/js/jquery.sprFlat.js"></script>
         <script src="/admin/js/app.js"></script>
         <script src="/admin/js/pages/dashboard.js"></script>
-        <link rel="stylesheet" href="/admin/css/lightbox.css" media="screen"/>
-        <script src="/admin/js/lightbox-2.6.min.js"></script>
-
     </body>
 </html>

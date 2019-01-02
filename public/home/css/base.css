@@ -1,0 +1,237 @@
+﻿html {
+	color: #313538;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	background: white;
+}
+
+input {      
+     -webkit-user-select:auto;
+}  
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	margin: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display: block;
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+
+audio,canvas,video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+th {
+	text-align: inherit
+}
+
+fieldset,img {
+	border: 0
+}
+
+iframe {
+	display: block
+}
+
+abbr,acronym {
+	border: 0;
+	font-variant: normal
+}
+
+del {
+	text-decoration: line-through
+}
+
+address,caption,cite,code,dfn,em,th,var,i,b {
+	font-style: normal;
+	font-weight: 500
+}
+
+ol,ul {
+	list-style: none
+}
+
+h1,h2,h3,h4,h5,h6,b {
+	font-size: 100%;
+	font-weight: 500
+}
+
+q:before,q:after {
+	content: ''
+}
+
+a {
+	color: #313538;
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+
+a:visited,a:hover {
+	text-decoration: none
+}
+
+body .hide {
+	display: none
+}
+
+body .hide2 {
+	visibility: hidden
+}
+
+body .hide3 {
+	position: absolute;
+	left: -99999px;
+	top: -99999px
+}
+
+* {
+	-webkit-overflow-scrolling:touch;
+}
+
+
+html,body,button,input,select,textarea {
+	font: 14px/1.5 SimHei,Microsoft YaHei,arial,\5b8b\4f53;
+	color: #313538
+}
+
+input,select,textarea {
+	font-size: 100%
+}
+
+ins,a {
+	text-decoration: none
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: "\20 ";
+	clear: both;
+	height: 0
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.nowrap {
+	white-space: nowrap;
+	word-break: keep-all
+}
+
+.wrap {
+	white-space: normal;
+	word-break: break-all
+}
+
+.ellipsis {
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: keep-all;
+	word-wrap: normal
+}
+
+.c_ba2636 {
+	color: #ba142b
+}
+
+.c_1e50c2 {
+	color: #1e50c2
+}
+
+.c_22ac38 {
+	color: #22ac38
+}
+@media screen and (min-width:240px) {
+	html,body,button,input,select,textarea {
+		font-size: 9px
+	}
+}
+
+@media screen and (min-width:320px) {
+	html,body,button,input,select,textarea {
+		font-size: 12px
+	}
+}
+
+@media screen and (min-width:380px) {
+	html,body,button,input,select,textarea {
+		font-size: 14px
+	}
+}
+
+@media screen and (min-width:420px) {
+	html,body,button,input,select,textarea {
+		font-size: 16px
+	}
+}
+
+@media screen and (min-width:450px) {
+	html,body,button,input,select,textarea {
+		font-size: 18px
+	}
+}
+
+@media screen and (min-width:480px) {
+	html,body,button,input,select,textarea {
+		font-size: 18px
+	}
+}
+
+@media screen and (min-width:540px) {
+	html,body,button,input,select,textarea {
+		font-size: 20.25px
+	}
+}
+
+@media screen and (min-width:600px) {
+	html,body,button,input,select,textarea {
+		font-size: 22px
+	}
+}
+
+@media screen and (min-width:640px) {
+	html,body,button,input,select,textarea {
+		font-size: 24px
+	}
+}
+
+@media screen and (min-width:720px) {
+	html,body,button,input,select,textarea {
+		font-size: 28px
+	}
+}
+
+@media screen and (min-width:800px) {
+	html,body,button,input,select,textarea {
+		font-size: 30px
+	}
+}
+
+@media screen and (min-width:880px) {
+	html,body,button,input,select,textarea {
+		font-size: 34px
+	}
+}
+
+@media screen and (min-width:960px) {
+	html,body,button,input,select,textarea {
+		font-size: 36px
+	}
+}
+@media screen and (min-width:1080px) {
+	html,body,button,input,select,textarea {
+		font-size: 38px
+	}
+}

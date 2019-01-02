@@ -136,7 +136,7 @@ class UsersController extends Controller
         $data = Users::find($id);
         // dd($data);
         $title = '用户修改';
-        return view('admin.users.edit',['data'=>$data]);
+        return view('admin.users.edit',['data'=>$data,'title'=>$title]);
     }
 
     /**

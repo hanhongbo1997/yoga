@@ -4,17 +4,7 @@
 <a href="/admin/clubsort">
         <button type="button" class="btn btn-pink" style="margin-bottom: 20px;"><i class="im-arrow-left"></i>返回分类列表</button>
  </a>
-                         @if (session('success'))
-                           <div class="alert alert-success">
-                          {{ session('success') }}
-                          </div>
-                          @endif
-
-                        @if (session('error'))
-                         <div class="alert alert-success">
-                        {{ session('error') }}
-                        </div>
-                        @endif
+                    
 
 <div class="col-lg-12">
    <!-- Start col-lg-12 -->

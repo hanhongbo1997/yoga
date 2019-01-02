@@ -23,29 +23,16 @@
         <label class="col-lg-2 col-md-2 col-sm-12 control-label">会馆类型</label>
         <div class="col-lg-10 col-md-10">
           
-       
+      
 
-          <select  class="form-control" style="width: 200px;margin-right: 20px; float: left;">
-                      <option value="0" selected="">请选择省</option>    
-                      @foreach($common_clubsort as $k=>$v)                                  
+          <select  class="form-control" style="width: 200px;margin-right: 20px; float: left;"  name="pid">
+                      <option value="0" selected="">请选择</option>    
+                   @foreach ($data as $k=>$v)                               
                       <option value="{{ $v->id }}" id="sel1">{{ $v->crname }}</option>
-                      @endforeach
+                    @endforeach
                                                          
          </select>
-    
-
-          <select  class="form-control" style="width: 200px;margin-right: 20px; float: left;">
-                     <option value="" selected="">请选择市区</option>     
-                                                                                                
-          </select> 
-         <select  class="form-control" style="width: 200px;margin-right: 20px; float: left;">
-                     <option value="" selected="">请选择市区</option>                                                                                      
-          </select> 
-
-         
-          
-
-        
+      
 
       </div>
 

@@ -1,17 +1,7 @@
 @extends('admin.layout.layout')
 
 @section('content')
-                         @if (session('success'))
-                           <div class="alert alert-success">
-                          {{ session('success') }}
-                          </div>
-                          @endif
-
-                        @if (session('error'))
-                         <div class="alert alert-success">
-                        {{ session('error') }}
-                        </div>
-                        @endif
+                         
                         
 <div class="table-responsive" style="overflow: hidden; width: 100%; height: auto;">
   <div id="datatable_wrapper" class="dataTables_wrapper form-inline" role="grid">
