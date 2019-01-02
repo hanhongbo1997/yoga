@@ -73,6 +73,7 @@ Route::get('admin/lessonsort/create/{id}','admin\LessonsortController@create');
 
 
 Route::resource('admin/users','admin\UsersController');
+
 Route::resource('admin/slideshow','admin\SlideshowController');
 
 
@@ -126,6 +127,7 @@ Route::resource('admin/slideshow','admin\SlideshowController');
 
 
 
+//admin 后台
 //会馆列表
 Route::resource('admin/club','admin\ClubController');
 //添加详情提交
@@ -136,4 +138,10 @@ Route::get('admin/club/details/{id}','admin\ClubController@details');
 Route::resource('admin/clubsort','admin\ClubsortController');
 //添加子类
 Route::get('admin/clubsort/create/{id}','admin\ClubsortController@create');
+
+//添加老师列表
+Route::resource('admin/teacher','admin\TeacherController');
+
+//前台 首页 home
+Route::resource('/','home\IndexController');
 

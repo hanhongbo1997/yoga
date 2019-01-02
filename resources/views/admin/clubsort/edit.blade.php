@@ -4,7 +4,6 @@
 <a href="/admin/clubsort">
         <button type="button" class="btn btn-pink" style="margin-bottom: 20px;"><i class="im-arrow-left"></i>返回分类列表</button>
  </a>
-
 <div class="col-lg-12">
    <!-- Start col-lg-12 -->
 <div class="panel panel-default toggle" id="spr_0">

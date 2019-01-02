@@ -7,10 +7,28 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Clubinfo;
 use App\Models\Clubsort;
+use DB;
 
 
 class ClubController extends Controller
 {
+    /**
+     * 公众部分
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getCates()
+    {
+        //获取数据
+        // $data = DB::select("select *,concat(path,',',id) as paths from club_sort order by paths asc");
+        $data = DB::table('club_sort')->select('*',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->get();
+        foreach ($data as $k=>$v) {
+            //统计，出现次数
+            $n = substr_count($v->path,',');
+            $data[$k]->crname = str_repeat('|— — ', $n).$v->crname;
+        }
+        return $data;
+    }
     /**
      * 图片函数
      *
@@ -88,10 +106,10 @@ class ClubController extends Controller
     public function create()
     {
         //获取分类信息
-        // $data = self::getPidClub(0);
+        // $data = Clubsort::all();
         // dump($data);exit;
         // 加载添加模板
-        return view('admin.club.create',['title'=>'瑜伽馆添加']);
+        return view('admin.club.create',['title'=>'瑜伽馆添加','data'=>self::getCates()]);
     }
 
     /**
@@ -104,16 +122,18 @@ class ClubController extends Controller
     {
         
         //获取数据
-        // $club = $request->all();
+        $club = $request->all();
+        // dump($club);
         
         $data = new Club;
         $data ->cname = $request->input('cname');
         $data ->caddr = $request->input('caddr');
-        // dump($data);
+        $data ->pid = $club['pid'];
+        // dump($data->pid);
         
         //图片
         $data ->cimg = '/uploads/'.self::profile($request);
-       
+       // dump($data);exit;
 
          if($data->save()){
 
@@ -209,7 +229,7 @@ class ClubController extends Controller
         //接收数据
         $data = Club::find($club->cid);
         //加载模板
-        return view('admin.club.edit',['title'=>'修改场馆','data'=>$data]);
+        return view('admin.club.edit',['title'=>'修改场馆','data'=>$data,'club'=>self::getCates()]);
     }
 
     /**
@@ -222,11 +242,13 @@ class ClubController extends Controller
     public function update(Request $request,$id)
     {
         $data = Club::find($id);
-            
+         //获取数据
+        $club = $request->all();   
+         $data ->pid = $club['pid'];
         $data ->cname = $request->input('cname');
         $data ->caddr = $request->input('caddr');
         
-        
+       
         //图片
         $data ->cimg = '/uploads/'.self::profile($request);
        

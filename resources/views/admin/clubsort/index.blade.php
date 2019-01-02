@@ -1,6 +1,7 @@
 @extends('admin.layout.layout')
 
 @section('content')
+
 <div class="table-responsive" style="overflow: hidden; width: 100%; height: auto;">
   <div id="datatable_wrapper" class="dataTables_wrapper form-inline" role="grid">
     <div class="row">
