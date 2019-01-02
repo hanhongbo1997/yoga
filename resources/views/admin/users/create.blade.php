@@ -38,14 +38,16 @@
                                         <div class="form-group">
                                             <label class="col-lg-2 control-label">用户名称</label>
                                             <div class="col-lg-10">
-                                                <input type="text" class="form-control required" id="uname" name="uname" placeholder="输入你的用户名">
+
+                                                <input type="text" class="form-control required" id="uname" name="uname" placeholder="请输入字母开头的6-12位">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-lg-2 control-label">用户密码</label>
                                             <div class="col-lg-10">
-                                                <input type="password" class="form-control" id="pass" name="pass" placeholder="请输入您的密码">
+
+                                                <input type="password" class="form-control" id="pass" name="pass" placeholder="请输6-12位密码">
                                             </div>
                                         </div>
 

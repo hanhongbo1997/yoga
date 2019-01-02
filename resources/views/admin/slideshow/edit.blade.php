@@ -26,16 +26,7 @@
                                     <form action="/admin/slideshow/{{$data->id}}"  method="post"  class="form-horizontal group-border hover-stripped" role="form" id="validate" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         {{ method_field('PUT') }}
-                                         <div class="form-group">
-                                            <label class="col-lg-2 control-label">用户权限</label>
-                                            <div class="col-lg-10">
-                                            <select name="status" id="status">
-                                                <option value="0">请选择</option>
-                                                <option value="1">详情</option>
-                                                <option value="2">链接</option>
-                                            </select>
-                                            </div>
-                                        </div>
+
                                         <div class="form-group">
                                             <label class="col-lg-2 control-label">用户名称</label>
                                             <div class="col-lg-10">
@@ -60,23 +51,21 @@
                                             </div>
 
                                         </div>
-                        <div class="form-group">
-                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">轮播图详情</label>
-                            <div class="col-lg-10 col-md-10">
-                                <!-- 加载编辑器的容器 -->
-                                <script id="container" name="content" type="text/plain"></script>
-                                <!-- 配置文件 -->
-                                <script type="text/javascript" src="/admin/UE/ueditor.config.js"></script>
-                                <!-- 编辑器源码文件 -->
-                                <script type="text/javascript" src="/admin/UE/ueditor.all.js"></script>
-                                <!-- 实例化编辑器 -->
-                                <script type="text/javascript">
-                                    var ue = UE.getEditor('container');
-                                </script>
-                            </div>
-                        </div>
-
-                                       
+                                        <div class="form-group">
+                                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">轮播图详情</label>
+                                            <div class="col-lg-10 col-md-10">
+                                                <!-- 加载编辑器的容器 -->
+                                                <script id="container" name="content" type="text/plain"></script>
+                                                <!-- 配置文件 -->
+                                                <script type="text/javascript" src="/admin/UE/ueditor.config.js"></script>
+                                                <!-- 编辑器源码文件 -->
+                                                <script type="text/javascript" src="/admin/UE/ueditor.all.js"></script>
+                                                <!-- 实例化编辑器 -->
+                                                <script type="text/javascript">
+                                                    var ue = UE.getEditor('container');
+                                                </script>
+                                            </div>
+                                        </div>                                     
 
                                         <div class="form-group">
                                             <div class="col-lg-offset-2">

@@ -85,7 +85,9 @@ class UsersController extends Controller
             // dd($pass);
             $data['pass'] = Hash::make($pass);
             $uid = $users -> insertGetId($data);
-            // dd($uid);
+
+            dd($uid);
+
             //获取所添加的status
             $status = $request->input('status');
 
@@ -136,7 +138,9 @@ class UsersController extends Controller
         $data = Users::find($id);
         // dd($data);
         $title = '用户修改';
-        return view('admin.users.edit',['data'=>$data,'title'=>$title]);
+
+        return view('admin.users.edit',['data'=>$data]);
+
     }
 
     /**

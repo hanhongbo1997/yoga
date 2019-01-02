@@ -12,7 +12,6 @@
 */
 
 Route::get('/', function () {
-	
     return view('welcome');
 });
 
@@ -72,9 +71,14 @@ Route::get('admin/lessonsort/create/{id}','admin\LessonsortController@create');
 
 
 
+
+
+//用户控制器
 Route::resource('admin/users','admin\UsersController');
 
+// 轮播图控制
 Route::resource('admin/slideshow','admin\SlideshowController');
+
 
 
 
@@ -144,4 +148,5 @@ Route::resource('admin/teacher','admin\TeacherController');
 
 //前台 首页 home
 Route::resource('/','home\IndexController');
+
 

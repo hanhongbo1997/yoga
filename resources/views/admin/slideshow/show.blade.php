@@ -25,9 +25,11 @@
                                     <h3 class="panel-title btn btn-success ml15"><a href="/admin/slideshow/create">轮播图添加</a></h3>
                                 </div>
                                 <div class="panel-body">
+                                        <label class="col-lg-2 col-md-2 col-sm-12 control-label">轮播图详情</label>
                                         <img src="{{$arr1['0']}}" alt="" width="300px">
                                         轮播图介绍：{{$arr2['0']}} 。
                                 </div>
+                                 
                             </div>
                             <!-- End .panel -->
                         </div>

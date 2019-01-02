@@ -3,7 +3,9 @@
 @section('content')
 	<div class="outlet">
 
+
         <ul class="breadcrumb"><li><i class="im-home"></i><a href="index.html">主页</a><i class="en-arrow-right7"></i></li><li><i class="im-list"></i>视频列表</ul>
+
 
                     <!-- Start .outlet -->
                     <!-- Page start here ( usual with .row ) -->
@@ -39,6 +41,7 @@
                         </div>
 
                                   
+
                                 </div>
                                 <div class="panel-body">
                                     <table class="table display" id="datatable">
@@ -54,6 +57,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+
                                             @foreach($video as $k=>$v)
                                             <tr class="odd gradeX">
                                                 <td>{{ $v->id }}</td>
@@ -103,6 +107,7 @@
 
 
                                     </div>
+
                             </div>
                             <!-- End .panel -->
                         </div>

@@ -44,8 +44,9 @@
                                                     value="20">20</option>
 
                                     </select>
-                                    <button class="btn btn-info">搜索</button>
+
                                     <input type="text" name="sousuo">
+                                    <button class="btn btn-info">搜索</button>
                                 </form>
                                     <table class="table display" id="datatable">
                                         <thead>

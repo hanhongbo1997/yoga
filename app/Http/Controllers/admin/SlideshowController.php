@@ -13,12 +13,25 @@ class SlideshowController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function index(Request $request)
     {
         //
-        $data = Slideshow::all();
+         $params = $request->all();
+        if(empty($params['limit'])){
+            $params['limit']=5;
+        }
+        if(empty($params['sousuo'])){
+            $params['sousuo']='';
+        }
+        // dd($params);
+        $search_uname = $request->input('search_uname','');
+        // dd($search_uname);
+        //获取数据便里面的所有数据
+        $data = Slideshow::where('name','like','%'.$params['sousuo'].'%')->paginate($params['limit']);
         // dd($data);
-        return view('admin.slideshow.index',['data'=>$data]);
+        return view('admin.slideshow.index',['data'=>$data,'params'=>$params]);
+
     }
 
     /**
@@ -46,17 +59,24 @@ class SlideshowController extends Controller
         // 
         $files = $request->file('img');
         // dd($data);
-        $file_name=date('YmdHis',time()).rand(1000,9999).'.'.$files->extension();
-        $file_res=$files->storeAs('admin_face',$file_name);
-        // dd($file_name);
-        $data['img']='/uploads/'.$file_res;
-        // dd($data);
-        $res = Slideshow::insert($data);
-        if($res){
-            return redirect('admin/slideshow')->with('success', '添加成功');
+
+        if ($files) {
+            $file_name=date('YmdHis',time()).rand(1000,9999).'.'.$files->extension();
+            $file_res=$files->storeAs('admin_face',$file_name);
+            // dd($file_name);
+            $data['img']='/uploads/'.$file_res;
+            // dd($data);
+            $res = Slideshow::insert($data);
+            if($res){
+                return redirect('admin/slideshow')->with('success', '添加成功');
+            }else{
+                return back()->with('error', '添加失败');
+            } 
         }else{
-            return back()->with('error', '添加失败');
+            return back()->with('error','你轮播图添加图片');
         }
+       
+
     }
 
     /**
@@ -81,7 +101,13 @@ class SlideshowController extends Controller
         $arr2 = $arr2['1'];
         $content = $arr1;
         // dd($arr1,$arr2);
-        return view('admin.slideshow.show',['arr1'=>$arr1,'arr2'=>$arr2]);
+
+        return view('admin.slideshow.show',['arr1'=>$arr1,'arr2'=>$arr2,'data'=>$data]);
+    }
+
+    public function modify()
+    {
+        echo 'aaa';
     }
 
     /**
@@ -107,10 +133,21 @@ class SlideshowController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $data=$request->except(['_token','_method']);
-        // dd($data);
-        $res =Slideshow::find($id)->update($data);      
-        // dd($res);
+
+        // $data1=$request->all();
+        $data = Slideshow::find($id);
+
+        $files = $request->file('img');
+        $file_name=date('YmdHis',time()).rand(1000,9999).'.'.$files->extension();
+        $file_res=$files->storeAs('admin_face',$file_name);
+        $img ='/uploads/'.$file_res;
+        $data->img = $img;
+        $data->name = $request->name;
+        $data->link = $request->link;
+        $data->content = $request->content;
+        $res = $data->save();
+
+
         if ($res) {
             return redirect('admin/slideshow')->with('success', '修改成功');
         }else{

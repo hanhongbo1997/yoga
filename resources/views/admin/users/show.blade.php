@@ -15,23 +15,10 @@
                                     <h3 class="panel-title btn btn-success ml15"><a href="/admin/users/create">用户添加</a></h3>
                                      <h3 class="panel-title btn btn-success ml15"><a href="/admin/users">用户列表</a></h3>
                                 </div>
-                                <div>
-									   @if($data->userinfo['status']==1)
-								           <div class="panel-heading">
-			                                    <h3 class="panel-title" style="color:red">尊敬的管理员  以下是你的信息</h3>
-			                                </div>
-								       @elseif($data->userinfo['status']==2)
-								              <div class="panel-heading">
-				                                    <h3 class="panel-title" style="color:purple">高贵的会员  以下是你的信息</h3>
-				                                </div>
-								       @elseif($data->userinfo['status']==3)
-								          <div class="panel-heading">
-			                                    <h3 class="panel-title" style="color:black">亲爱的用户  以下是你的信息</h3>
-			                                </div>
-								       @endif
-								           <div class="form-group">
-                                            <div class="col-lg-offset-2">
-                                                <button class="btn btn-success ml15" type="submit">用户信息</button>
+              
+								         <div class="xui-content xui-margin-b-15" style="line-height:30px;">
+                                            <div class="span7">
+                                                <h3 class="xui-margin-0">我的信息</h3>
                                             </div>
                                         </div>
 								</div>	
@@ -61,6 +48,27 @@
                                                 <input id="phone" name="phone" type="number" class="form-control" value="{{$data->phone}}" placeholder="输入你的手机号码">
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">生日</label>
+                                            <div class="col-lg-10">
+                                                <input id="phone" name="phone" type="number" class="form-control" value="" placeholder="未设置">
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="col-lg-2 control-label">所在城市</label>
+                                            <div class="col-lg-10">
+                                                <input id="phone" name="phone" type="number" class="form-control" value="" placeholder="未设置">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">个性签名</label>
+                                            <div class="col-lg-10">
+                                                 <textarea rows="6" placeholder="未设置" class="xui-margin-10" style="width:50%;" name="signature"></textarea>
+                                            </div>
+                                        </div>
+                                        
 
                                        
 

@@ -17,9 +17,12 @@
         <link rel='stylesheet' type='text/css' 
         <!--[if lt IE 9]>
 
-         <!-- Css files -->
+
+        <![endif]-->
+        <!-- Css files -->
         <!-- Icons -->
         <link href="/admin/css/icons.css" rel="stylesheet" />
+        <link href="/admin/css/slidebar.css" rel="stylesheet" />
         <!-- jQueryUI -->
         <link href="/admin/css/sprflat-theme/jquery.ui.all.css" rel="stylesheet" />
         <!-- Bootstrap stylesheets (included template modifications) -->
@@ -38,7 +41,8 @@
         <link rel="icon" href="/admin/img/ico/favicon.ico" type="image/png">
         <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
         <meta name="msapplication-TileColor" content="#3399cc" />
-    </head> 
+
+    </head>
     <body>
         <!-- Start #header -->
         <div id="header">
@@ -322,6 +326,7 @@
                             <li><a href="/admin/videosort"><i class="ec-pencil2"></i> 视频分类列表</a>
                             </li>
                             <li><a href="/admin/videosort/create"><i class="im-checkbox-checked"></i> 视频分类添加</a>
+
                             </li>
                         </ul>
                     </li>
@@ -332,6 +337,7 @@
                             <li><a href="/admin/class"><i class="im-list"></i> 课程列表</a>
                             </li>
                             <li><a href="/admin/class/create"><i class="im-plus"></i> 课程添加</a>
+
                             </li>
                             <li><a href="form-validation.html"><i class="ec-pencil2"></i> 课程评论</a>
                             </li>
@@ -344,6 +350,7 @@
                             <li><a href="/admin/lessonsort"><i class="ec-pencil2"></i> 课程分类列表</a>
                             </li>
                             <li><a href="/admin/lessonsort/create"><i class="im-checkbox-checked"></i> 课程分类添加</a>
+
                             </li>
                         </ul>
                     </li>
@@ -386,6 +393,7 @@
                             <li><a href="/admin/teacher/index"><i class="im-list"></i> 资讯列表</a>
                             </li>
                             <li><a href="/admin/teacher/create"><i class="im-plus"></i> 资讯添加</a>
+
                             </li>
                         </ul>
                     </li>
@@ -559,10 +567,10 @@
                     <!-- Start .row -->
                     <!-- Start .page-header -->
                     <div class="col-lg-12 heading">
-                        <h1 class="page-header"><i class="im-home"></i>aaaaa</h1>
-
+                        <h1 class="page-header"><i class="im-screen"></i> 网站后台</h1>
                         <!-- Start .bredcrumb -->
-                        
+                        <ul id="crumb" class="breadcrumb">
+                        </ul>
                         <!-- End .breadcrumb -->
                         <!-- Start .option-buttons -->
                         <div class="option-buttons">
@@ -684,6 +692,7 @@
                         </div>
                     @endif
                 @section('content')
+
             
                 @show
                 </div>
@@ -692,7 +701,9 @@
         </div>
         <!-- End #content -->
         <!-- Javascripts -->
+
        <script src="/admin/plugins/core/pace/pace.min.js"></script>
+
         <!-- Important javascript libs(put in all pages) -->
         <script src="/admin/js/jquery-1.8.3.min.js"></script>
         <script>
@@ -703,14 +714,12 @@
         window.jQuery || document.write('<script src="/admin/js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')
         </script>
         <!--[if lt IE 9]>
-  <script type="text/javascript" src="/admin/js/libs/excanvas.min.js"></script>
-  <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <script type="text/javascript" src="/admin/js/libs/respond.min.js"></script>
-<![endif]-->
+
+        <script type="text/javascript" src="/admin/js/libs/excanvas.min.js"></script>
+        <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script type="text/javascript" src="/admin/js/libs/respond.min.js"></script>
+        <![endif]-->
         <!-- Bootstrap plugins -->
-
-        <!-- <script src="/admin/js/main.js" type="text/javascript"></script> -->
-
         <script src="/admin/js/bootstrap/bootstrap.js"></script>
         <!-- Core plugins ( not remove ever) -->
         <!-- Handle responsive view functions -->
@@ -725,7 +734,9 @@
         <!-- Bootbox confirm dialog for reset postion on panels -->
         <script src="/admin/plugins/ui/bootbox/bootbox.js"></script>
         <!-- Other plugins ( load only nessesary plugins for every page) -->
+
         <script src="/admin/plugins/core/moment/moment.min.js"></script>
+
         <script src="/admin/plugins/charts/flot/jquery.flot.js"></script>
         <script src="/admin/plugins/charts/flot/jquery.flot.pie.js"></script>
         <script src="/admin/plugins/charts/flot/jquery.flot.resize.js"></script>
@@ -740,6 +751,7 @@
         <script src="/admin/plugins/forms/icheck/jquery.icheck.js"></script>
         <script src="/admin/plugins/forms/tags/jquery.tagsinput.min.js"></script>
         <script src="/admin/plugins/forms/tinymce/tinymce.min.js"></script>
+
         <script src="/admin/plugins/forms/switch/jquery.onoff.min.js"></script>
         <script src="/admin/plugins/forms/maxlength/bootstrap-maxlength.js"></script>
         <!-- <script src="/admin/plugins/forms/bootstrap-filestyle/bootstrap-filestyle.js"></script> -->
@@ -752,6 +764,7 @@
         <script src="/admin/plugins/forms/dual-list-box/jquery.bootstrap-duallistbox.js"></script>
         <script src="/admin/plugins/forms/password/jquery-passy.js"></script>
         <script src="/admin/plugins/forms/checkall/jquery.checkAll.js"></script>
+
         <script src="/admin/plugins/misc/highlight/highlight.pack.js"></script>
         <script src="/admin/plugins/misc/countTo/jquery.countTo.js"></script>
         <script src="/admin/plugins/ui/weather/skyicons.js"></script>
@@ -764,6 +777,7 @@
         <script src="/admin/js/pages/forms.js"></script>
         <link rel="stylesheet" href="/admin/css/lightbox.css" media="screen"/>
         <script src="/admin/js/lightbox-2.6.min.js"></script>
+
 
     </body>
 </html>

@@ -25,6 +25,29 @@
                                     <h3 class="panel-title btn btn-success ml15"><a href="/admin/slideshow/create">轮播图添加</a></h3>
                                 </div>
                                 <div class="panel-body">
+
+                                 <form action="/admin/slideshow" method="get">
+                                {{csrf_field()}}
+                                    选择页数：<select name="limit" id="">
+
+                                                    <option value="5" @if($params['limit']=='5') selected
+                                                    @endif>5</option>
+                                                    <option 
+                                                            @if($params['limit']=='10') selected
+                                                    @endif
+                
+    
+                                                    value="10">10</option>
+                                                    <option 
+                                                        @if($params['limit']=='20') selected
+                                                    @endif
+    
+                                                    value="20">20</option>
+
+                                    </select>
+                                    <input type="text" name="sousuo">
+                                    <button class="btn btn-info">搜索</button>
+                                </form>
                                
                                     <table class="table display" id="datatable">
                                         <thead>
@@ -66,7 +89,8 @@
                                                     </form>
                                                 	<a href="/admin/slideshow/{{$v->id}}/edit" class="btn btn-info">修改</a>
                                         
-                                                    <a href="/admin/slideshow/{{$v->id}}" class="btn btn-warning">轮播图详情</a>
+
+                                                    <a href="/admin/slideshow/{{$v->id}}" class="btn btn-warning">轮播图详情和修改</a>
                                                 </td>
                                             </tr>
                                                @endforeach
