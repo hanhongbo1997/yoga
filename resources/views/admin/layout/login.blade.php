@@ -44,6 +44,7 @@
         <meta name="msapplication-TileColor" content="#3399cc" />
     </head>
     <body class="login-page">
+
         <!-- Start #login -->
         <div id="login" class="animated bounceIn">
            
@@ -55,23 +56,34 @@
                         <a href="#register" data-toggle="tab">后台管理员登录</a>
                     </li>
                 </ul>
+                                            @if (session('success'))
+                           <div class="alert alert-success">
+                          {{ session('success') }}
+                          </div>
+                        @endif
+
+                        @if (session('error'))
+                         <div class="alert alert-success">
+                        {{ session('error') }}
+                        </div>
+                        @endif
                 <div id="myTabContent" class="tab-content bn">
                     <div class="tab-pane fade active in" id="log-in">
                        
                       
 
-                        <form class="form-horizontal mt20" action="#" id="register-form" role="form">
-                           
+                        <form class="form-horizontal mt20" method="post" action="/admin/login/dologin" id="register-form" role="form">
+                            {{ csrf_field() }}
                             <div class="form-group">
                                 <div class="col-lg-12">
                                     <!-- col-lg-12 start here -->
-                                    <input type="password" class="form-control left-icon" id="password1" name="password" placeholder="请输入你的用户名账号">
+                                    <input type="text" class="form-control left-icon" id="uname" name="uname" placeholder="请输入你的用户名账号">
                                     <i class="ec-locked s16 left-input-icon"></i> 
                                 </div>
                                 <!-- col-lg-12 end here -->
                                 <div class="col-lg-12 mt15">
                                     <!-- col-lg-12 start here -->
-                                    <input type="password" class="form-control left-icon" id="confirm_password" name="confirm_passowrd" placeholder="请输入你的密码">
+                                    <input type="password" class="form-control left-icon" id="pass" name="pass" placeholder="请输入你的密码">
                                     <i class="ec-locked s16 left-input-icon"></i> 
                                 </div>
                                 <!-- col-lg-12 end here -->

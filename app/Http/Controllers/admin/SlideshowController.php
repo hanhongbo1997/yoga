@@ -16,7 +16,7 @@ class SlideshowController extends Controller
 
     public function index(Request $request)
     {
-        //
+        // 获取数据  判断是否有分页传值和搜索传值
          $params = $request->all();
         if(empty($params['limit'])){
             $params['limit']=5;
@@ -54,12 +54,12 @@ class SlideshowController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //获取数据
         $data = $request->except(['_token','_method']);
-        // 
+        // 获取图片
         $files = $request->file('img');
         // dd($data);
-
+        //判断是否有图片
         if ($files) {
             $file_name=date('YmdHis',time()).rand(1000,9999).'.'.$files->extension();
             $file_res=$files->storeAs('admin_face',$file_name);
@@ -73,7 +73,7 @@ class SlideshowController extends Controller
                 return back()->with('error', '添加失败');
             } 
         }else{
-            return back()->with('error','你轮播图添加图片');
+            return back()->with('error','请为轮播图添加图片');
         }
        
 
@@ -88,27 +88,31 @@ class SlideshowController extends Controller
     public function show($id)
     {
         // <p><img src="/uploads/images/20181228/cdr1545977160.jpg" title="cdr1545977160.jpg" alt="cdr.jpg"/>12321312321321321</p>
+        // 获取数据
         $data = Slideshow::find($id);
-
+        // dd($data['img']);
         $content = $data->content;
         // dd($content);
-         $ptn1='/<img src="(.*?)"/';
-         preg_match_all($ptn1, $content,$arr1);
-          $ptn2='/\/>(.*?)<\/p>/';  
-         preg_match_all($ptn2, $content,$arr2);
-        // dd($arr1,$arr2);
+        // 用正则匹配相应的数据
+        $ptn1='/<img src="(.*?)"/';
+        preg_match_all($ptn1, $content, $arr1);
+        // dd($arr1['1']);
+        if (!$arr1) {
+            $ptn2='/\/>(.*?)<\/p>/';  
+            preg_match_all($ptn2, $content, $arr2);
+        }else{
+            $ptn3='/>(.*?)<\/p>/';
+            preg_match_all($ptn3, $content, $arr2);
+        }
         $arr1 = $arr1['1'];
         $arr2 = $arr2['1'];
         $content = $arr1;
         // dd($arr1,$arr2);
+        
 
         return view('admin.slideshow.show',['arr1'=>$arr1,'arr2'=>$arr2,'data'=>$data]);
     }
 
-    public function modify()
-    {
-        echo 'aaa';
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -119,6 +123,7 @@ class SlideshowController extends Controller
     public function edit($id)
     {
         //
+        //获取需要修改的数据
          $data = Slideshow::find($id);
         return view('admin.slideshow.edit',['data'=>$data]);
     }
@@ -136,23 +141,37 @@ class SlideshowController extends Controller
 
         // $data1=$request->all();
         $data = Slideshow::find($id);
+        //获取修改过的数据
 
         $files = $request->file('img');
-        $file_name=date('YmdHis',time()).rand(1000,9999).'.'.$files->extension();
-        $file_res=$files->storeAs('admin_face',$file_name);
-        $img ='/uploads/'.$file_res;
-        $data->img = $img;
-        $data->name = $request->name;
-        $data->link = $request->link;
-        $data->content = $request->content;
-        $res = $data->save();
+        if ($files) {
+            $file_name=date('YmdHis',time()).rand(1000,9999).'.'.$files->extension();
+            $file_res=$files->storeAs('admin_face',$file_name);
+            $img ='/uploads/'.$file_res;
+            $data->img = $img;
+            $data->name = $request->name;
+            $data->link = $request->link;
+            $data->content = $request->content;
+            $res = $data->save();
 
 
-        if ($res) {
-            return redirect('admin/slideshow')->with('success', '修改成功');
+            if ($res) {
+                return redirect('admin/slideshow')->with('success', '修改成功');
+            }else{
+                return back()->with('error', '修改失败');
+            }
         }else{
-            return back()->with('error', '修改失败');
+            $data->name = $request->name;
+            $data->link = $request->link;
+            $data->content = $request->content;
+            $res = $data->save();
+            if ($res) {
+                return redirect('admin/slideshow')->with('success', '修改成功');
+            }else{
+                return back()->with('error', '修改失败');
+            }
         }
+        
     }
 
     /**
@@ -163,9 +182,10 @@ class SlideshowController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //根据id获取要删除的数据
         // echo $id;
          $data = Slideshow::destroy($id);
+
         
         // $user_info = User_info::find($id);
        

@@ -85,6 +85,15 @@ Route::resource('admin/users','admin\UsersController');
 // 轮播图控制
 Route::resource('admin/slideshow','admin\SlideshowController');
 
+//后台登录
+// Route::resource('admin/login','admin\LoginController');
+Route::get('admin/login','admin\LoginController@index'); 
+Route::post('admin/login/dologin','admin\LoginController@dologin'); 
+
+
+//前台注册
+Route::resource('home/register','home\RegisterController');
+
 
 
 

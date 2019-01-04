@@ -90,7 +90,7 @@
                                                 	<a href="/admin/slideshow/{{$v->id}}/edit" class="btn btn-info">修改</a>
                                         
 
-                                                    <a href="/admin/slideshow/{{$v->id}}" class="btn btn-warning">轮播图详情和修改</a>
+                                                    <a href="/admin/slideshow/{{$v->id}}" class="btn btn-warning">轮播图详情</a>
                                                 </td>
                                             </tr>
                                                @endforeach

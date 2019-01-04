@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="panel-body">
                                         <label class="col-lg-2 col-md-2 col-sm-12 control-label">轮播图详情</label>
-                                        <img src="{{$arr1['0']}}" alt="" width="300px">
+                                        <img src="{{$data->img}}" alt="" width="300px">
                                         轮播图介绍：{{$arr2['0']}} 。
                                 </div>
                                  
