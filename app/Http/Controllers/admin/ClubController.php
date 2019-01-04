@@ -88,6 +88,7 @@ class ClubController extends Controller
 
         $data = $where->paginate(10);
         $data->cname = $request->search_nname;
+       
         // return view('admin.video.index',compact('video'));
 
         //获取数据

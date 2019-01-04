@@ -1,0 +1,180 @@
+﻿@charset "UTF-8";
+/*全局样式*/
+*{margin:0;padding:0;list-style:none;}
+html{font-size:20px !important;}
+body{margin:auto;font-family:"Open Sans", "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", "SimSun,Arial", "sans-serifsans-serif";background:#fff;}
+a{text-decoration:none;color:#333;}
+/*滑动效果*/
+.swiper-slide{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;}
+/*页头*/
+.head{width:100%;height:4rem;background-color:#fff;}
+.head .head-con{width:55rem;margin:0 auto;height:100%;}
+.head .head-con .logo{float:left;height:100%;}
+.head .head-con .logo > a{display:inline-block;height:2rem;margin:1rem 0;}
+.head .head-con .logo > a > img{width:auto;height:100%;}
+.head .head-con .login{float:right;margin-top:2rem;}
+.head .head-con .login > a{display:inline-block;font-size:0.7rem;}
+.head .head-con .login > a:hover{color:#f85f1c;}
+
+/*个人中心*/
+#user-login{float:right;height:100%;position:relative;cursor:pointer;}
+#user-login .login-img > img{width:1.5rem;height:1.5rem;margin:1.25rem 0.5rem 0;border-radius:50%;}
+#user-login .login-name{float:left;line-height:4rem;}
+#user-login .user-menu{background-color:#fff;position:absolute;z-index:9;top:4rem;right:50%;margin-right:-2.5rem;text-align:center;}
+#user-login .user-menu:before{content:'';position:absolute;top:-10px;left:50%;margin-left:-10px;border-bottom:10px solid #ccc;border-left:10px solid transparent;border-right:10px solid transparent;}
+#user-login .user-menu:after{content:'';position:absolute;border-bottom:9px solid #fff;border-right:9px solid transparent;border-left:9px solid transparent;top:-8px;left:50%;margin-left:-9px;}
+#user-login .user-menu ul{width:5rem;border:0.05rem solid #ccc;box-shadow:2px 2px 0 0 rgba(0,0,0,.1);}
+#user-login .user-menu ul li a{display:block;font-size:0.7rem;height:1.6rem;line-height:1.6rem;color:#666;}
+#user-login .user-menu ul li a:hover{background-color:#22cd6e;color:#fff;}
+
+
+/*====================瑜课堂频道页=========================*/
+/*banner*/
+.banner{position:relative;height:21.45rem;}
+.banner > img{height:11.5rem;width:100%;}
+.ban-con{width:55rem;height:17.8rem;margin:0 auto;position:absolute;left:50%;top:1.45rem;margin-left:-27.5rem;overflow:hidden;}
+.ban-con img{width:100%;}
+/*主体*/
+.mainContent .man-con{width:55rem;margin:0 auto;}
+/*标题公共类*/
+.mainContent .man-con h3.title{width:100%;margin:2rem auto;font-size:1.5rem;line-height:3rem;color:#1f1f1f;font-weight:100;position:relative;text-align:center;}
+.mainContent .man-con h3.title:before,
+.mainContent .man-con h3.title:after{content:'';background:#dbdbdb;display:block;width:4rem;height:0.05rem;position:absolute;top:50%;}
+.mainContent .man-con h3.title:before{left:18rem;}
+.mainContent .man-con h3.title:after{right:18rem;}
+/*精品课程*/
+.minClass{width:100%;margin-bottom:2rem;display:table;}
+p.channellist{margin-bottom:1.25rem;}
+p.channellist a:hover{color:#999;}
+p.channellist a.active{color:#4dc060;}
+ul#classList{overflow:hidden;width:56.5rem;margin-left:-0.625rem;}
+ul#classList li{float:left;margin:0 0.625rem 2.5rem;width:17.5rem;}
+ul#classList li div.item{position:relative;display:block;text-decoration:none;box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);}
+ul#classList li div.item:hover{box-shadow:0 5px 12px 0 rgba(7,17,27,.1);}
+ul#classList li div.item img{display:block;width:100%;}
+ul#classList li div.item div.text{padding:1.2rem 0.75rem 0.5rem;text-align:left;}
+ul#classList li div.item div.text h2{font-size:0.9rem;color:#000;height:2.8rem;}
+ul#classList li div.item div.text h2 a:hover{text-decoration:underline;color:#4dc060;}
+ul#classList li div.item div.text div{height:1.7rem;}
+ul#classList li div.item div.text div span{font-size:0.7rem;color:#7b7777}
+ul#classList li div.item div.text div span:before{font-weight:700;margin-right:0.45rem;}
+ul#classList li div.item div.text div span.add{margin-right:1.2rem;}
+ul#classList li div.item div.text p.yuan{height:1.85rem;line-height:1.85rem;}
+ul#classList li div.item .angle{position:absolute;left:0.5rem;top:0.5rem;background:rgba(182,0,0,0.8);color:#fff;padding:0 0.5rem;border-radius:0.2rem;}
+/*报名中*/
+.mainContent .minClass ul li div.item div.tagicon{width:2.75rem;height:1.9rem;position:absolute;top:0.5rem;left:-0.3rem;}
+.mainContent .minClass ul li div.item div.baoming{background:url(../images/icon.png) no-repeat 0 0;background-size:cover;}
+/*进行中*/
+.mainContent .minClass ul li div.item div.jinxing{background:url(../images/icon.png) no-repeat -2.8rem 0;background-size:cover;}
+
+/*往期课程现场*/
+.live{width:55rem;position:relative;margin:-10rem auto 0;}
+.live .swiper-slide{background-position:center;background-size:cover;width:300px}
+/*学员成长故事*/
+ul#remenCla{width:55.5rem;margin-left:-0.25rem;overflow:hidden;}
+ul#remenCla li{width:25%;float:left;padding:0 0.75rem;}
+ul#remenCla li > div{width:100%;height:14rem;border:1px solid #e5e5e5;box-sizing:border-box;padding:0 0.75rem;}
+ul#remenCla li > div a:hover{text-decoration:underline;color:#4dc060;}
+ul#remenCla li .user-img{border-radius:50%;width:3rem;height:3rem;overflow:hidden;margin:1.25rem auto;}
+ul#remenCla li .user-img img{width:100%;}
+ul#remenCla li p{font-size:0.7rem;color:#999;line-height:1.099rem;text-align:left;overflow:hidden;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;}
+
+/*footer*/
+.footer{background-color:#444546;}
+.footer-cont{width:1200px;height:165px;margin:0 auto;/* padding:60px 0; */overflow:hidden;}
+.first-piece,.second-piece{margin-right:90px;margin-top:50px;}
+.first-piece > a{display:inline-block;color:#9d9d9d;}
+.first-piece > a:not(:last-of-type){margin-right:25px;}
+.first-piece .copyright{font-size:12px;color:#9d9d9d;margin-top:18px;}
+.service-weixin{color:#bbb;}
+.service-weixin i,
+.service-qq i{margin-right:10px;}
+.service-qq{display:table;margin:0 auto;color:#fff;padding:5px 10px;background:#5fb7e8;border-radius:4px;}
+.service-qq:hover{background:#50a7e5;}
+.service-qq i{vertical-align:middle;}
+.service-time{color:#7b7b7b;font-size:12px;margin-top:18px;}
+.third-piece{margin-top:54px;}
+.fourth-piece,.fifth-piece{float:right;text-align:center;color:#7b7b7b;margin-top:20px;}
+.fourth-piece{margin-left:40px;}
+
+/*意见反馈*/
+.layer-feed-mask {position:fixed;left:0;top:0;bottom:0;right:0;background:rgba(0,0,0,.6);z-index:300;display:none;}
+.layer-feed {position:absolute;top:50%;left:50%;margin-top:-170px;margin-left:-310px;width:620px;height:340px;}
+.layer-feed .iconfont {position:absolute;font-size:25px;right:10px;top:10px;cursor:pointer;}
+.cancel-layer-feed {position:absolute;right:34px;width:49px;height:30px;bottom:25px;cursor:pointer;}
+
+/*====================瑜课堂详情页=========================*/
+/*营销详情*/
+.activityBar{width:100%;position:absolute;left:0;bottom:0;height:2.2rem;padding:0 0.75rem;background:#e22d32;}
+.listactivityBar{position:absolute;left:0;bottom:0;padding-top:0.5rem;line-height:1.2rem;background:rgba(226,45,50,0.8);}
+
+/*右侧浮动按钮*/
+ul.rightBar{position:fixed;z-index:99;right:0.5rem;top:50%;}
+ul.rightBar li{width:2rem;height:2rem;text-align:center;margin-bottom:0.2rem;background:#c8c8c8;}
+ul.rightBar li.wx{background:#00a0e9;position:relative;}
+ul.rightBar li > .child{width:8rem;position:absolute;top:0;right:2rem;border:1px solid #ccc;display:none;}
+ul.rightBar li > span{width:100%;height:100%;display:block;cursor:pointer;}
+ul.rightBar li.wx span{background:url(../images/icon-weixin.png) no-repeat center;}
+ul.rightBar li.gotop span{background:url('../images/icon-top.png') no-repeat center;}
+ul.rightBar li.downapp span{background:url('../images/icon-phone.png') no-repeat center;}
+ul.rightBar li.feedback span{background:url('../images/icon-advice.png') no-repeat center;}
+ul.rightBar li.cart a{line-height:2rem;font-weight:bold;color:#fff;}
+ul.rightBar li:hover{background:#00a0e9;}
+ul.rightBar li:hover > .child{display:block;}
+
+/*课程*/
+.lesson{width:100%;background:#fff;padding-bottom:2.5rem;overflow:hidden;}
+.bread-nav{width:55rem;margin:1.25rem auto;color:#999;}
+.descript-content{width:55rem;margin:0 auto;}
+/*.figureInfo{position:relative;overflow:hidden;}
+.figureInfo label{position:absolute;right:0;bottom:0;padding:0.5rem 0.75rem;background:rgba(77,192,96,0.5);color:#fff;}
+.figureInfo label span em{font-size:0.6rem;}*/
+.lesline2{overflow:hidden;margin:10px 0 20px;}
+/*.lesline2 strong{font-weight:400;font-size:14px;color:#999;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:490px;float:left;}*/
+.lesline2 .les-share{float:left;font-size:14px;color:#999;}
+.lesline2 .les-share a{display:inline-block;width:25px;height:20px;vertical-align:middle;}
+.lesline2 .les-share a.weibo{background:url(../images/icon-group-share.png) no-repeat 0 -2px;}
+.lesline2 .les-share a.weibo:hover{background:url(../images/icon-group-share.png) no-repeat 0 -26px;}
+.lesline2 .les-share a.weixin{background:url(../images/icon-group-share.png) no-repeat -33px -2px;}
+.lesline2 .les-share a.weixin:hover{background:url(../images/icon-group-share.png) no-repeat -33px -26px;}
+.lesline3{background:#f6f6f6;color:#999;padding:0.5rem 0.75rem;overflow:hidden;line-height:1.8rem;position:relative;}
+.lesline3 > *{float:left;}
+.lesline3 span.oriPrice{text-decoration:line-through;}
+.lesline3 span.skuPrice{color:#f90;}
+.lesline3 .bdsharebuttonbox{position:absolute;right:0;}
+.lestime span{cursor:pointer;display:inline-block;padding:0.3rem 0.6rem;}
+.lestime span.active{position:relative;border-color:#4dc060;color:#4dc060;}
+.lestime span.active:after{content:'';padding:0.45rem;background:url(../images/les-sp-icon.png) no-repeat center;position:absolute;bottom:0;right:0;}
+.lesline5{position:relative;overflow:hidden;vertical-align:bottom;}
+.lesline5 a{display:inline-block;}
+.lesline5 button{display:inline-block;width:8rem;border:0;background:#fa0;cursor:pointer;}
+.lesline5 span{color:#999;float:right;margin-top:1rem;}
+
+/*课程描述*/
+.detail{padding:2.5rem 0;background:#eee;box-sizing:border-box;width:100%;}
+.detail > div{width:55rem;margin:0 auto;overflow:hidden;}
+.det-left{width:800px;margin-right:20px;background:#fff;min-height:30rem;}
+ul.detnav{width:100%;height:3.5rem;}
+ul.detnav li{width:33.3333333%;font-size:0.8rem;text-align:center;line-height:3.5rem;float:left;}
+ul.detnav li.active span{border-bottom:0.1rem solid red;}
+ul.detnav li span{display:inline-block;height:3rem;padding:0 0.75rem;box-sizing:border-box;cursor:pointer;}
+span.goVideo{position:absolute;top:50%;right:0.75rem;transform:translateX(-50%);-webkit-transform:translateY(-50%);padding:0.1rem 0.5rem;border:1px solid #4dc060;color:#4dc060;border-radius:0.1rem;font-size:0.6rem;}
+span.goVideo:hover{background:#4dc060;color:#fff;}
+/*评论列表*/
+.user-review-item{width:100%;padding:1rem 0.5rem 0.5rem;overflow:hidden;box-sizing:border-box;}
+.user-review-item .headerpic{width:2.4rem;height:2.4rem;border-radius:50%;overflow:hidden;}
+.user-review-item .headerpic img{width:100%;height:auto;}
+.user-review-item .content{padding-left:3rem;}
+.user-review-item .content p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#2d2d2d;margin:0.5rem 0;}
+
+/*右侧栏目*/
+.det-right{width:280px;background-color:#fff;}
+.det-right > div{width:230px;margin:20px auto;}
+.det-serve{position:relative;height:67px;margin-bottom:20px;}
+.det-serve > div{width:200px;background-color:#fad7bd;border-radius:15px;line-height:40px;text-align:right;padding-right:30px;font-size:12px;position:absolute;right:0;top:13px;}
+.det-serve span{display:block;width:60px;height:60px;border-radius:50%;background:#ef7b24;color:#fff;font-size:16px;text-align:center;left:0;top:0;z-index:2;position:absolute;padding:10px 0;box-sizing:border-box;line-height:20px;}
+.det-wx{height:475px;}
+.det-wx > div{padding:0;text-align:center;}
+.det-wx p{width:140px;float:right;overflow:hidden;line-height:16px;font-size:10px;padding-top:10px;padding-right:15px;overflow:hidden;}
+.det-wx p i{float:left;margin-right:10px;font-style:normal;}
+.det-wx img{width:150px;margin:10px auto;height:auto;}

@@ -3,9 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use App\Http\Controllers\admin\ClubController;
 use Illuminate\Support\Facades\View;
-use App\Http\Controllers\admin\ClubsortController;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -19,8 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
 
         //共享化数据
-        
-        // View::share('common_clubsort', ClubsortController::getCates());
+        View::share('common_clubsort',ClubController::getPidClub(0));
 
     }
 

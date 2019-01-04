@@ -106,6 +106,7 @@ var _hmt = _hmt || [];
     </div>
     <input type="hidden" id="showFlag" name="showFlag" value="1"/>
     <ul class="fr navList2">
+
         <li class="fl"><a href="http://wakeyoga.com/" id="index" class="cur">首页</a></li>
         <li class="fl"><a href="/home/video">瑜伽视频</a></li>
         <li class="fl"><a href="/home/lesson">瑜伽课程</a></li>

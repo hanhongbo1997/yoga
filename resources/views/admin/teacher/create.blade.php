@@ -39,20 +39,18 @@
   <div class="form-group">
         <label class="col-lg-2 col-md-2 col-sm-12 control-label">擅长</label>
         <div class="col-lg-10 col-md-10">
-          <input type="text" class="form-control" placeholder="请输入名师教龄" name="adept"></div>   
+          <input type="text" class="form-control" placeholder="请输入名师擅长" name="adept"></div>   
       </div>
     <div class="form-group">
         <label class="col-lg-2 col-md-2 col-sm-12 control-label">性别</label>
         <div class="col-lg-10 col-md-10"  >
           <div id="sex">
    
-          <label><input name="sex" type="radio" value="w" style="display:inline; visibility: collapse">女 
+          <label><input name="sex" type="radio" value="w" >女 
          
           </label> 
-          <label><input name="sex" type="radio" value="m" />男</label> 
-          <label class="checkbox-inline">
-                                                <div class="icheckbox_flat-blue checked" style="position: relative;"><input type="checkbox" value="option1" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(0, 0, 0); border: 0px; opacity: 0;"></ins></div>AAA
-                                            </label>
+          <label><input name="sex" type="radio" value="m" >男</label> 
+        
        
 
 
@@ -65,9 +63,10 @@
     <div class="form-group">
         <label class="col-lg-2 col-md-2 col-sm-12 control-label">类型</label>
         <div class="col-lg-10 col-md-10">
-          <label> <input type="checkbox" class="form-control" value="1" name="status">瑜伽导师  </label>  
-          <label> <input type="checkbox" class="form-control" value="2" name="status">行业顾问 </label> 
-          <label> <input type="checkbox" class="form-control" value="3" name="status">官方认证 </label>
+         <label> <input type="checkbox" class="form-control" value="1" name="status">瑜伽导师 </label>&nbsp; &nbsp; 
+          <label> <input type="checkbox" class="form-control" value="2" name="status">行业顾问</label>&nbsp; &nbsp;
+          <label> <input type="checkbox" class="form-control" value="3" name="status">官方认证</label>
+
           </div>   
       </div>
 
