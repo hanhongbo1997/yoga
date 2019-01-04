@@ -146,7 +146,11 @@ Route::get('admin/clubsort/create/{id}','admin\ClubsortController@create');
 //添加老师列表
 Route::resource('admin/teacher','admin\TeacherController');
 
+
 //前台 首页 home
 Route::resource('/','home\IndexController');
+//前台 瑜伽馆
+Route::resource('club','home\ClubController');
 
-
+//前台 名师
+Route::get('teacher/index','home\TeacherController@index');

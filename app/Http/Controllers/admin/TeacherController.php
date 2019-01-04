@@ -86,6 +86,7 @@ class TeacherController extends Controller
         }
 
         $data = $where->paginate(10);
+
         $data->tname = $request->search_nname;
         //加载模板
         return view('admin.teacher.index',['title'=>'名师列表','data'=>$data]);
@@ -112,7 +113,7 @@ class TeacherController extends Controller
     {
         //获取数据
         $user =  $request->all();
-        dump($user);
+        // dump($user);
 
         $data = new Teacher;
         $data->tname = $request->input('tname');
@@ -135,8 +136,8 @@ class TeacherController extends Controller
         $teach ->timg = '/uploads/'.self::profile($request);
 
         $teach->imges = '/uploads/'.self::Timges($request);
-        // dump($data);
-        // dump($teach);
+        dump($data);
+        dump($teach);exit;
         
         if($data->save() && $teach->save()){
 
@@ -165,9 +166,13 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teacher $teacher)
+    public function edit($id)
     {
-        return view('admin.teacher.edit');
+        //提取数据
+        $data = Teacher::find($id);
+        // dump($data);
+        //加载模板
+        return view('admin.teacher.edit',['title'=>'名师修改','data'=>$data]);
     }
 
     /**

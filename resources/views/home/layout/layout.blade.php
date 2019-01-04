@@ -67,10 +67,10 @@ var _hmt = _hmt || [];
     </div>
     <input type="hidden" id="showFlag" name="showFlag" value="1"/>
     <ul class="fr navList2">
-        <li class="fl"><a href="http://wakeyoga.com/" id="index" class="cur">首页</a></li>
+        <li class="fl"><a href="www.yoga.com/" id="index" class="cur">首页</a></li>
         <li class="fl"><a href="http://wakeyoga.com/2lessons/a1z2/" id="lesson">瑜伽课程</a></li>
         <li class="fl"><a href="http://wakeyoga.com/2community/z3/" id="community">社区</a></li>
-        <li class="fl"><a href="http://wakeyoga.com/2club.html" id="clubYoga">瑜伽馆</a></li>
+        <li class="fl"><a href="club" id="clubYoga">瑜伽馆</a></li>
         <li class="fl"><a href="http://wakeyoga.com/2enterprise.html" id="enterpriseYoga">企业瑜伽</a></li>
         <li class="fl trainList">
         	<a href="./toTraining.html" id="trainingCoach">瑜伽教培</a>

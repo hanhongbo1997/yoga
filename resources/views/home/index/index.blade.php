@@ -3,62 +3,39 @@
 @section('content')
 
 <!-- 轮播图 -->
-<div class="container ">
-    <ul class="imgs">
-        <li><img src="\home\images\2.jpeg" alt="" width="1450px;"></li>
-        <li><img src="\home\images\1.jpeg" alt="" width="1450px;"></li>
-        <li><img src="\home\images\3.jpeg" alt="" width="1450px;"></li>
-        <li><img src="\home\images\4.jpeg" alt="" width="1450px;"></li>
-
-    </ul>
-    <ul class="nums">
-    <li class="toggle"></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li clearfix></li>
-
-    </ul>
-    <div class="btn prev"></div>
-    <div class="btn next"></div>
+<link rel="stylesheet" href="\home\index.css" />
+<div class="js-silder">
+   <div class="silder-scroll">
+        <div class="silder-main">
+            <div class="silder-main-img">
+                <a href=""><img src="\home\images\2.jpeg" alt="" ></a>
+            </div>
+            <div class="silder-main-img">
+                <a href=""><img src="\home\images\3.jpeg" alt="" ></a>
+            </div>
+            <div class="silder-main-img">
+                <a href=""><img src="\home\images\4.jpeg" alt="" ></a>
+            </div>
+        </div>
+    </div>
 </div>
 
-<style>
-    .container{
-        position: absolute;
-        left: 20px;
-    }
-    ul,li{
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
-    .imgs li{
-        position: absolute;
-        left: 0;
-        display: none;
-    }
-    .imgs li:first-of-type{
-        display: block;
-    }
-    .nums{
-        position: relative;
-        left: 200px;
-        bottom:-300px;
-    }
-    .nums li{
-        width: 10px;
-        height: 10px;
-        border: #fff;
-        border-radius: 50%;
-        float: left;
-        margin: 5px;
-        cursor:pointer;
-    }
-    .nums .toggle{
-        background: red;
-    }
-</style>
+
+<script src="\home\jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="\home\wySilder.min.js" type="text/javascript"></script>
+<script>
+    $(function (){
+        $(".js-silder").silder({
+            auto: true,//自动播放，传入任何可以转化为true的值都会自动轮播
+            speed: 20,//轮播图运动速度
+            sideCtrl: true,//是否需要侧边控制按钮
+            bottomCtrl: true,//是否需要底部控制按钮
+            defaultView: 0,//默认显示的索引
+            interval: 3000,//自动轮播的时间，以毫秒为单位，默认3000毫秒
+            activeClass: "active",//小的控制按钮激活的样式，不包括作用两边，默认active
+        });
+    });
+</script>
 
 <!-- 轮播图 -->
 

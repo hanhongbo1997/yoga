@@ -10,4 +10,6 @@ class Clubinfo extends Model
     public $table = 'club_info';
     //设置模型操作主件
     protected $primaryKey = 'id';
+
+   
 }

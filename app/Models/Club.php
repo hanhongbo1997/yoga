@@ -16,4 +16,9 @@ class Club extends Model
     {
     	return $this->hasOne('App\Models\Clubinfo','clid');
     }
+    //模型和Clubsort 一对一关系
+    public function clubsortinfo()
+    {
+    	return $this->hasOne('App\Models\Clubsort','csid');
+    }
 }
