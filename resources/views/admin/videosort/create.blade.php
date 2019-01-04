@@ -14,7 +14,7 @@
       </a>
     </div>
   </div>
-<div class="panel-body">
+<div class="panel-body"> 
  
     <form  action="/admin/videosort" method="post" enctype="multipart/form-data" class="form-horizontal group-border hover-stripped">
     {{ csrf_field() }}

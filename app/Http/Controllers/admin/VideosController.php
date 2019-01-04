@@ -49,7 +49,6 @@ class VideosController extends Controller
     {
 
         $video = new Video;
-
         $video->vname = $request->vname;
         $img = $request->file('img');
         $ext = $img->extension('img');
@@ -64,17 +63,8 @@ class VideosController extends Controller
         $detail->writer = $request->writer;
         $detail->details = $request->details;
         $detail->imgs = $res;
-
-        $video = $request->file('video');
-        $ext = $video->extension('video');
-        $filename = time().'.'.$ext;
-        $videos = $img->storeAs('video',$filename);
-        
-        $detail->video = $videos;
+        $detail->video = $request->video;
         $res2 = $detail->save();
-
-        
-        
         if($res1 && $res2){
             DB::commit();
             return redirect('/admin/videos')->with('success', '添加成功');

@@ -39,6 +39,10 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/admin/img/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="/admin/img/ico/apple-touch-icon-57-precomposed.png">
         <link rel="icon" href="/admin/img/ico/favicon.ico" type="image/png">
+        <meta name="csrf-token" content="{{ csrf_token() }}"><!--需要有csrf token-->
+        <script src="{{ URL::asset('js/spark-md5.min.js') }}"></script><!--需要引入spark-md5.min.js-->
+        <script src="//cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script><!--需要引入jquery.min.js-->
+        <script src="{{ URL::asset('js/aetherupload.js') }}"></script><!--需要引入aetherupload.js-->
         <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
         <meta name="msapplication-TileColor" content="#3399cc" />
 
@@ -390,9 +394,9 @@
                     <li>
                         <a href="#"> 资讯管理 <i class="im-earth"></i></a>
                         <ul class="nav sub">
-                            <li><a href="/admin/teacher/index"><i class="im-list"></i> 资讯列表</a>
+                            <li><a href="/admin/news/index"><i class="im-list"></i> 资讯列表</a>
                             </li>
-                            <li><a href="/admin/teacher/create"><i class="im-plus"></i> 资讯添加</a>
+                            <li><a href="/admin/news/create"><i class="im-plus"></i> 资讯添加</a>
 
                             </li>
                         </ul>
@@ -702,7 +706,14 @@
         <!-- End #content -->
         <!-- Javascripts -->
 
-       <script src="/admin/plugins/core/pace/pace.min.js"></script>
+        <script src="/admin/plugins/core/pace/pace.min.js"></script>
+        <script>
+            someCallback = function(){
+                $('#result').append(
+                    '<p>执行回调 - 文件原名：<span >'+this.fileName+'</span> | 文件大小：<span >'+parseFloat(this.fileSize / (1000 * 1000)).toFixed(2) + 'MB'+'</span> | 文件储存名：<span >'+this.savedPath.substr(this.savedPath.lastIndexOf('/') + 1)+'</span></p>'
+                );
+            }
+        </script>
 
         <!-- Important javascript libs(put in all pages) -->
         <script src="/admin/js/jquery-1.8.3.min.js"></script>

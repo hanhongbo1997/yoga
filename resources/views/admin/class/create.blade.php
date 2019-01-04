@@ -50,16 +50,16 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group " id="aetherupload-wrapper" ><!--组件最外部需要有一个名为aetherupload-wrapper的id，用以包装组件-->
                             <label class="col-lg-2 col-md-2 col-sm-12 control-label">课程视频上传</label>
                             <div class="col-lg-10 col-md-10">
-                                <span class="btn btn-info fileinput-button">
-                                <i class="en-plus3"></i>
-                                <span>添加视频...</span>
-                                <input type="file" name="video">
-                            </span>
+                                <input type="file" id="file"  onchange="aetherupload(this,'file').success(someCallback).upload()"/><!--需要有一个名为file的id，用以标识上传的文件，aetherupload(file,group)中第二个参数为分组名，success方法可用于声名上传成功后的回调方法名-->
+                                <div class="progress " style="height: 6px;margin-bottom: 2px;margin-top: 10px;width: 200px;">
+                                    <div id="progressbar" style="background:blue;height:6px;width:0;"></div><!--需要有一个名为progressbar的id，用以标识进度条-->
+                                </div>
+                                <span style="font-size:12px;color:#aaa;" id="output"></span><!--需要有一个名为output的id，用以标识提示信息-->
+                                <input type="hidden" name="video" id="savedpath" ><!--需要有一个名为savedpath的id，用以标识文件保存路径的表单字段，还需要一个任意名称的name-->
                             </div>
-                        </span>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-2 col-md-2 col-sm-12 control-label">视频缩略图</label>
@@ -72,11 +72,11 @@
                         </div>
                         <div class="form-group">
                             <label class="col-lg-2 col-md-2 col-sm-12 control-label">课程简介</label>
-                            <div class="col-lg-10 col-md-10">
+                            <div class="col-lg-12 col-md-10">
                                 <!-- 加载编辑器的容器 -->
-                                <script id="container" name="details" type="text/plain"></script>
+                                <script id="container" name="details" type="text/plain" style="width: 1000px;margin: 0 auto;"></script>
                                 <!-- 配置文件 -->
-                                <script type="text/javascript" src="/admin/UE/ueditor.config.js"></script>
+                                <script type="text/javascript" src="/admin/UE/ueditor.config_new.js"></script>
                                 <!-- 编辑器源码文件 -->
                                 <script type="text/javascript" src="/admin/UE/ueditor.all.js"></script>
                                 <!-- 实例化编辑器 -->
@@ -84,7 +84,7 @@
                                     var ue = UE.getEditor('container');
                                 </script>
                             </div>
-                        </div>
+                        </div
                         <div class="form-group ">
                            
                         	<input type="submit" class="btn btn-success" style="width:100%" value="添加课程">

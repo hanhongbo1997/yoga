@@ -1,9 +1,6 @@
-<!doctype html>
-<html>
 <script type="text/javascript">
     var basePath = "http://wakeyoga.com/";
 </script>
-<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Wake-瑜伽减肥健身视频课程，瑜伽教练培训首选品牌</title>
@@ -12,9 +9,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="/home/css/yoga_new.css">
+    <link href="/home/css/poposlides.css" rel="stylesheet" >
+    <link rel="stylesheet" href="/home/css/idangerous.swiper2.7.6.css">
+    <link rel="stylesheet" href="/home/css/animate.min.css">
+    <link rel="stylesheet" href="/home/css/style.css">
 
     <script type="text/javascript" src="/home/js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="/home/js/common.js"></script>
+    <script src="/home/js/idangerous.swiper2.7.6.min.js"></script>
+    <script src="/home/js/swiper.animate1.0.2.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="icon" href="/home/pc/image/yuketang/favicon.ico" type="x-icon" />
+    <link href="/home/css/aui.css" rel="stylesheet">
+    <link href="/home/css/revision.css" rel="stylesheet">
+    <link rel="stylesheet" href="/home/css/swiper.min.css">
+    <script src="/home/js/require_1.js" type="text/javascript"></script>
+    <script>        
+      var mySwiper = new Swiper ('.swiper-container', {
+        pagination: '.pagination',
+        paginationClickable :true,
+        autoplay : 10000,
+        speed:1,
+
+        //autoplayDisableOnInteraction : false,
+        
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+          swiperAnimateCache(swiper); //隐藏动画元素 
+          swiperAnimate(swiper); //初始化完成开始动画
+        }, 
+        onSlideChangeEnd: function(swiper){ 
+        swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        } 
+      })
+        
+      $('.arrow-left').on('click', function(e){
+        e.preventDefault()
+        mySwiper.swipePrev()
+      })
+      $('.arrow-right').on('click', function(e){
+        e.preventDefault()
+        mySwiper.swipeNext()
+      })    
+      </script> 
     <style>
 		header{
 			background: -webkit-linear-gradient(white, transparent)!important; /* Safari 5.1 - 6.0 */
@@ -29,7 +65,10 @@
 	  		height:120px!important;
 	  		z-index:100;
 		}
-	</style>
+       
+       
+        </style>
+
 </head>
 <body>
 <!--头部-->
@@ -68,9 +107,10 @@ var _hmt = _hmt || [];
     <input type="hidden" id="showFlag" name="showFlag" value="1"/>
     <ul class="fr navList2">
         <li class="fl"><a href="http://wakeyoga.com/" id="index" class="cur">首页</a></li>
-        <li class="fl"><a href="http://wakeyoga.com/2lessons/a1z2/" id="lesson">瑜伽课程</a></li>
-        <li class="fl"><a href="http://wakeyoga.com/2community/z3/" id="community">社区</a></li>
-        <li class="fl"><a href="http://wakeyoga.com/2club.html" id="clubYoga">瑜伽馆</a></li>
+        <li class="fl"><a href="/home/video">瑜伽视频</a></li>
+        <li class="fl"><a href="/home/lesson">瑜伽课程</a></li>
+        <li class="fl"><a href="/home/news" id="community">社区</a></li>
+        <li class="fl"><a href="club" id="clubYoga">瑜伽馆</a></li>
         <li class="fl"><a href="http://wakeyoga.com/2enterprise.html" id="enterpriseYoga">企业瑜伽</a></li>
         <li class="fl trainList">
         	<a href="./toTraining.html" id="trainingCoach">瑜伽教培</a>
@@ -251,6 +291,10 @@ var _hmt = _hmt || [];
 
 </body>
 <script type="text/javascript" src="/home/js/index.js"></script>
+<script src="/home/js/poposlides.js"></script> 
+<script>
+    $(".slides").poposlides();
+</script>
 <script>
     var LogsNum = 0;
     LogsNum =

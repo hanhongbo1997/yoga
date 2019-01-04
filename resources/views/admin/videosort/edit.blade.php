@@ -14,7 +14,7 @@
       <a href="#" class="toggle panel-minimize">
         <i class="im-minus"></i>
       </a>
-    </div>
+    </div> 
   </div>
 <div class="panel-body">
  

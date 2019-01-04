@@ -3,6 +3,7 @@
 @section('content')
 <!-- Start .outlet -->
     <!-- Page start here ( usual with .row ) -->
+    
    
 <ul class="breadcrumb"><li><i class="im-home"></i><a href="index.html">主页</a><i class="en-arrow-right7"></i></li><li><i class="im-plus"></i>视频添加</ul>       
     <div class="row">
@@ -40,29 +41,16 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">Inline Radios</label>
-                            <label class="radio-inline">
-                                <input type="radio" name="radio1" value="option1">unchecked
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="radio1" value="option2" checked="checked">checked
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="radio1" value="option3" disabled="disabled">disabled
-                            </label>
-                        </div>
-
-                        <div class="form-group">
-                        	<label class="col-lg-2 col-md-2 col-sm-12 control-label">视频上传</label>
-                        	<div class="col-lg-10 col-md-10">
-                                <span class="btn btn-info fileinput-button">
-	                            <i class="en-plus3"></i>
-	                            <span>添加视频...</span>
-                            	<input type="file" name="video">
-                            </span>
-                        	</div>
-                        </span>
+                        <div class="form-group " id="aetherupload-wrapper" ><!--组件最外部需要有一个名为aetherupload-wrapper的id，用以包装组件-->
+                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">视频上传</label>
+                            <div class="col-lg-10 col-md-10">
+                                <input type="file" id="file"  onchange="aetherupload(this,'file').success(someCallback).upload()"/><!--需要有一个名为file的id，用以标识上传的文件，aetherupload(file,group)中第二个参数为分组名，success方法可用于声名上传成功后的回调方法名-->
+                                <div class="progress " style="height: 6px;margin-bottom: 2px;margin-top: 10px;width: 200px;">
+                                    <div id="progressbar" style="background:blue;height:6px;width:0;"></div><!--需要有一个名为progressbar的id，用以标识进度条-->
+                                </div>
+                                <span style="font-size:12px;color:#aaa;" id="output"></span><!--需要有一个名为output的id，用以标识提示信息-->
+                                <input type="hidden" name="video" id="savedpath" ><!--需要有一个名为savedpath的id，用以标识文件保存路径的表单字段，还需要一个任意名称的name-->
+                            </div>
                         </div>
 
                         <div class="form-group">

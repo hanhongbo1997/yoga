@@ -40,7 +40,13 @@ Route::resource('admin/lessonsort','admin\LessonsortController');
 //添加課程子分類
 Route::get('admin/lessonsort/create/{id}','admin\LessonsortController@create');
 
-
+//前台控制器
+//视频页面控制器
+Route::resource('home/video','home\VideoController');
+//课程页面控制器
+Route::resource('home/lesson','home\LessonController');
+//资讯页面控制器
+Route::resource('home/news','home\NewsController');
 
 
 

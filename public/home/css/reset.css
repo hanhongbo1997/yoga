@@ -1,0 +1,149 @@
+﻿@charset 'utf-8';
+/*编辑按钮*/
+.editdatum {
+  font-size: 16px;
+  line-height:60px;
+  font-weight: normal;
+  margin-left: 10px;
+  color: #f90;
+}
+.editdatum:hover {color: #f60;}
+.editdatum:focus {color: #f90;}
+/* 快捷登录 */
+.video-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 99999;
+}
+.QUickLogin{
+  width:auto;
+  height:auto;
+  position:static;
+  display:block;
+}
+.QUickLogin .loginKK{
+  width:450px;
+  height:350px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin:-230px 0px 0px -225px;
+  border:4px solid #e8e8e8;
+  background: #fff;
+  padding: 40px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  z-index: 999;}
+/*.QUickLogin .loginKK span.close{width:47px;height:24px;display:block;cursor:pointer;position:absolute;right:5px;top:5px;background:url(../images/c_icon_tiny.jpg) left top no-repeat;}
+.QUickLogin .loginKK span.close:hover{background-position:left bottom;}*/
+.QUickLogin .QKbox{ 
+  width:100%;
+  position:relative;
+}
+.QUickLogin ul.Log{
+  margin:20px 0px;
+}
+.QUickLogin ul.Log:after,.QUickLogin ul.Log li:after{
+  content:'';
+  clear:both;
+  display:table;
+}
+.QUickLogin ul.Log li{
+  width: 100%;
+  height: 38px;
+  padding: 5px 0px;
+  position: relative;
+  display: block;
+}
+.QUickLogin ul.Log li input{
+  width:100%;
+  line-height:34px;
+  height:38px;
+  padding-left:100px;
+  border:2px solid #ebebeb;
+  color:#999;
+  outline:thick;
+  box-sizing:border-box;
+  display:block;
+}
+.QUickLogin ul.Log li i{
+  width:74px;
+  text-align:right;
+  line-height:22px;
+  position:absolute;
+  left:5px;top:50%;
+  margin-top:-11px;
+  padding-left:30px;
+  box-sizing:border-box;}
+.QUickLogin ul.Log li.Reg_name i{
+  background:url(../images/script_login_pic.png) no-repeat 4px -1px;
+}
+.QUickLogin ul.Log li.login_password i{
+  background:url(../images/script_login_pic.png) no-repeat 4px -40px;
+}
+.QUickLogin p.Qubott{
+  display:block;
+  line-height:32px;
+  margin:0px 0px 5px 0px;
+}
+.QUickLogin p.Qubott a{
+  color:#4dc060;
+}
+/*视频*/
+.playerBox{
+  background: #000;
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+}
+.playerBox .videoPlayer{
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+}
+.playerBox .layer{ 
+  width:360px; 
+  height:700px;
+  position:absolute;
+  right:0;top:0;
+  background:#14191e;
+  border-top:1px solid #080a0c;
+}
+.playerBox .layer > .layer-button{
+  position:absolute;
+  left:-48px;
+  top:50%;
+  margin-top:-48px;
+  width:48px;
+  height:48px;
+  overflow:hidden;
+  text-align:center;
+  background:#363C40;
+  cursor:pointer;
+  padding:5px 0;
+}
+.playerBox .layer > .layer-button:hover,
+.playerBox .layer > .layer-button.on{background:#f01400;}
+.playerBox .layer > .layer-button > i{font-size:24px;color:#ebebeb;display:table;margin:3px auto 0;color:#f4f4f4;}
+.playerBox .layer > .layer-button > p{font-size:12px;margin:0;color:#f4f4f4;}
+.playerBox .layer > .layer-list{padding:10px;box-sizing:border-box;}
+.playerBox .layer > .layer-list h1{font-size:18px;color:#b5b9bc;font-weight:normal;}
+.playerBox .layer > .layer-list ul{padding:0 0 0 15px;box-sizing:border-box;}
+.playerBox .layer > .layer-list ul > li{color:#787d82;margin-top:15px;padding-bottom:10px;position:relative;padding-right:80px;}
+.playerBox .layer > .layer-list ul > li a{color:#787d82;display:block;}
+.playerBox .layer > .layer-list ul > li a:hover{color:#4dc060;}
+.playerBox .layer > .layer-list ul > li .status{position:absolute;right:0;top:0;font-size:12px;}
+.playerBox .layer > .layer-list ul > li abbr i{font-size:14px;border-radius:50%;}
+/*.playerBox .layer > .layer-list ul > li.studying span,*/
+/*.playerBox .layer > .layer-list ul > li.studying span i.sui-icon,*/
+/*.playerBox .layer > .layer-list ul > li.studyed span i.sui-icon{color:#4dc060;}*/
+.playerBox .layer > .layer-list ul > li > abbr > i.sui-icon{color:#fa0;font-size:14px;}
+.playerBox .layer > .layer-list ul > li.studying a,
+.playerBox .layer > .layer-list ul > li.studying abbr{color:#4dc060;}
+/*.playerBox .layer > .layer-list ul > li.studying abbr i.sui-icon:before{content:"\e65f";}*/
+/*.playerBox .layer > .layer-list ul > li.studyed abbr i.sui-icon:before{content:"\e657";}*/

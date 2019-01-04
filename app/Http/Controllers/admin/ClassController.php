@@ -68,13 +68,7 @@ class ClassController extends Controller
         $detail->tips = $request->tips;
         $detail->time = $request->time;
         $detail->imgs = $res;
-
-        $lesson = $request->file('video');
-        $ext = $lesson->extension('video');
-        $filename = time().'.'.$ext;
-        $videos = $img->storeAs('video',$filename);
-        
-        $detail->video = $videos;
+        $detail->video = $request->video;
         $res2 = $detail->save();
 
         

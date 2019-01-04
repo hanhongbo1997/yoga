@@ -30,7 +30,7 @@
             <div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
                 <div class="panel-body">
                     <!-- video start -->
-                        <video src="/uploads/video/1545823236.mp4" controls="controls" style="width: 750px;"></video>
+                        <video src="/app/aetherupload/{{ $data->videodetails->video }}" controls="controls" style="width: 750px;"></video>
                     <!-- video stop -->
                 </div>
             </div>
@@ -43,7 +43,7 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse" style="height: 0px;">
                 <div class="panel-body">
-                    <video src="/uploads/video/sintel.mp4" controls="controls" style="width: 750px;"></video>
+                    <video src="/app/aetherupload/{{ $data->videodetails->video }}" controls="controls" style="width: 750px;"></video>
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@
             </div>
             <div id="collapseThree" class="panel-collapse collapse" style="height: 0px;">
                 <div class="panel-body">
-                    <video src="/uploads/video/sintel.mp4" controls="controls" style="width: 750px;"></video>
+                    <video src="/app/aetherupload/{{ $data->videodetails->video }}" controls="controls" style="width: 750px;"></video>
                 </div>
             </div>
         </div>

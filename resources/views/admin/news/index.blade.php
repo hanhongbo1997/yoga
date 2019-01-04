@@ -93,16 +93,10 @@
               <div class="slimScrollBar ui-draggable" style="background: rgb(153, 153, 153); height: 5px; position: absolute; bottom: 3px; opacity: 0.4; display: none; border-radius: 5px; z-index: 99; width: 1611px; left: 0px;"></div><div class="slimScrollRail" style="width: 100%; height: 5px; position: absolute; bottom: 3px; display: none; border-radius: 5px; background: rgb(51, 51, 51); opacity: 0.5; z-index: 90;">
               	
               </div>
-
-				
-
-
-
-
-</div>
-</div>
-</div>
-</div>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
 
 

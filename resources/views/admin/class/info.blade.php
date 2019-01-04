@@ -85,16 +85,16 @@
                                 </ul>
                                 <div id="myTabContent2" class="tab-content">
                                     <div class="tab-pane fade active in" id="home2">
-                                        <video src="/uploads/video/sintel.mp4" controls="controls" style="width: 680px;height: 380px;"></video>
+                                        <video src="/app/aetherupload/{{ $data->lessondetails->video }}" controls="controls" style="width: 680px;height: 380px;"></video>
                                     </div>
                                     <div class="tab-pane fade" id="profile2">
-                                        <video src="/uploads/video/sintel.mp4" controls="controls" style="width: 680px;height: 380px"></video>
+                                        <video src="/app/aetherupload/{{ $data->lessondetails->video }}" controls="controls" style="width: 680px;height: 380px"></video>
                                     </div>
                                     <div class="tab-pane fade" id="settings2">
-                                        <video src="/uploads/video/sintel.mp4" controls="controls" style="width: 680px;height: 380px"></video>
+                                        <video src="/app/aetherupload/{{ $data->lessondetails->video }}" controls="controls" style="width: 680px;height: 380px"></video>
                                     </div>
                                     <div class="tab-pane fade" id="users2">
-                                        <video src="/uploads/video/test.mp4" controls="controls" style="width: 680px;height: 380px;"></video>
+                                        <video src="/app/aetherupload/{{ $data->lessondetails->video }}" controls="controls" style="width: 680px;height: 380px;"></video>
                                     </div>
                                 </div>
                             </div>
