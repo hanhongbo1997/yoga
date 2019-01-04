@@ -39,7 +39,7 @@
                                     <form action="/admin/slideshow"  method="post"  class="form-horizontal group-border hover-stripped" role="form" id="validate" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                          <div class="form-group">
-                                            <label class="col-lg-2 control-label">用户权限</label>
+                                            <label class="col-lg-2 control-label">轮播图权限</label>
                                             <div class="col-lg-10">
                                             <select name="status" id="status">
                                                 <option value="0" selected>请选择</option>
@@ -49,7 +49,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-lg-2 control-label">用户名称</label>
+                                            <label class="col-lg-2 control-label">轮播图名称</label>
                                             <div class="col-lg-10">
                                                 <input type="text" class="form-control required" id="name" name="name" placeholder="输入你的轮播图名称">
                                             </div>
@@ -70,21 +70,21 @@
                                                 <input type="file" name="img">
                                             </div>
                                         </div>
-                        <div class="form-group">
-                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">轮播图详情</label>
-                            <div class="col-lg-10 col-md-10">
-                                <!-- 加载编辑器的容器 -->
-                                <script id="container" name="content" type="text/plain"></script>
-                                <!-- 配置文件 -->
-                                <script type="text/javascript" src="/admin/UE/ueditor.config.js"></script>
-                                <!-- 编辑器源码文件 -->
-                                <script type="text/javascript" src="/admin/UE/ueditor.all.js"></script>
-                                <!-- 实例化编辑器 -->
-                                <script type="text/javascript">
-                                    var ue = UE.getEditor('container');
-                                </script>
-                            </div>
-                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">轮播图详情</label>
+                                            <div class="col-lg-10 col-md-10">
+                                                <!-- 加载编辑器的容器 -->
+                                                <script id="container" name="content" type="text/plain"></script>
+                                                <!-- 配置文件 -->
+                                                <script type="text/javascript" src="/admin/UE/ueditor.config.js"></script>
+                                                <!-- 编辑器源码文件 -->
+                                                <script type="text/javascript" src="/admin/UE/ueditor.all.js"></script>
+                                                <!-- 实例化编辑器 -->
+                                                <script type="text/javascript">
+                                                    var ue = UE.getEditor('container');
+                                                </script>
+                                            </div>
+                                        </div>
 
                                        
 

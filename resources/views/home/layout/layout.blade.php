@@ -51,7 +51,7 @@ var _hmt = _hmt || [];
     <h1 class="fl"><a href="http://wakeyoga.com/" title="Wake，瑜伽减肥塑形健身教练"><img src="/home/picture/logo.png" class="logo" alt="Wake，瑜伽减肥塑形健身教练" onclick="toLogin()"/></a></h1>
     <div class="fr loginArea oh">
         <a href="javascript:;" class="fl loginBtn" style="display: block;" onclick="headLoginBtn()">登录</a>
-        <a href="javascript:;" class="fl loginBtn" style="display: block;">注册</a>
+        <a href="/home/register" class="fl loginBtn" style="display: block;">注册</a>
         <a href="javascript:;" class="fl loginBtn2" style="display: none;">开通VIP</a>
         <!--登录后头像+用户名-->
         <div class="fl user oh" style="display: none;">
