@@ -51,10 +51,16 @@ class LoginController extends Controller
         }
        
         session(['data'=>$data]);
-        return redirect('/admin/users');
+        return redirect('/admin/index');
 
             
 
+    }
+    
+    public function logout(Request $request)
+    {   
+        $res = $request->session()->flush();
+        dd($res);
     }
 
     /**
