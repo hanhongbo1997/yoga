@@ -1,7 +1,7 @@
 @extends('home.layout.layout')
 
 @section('content')
-
+<link rel="stylesheet" type="text/css" href="/home/css/yoga_new.css">
 <div class="bussManner">
 	<div class="company_topic">Wake企业瑜伽培训是国内为企业提供瑜伽服务的专业机构。服务城市包括：北京、上海、广州、深圳、杭州、南京、武汉等。<br/>
 我们可提供办公室瑜伽、传统瑜伽、双人瑜伽、户外瑜伽、力量瑜伽、塑形瑜伽、亲子瑜伽、理疗瑜伽、太极瑜伽、禅坐瑜伽等。<br/>
@@ -49,9 +49,9 @@
         <tr><td>签署服务合同，开具正规发票</td><td>无合同无发票</td></tr>
       </table>
     </div>
-    <div class="busiTitle">我们的客户</div>
+    <!-- <div class="busiTitle">我们的客户</div> -->
 </div>
-<div class="ourParner">
+<!-- <div class="ourParner">
     <div class="parnerCon oh">
         <div class="fl leftParner" style="visibility: hidden"><img
                 src="/home/picture/leftparner.png"/></div>
@@ -64,7 +64,7 @@
         </div>
         <div class="fl rightParner"><img src="/home/picture/rightparner.png"/></div>
     </div>
-</div>
+</div> -->
 <div class="bussInner">
 
     <div class="busiTitle">来报名吧</div>

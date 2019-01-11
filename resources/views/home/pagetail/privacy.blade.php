@@ -1,6 +1,7 @@
 @extends('home.layout.layout')
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="/home/css/yoga_new.css">
 <div class="ruleOut">
     <h3>隐私条款</h3>
     <dl>

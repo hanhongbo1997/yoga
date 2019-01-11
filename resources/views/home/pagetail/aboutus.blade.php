@@ -1,6 +1,7 @@
 @extends('home.layout.layout')
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="/home/css/yoga_new.css">
 <div class="aboutManner">
 	<dl class="introSelf">
       <dt>关于我们</dt>
@@ -12,10 +13,10 @@
     </dl>
 </div>
 <div class="map"><a href="http://j.map.baidu.com/vGdMI" target="_blank"></a></div>
-<div class="joinUs oh">
+<div class="joinUs oh" style="width: 1200px">
     <div class="fl joinLeft">
         <ul>
-            <li>
+            <li style="margin-bottom:  20px;">
                 <em>加入我们：</em>hr@wakeyoga.com
             </li>
             <li>
@@ -27,7 +28,7 @@
     </div>
     <div class="fr joinRight">
         <ul>
-            <li>
+            <li style="margin-bottom:  20px;">
                 <em>联系电话：</em>4001668393
             </li>
             <li>

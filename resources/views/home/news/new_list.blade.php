@@ -187,21 +187,7 @@
             </li>
             </ul>
 
-    <ul class="xui-padded-l-10 xui-padded-r-10">
-        <div class="video-cont-list">
-            <h3 class="video-cont-list-title">大家都在关注</h3>
-            <div class=" xui-content video-right-tag">
-                <a href="/course/26/10.html">哈他瑜伽</a>
-                <a href="/course/26/8.html">阴瑜伽</a>
-                <a href="/course/26/31.html">球瑜伽</a>
-                <a href="/siftclass/7057.html" title="孕妇瑜伽">孕妇瑜伽</a>
-                <a href="/siftclasslist.html" title="瑜伽教练培训">瑜伽教练培训</a>
-                <a href="/course/23/-1,25.html" title="瑜伽入门">瑜伽入门</a>
-                <a href="/course/25.html" title="瑜伽教学初级视频">瑜伽教学初级视频</a>
-                <a href="/course/26/9.html">阿斯汤加</a>
-            </div>
-        </div>
-    </ul>
+   
 </div>
 <script type="text/javascript">
     var pathArray = location.pathname.split('/');
@@ -290,6 +276,7 @@
             <!-- <span style="position: absolute;bottom: 19%;left: 50%;width: 46%;height: 15%;text-align: center;margin-left: -23%;background: green;">我要免单</span> -->
         </div>
     </div>
+</div>
 </div>
 <script src="js/jquery.cookie.js"></script>
 <script type="text/javascript">
@@ -436,7 +423,5 @@
         //每日签到开启关闭
 </script>
 
-</body>
-</html>
 
 @endsection

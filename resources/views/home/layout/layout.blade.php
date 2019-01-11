@@ -9,10 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="/home/css/yoga.css">
+    
     <link href="/home/css/poposlides.css" rel="stylesheet" >
     <link rel="stylesheet" href="/home/css/idangerous.swiper2.7.6.css">
     <link rel="stylesheet" href="/home/css/animate.min.css">
     <link rel="stylesheet" href="/home/css/style.css">
+    <link rel="stylesheet" href="/home/css/sui.css">
 
 
     <script type="text/javascript" src="/home/js/jquery-2.1.1.min.js"></script>
@@ -255,7 +257,7 @@ var _hmt = _hmt || [];
         <label for="" class="aside-menu" title="按住拖动">临时用</label>
 
         <a href="/home/userinfo/1" title="临时用的" class="menu-item menu-first">个人中心</a>
-        <a href="/admin/videos" title="后台页面，我真机智" class="menu-item menu-second">后台页面</a>
+        <a href="/admin/login" title="后台页面，我真机智" class="menu-item menu-second">后台页面</a>
         <a href="javascript:void(0)" title="点不了" style="cursor: no-drop;" class="menu-item menu-third">点不了</a>
         <a href="javascript:void(0)" title="还是点不了" style="cursor: no-drop;" class="menu-item menu-line menu-fourth">广告<br>招租</a> <!-- *跳到商家微信推广* -->
     </div>
@@ -273,9 +275,7 @@ var _hmt = _hmt || [];
     <div class="footCon" >
         <div class="fl linkOut" style="margin-top: 40px; margin-bottom:30px">
             <ul class="oh">
-                <br>
-                <br>
-                <br>
+          
                 <li class="title fl">内容</li>
                 <li class="fl"><a href="home/lesson">课程</a></li>
                 <li class="fl"><a href="http://wakeyoga.com/2lessons/a6z2/">体式库</a></li>

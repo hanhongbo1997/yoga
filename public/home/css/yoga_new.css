@@ -1,8 +1,4 @@
-﻿*{
-	margin:0;
-	padding:0;
-}
-html,body,button,input,select,textarea {
+﻿html,body,button,input,select,textarea {
 	font-family:"YouYuan";
 	font-weight: normal;
 	color: #313538;
@@ -86,11 +82,6 @@ header{
 	line-height: 28px;
 	margin-top: 5px;
 	margin-right: 38px;
-}
-.loginArea a:hover{
-	background:#f85f1c;
-	border:1px solid #f85f1c;
-	color: white;
 }
 .navList{
 	font-size: 18px;
@@ -323,38 +314,7 @@ footer{
 	border:2px solid #f85f1c;
 	border-radius: 20px;
 }
-.loginCode{
-	width: 1100px;
-	height: 645px;
-	background:rgba(255,255,255,0.9);
-	border-radius: 10px;
-	position: fixed;
-	left: 50%;
-	top: 50%;
-	margin-left: -550px;
-	margin-top: -322.5px;
-	display: none;
-	z-index: 1000;
-	border: 1px solid #f85f1c;
-}
-.loginCode dl{
-	text-align: center;
-	padding-top: 135px;
-}
-.loginCode dl dt{
-	height: 256px;
-	border: 4px solid #e6e6e6;
-	width: 256px;
-	margin:0 auto;
-	margin-bottom: 60px;
-}
-.loginCode dl dd{
-	font-size: 18px;
-	line-height: 24px;
-}
-.loginCode dl dd a{
-	color: #f85f1c;
-}
+
 .baseVideo dt,.baseVideo dt img{
 	width: 316px;
 	height: 250px;
