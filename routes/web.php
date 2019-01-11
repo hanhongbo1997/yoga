@@ -47,6 +47,21 @@ Route::resource('home/video','home\VideoController');
 Route::resource('home/lesson','home\LessonController');
 //资讯页面控制器
 Route::resource('home/news','home\NewsController');
+//个人信息页面控制器
+Route::get('home/userinfo/common','home\UserinfoController@common');
+Route::get('home/userinfo/allbuy','home\UserinfoController@allbuy');
+Route::get('home/userinfo/fav','home\UserinfoController@fav');
+Route::get('home/userinfo/vip','home\UserinfoController@vip');
+Route::get('home/userinfo/order','home\UserinfoController@order');
+Route::get('home/userinfo/cart','home\UserinfoController@cart');
+Route::get('home/userinfo/safe','home\UserinfoController@safe');
+Route::resource('home/userinfo','home\UserinfoController');
+//订单控制器
+Route::get('home/order/order','home\OrderController@order');
+Route::resource('home/order','home\OrderController');
+//视频评论控制器
+Route::get('home/comment/getcomment','home\CommentController@getcomment');
+Route::resource('home/comment','home\CommentController');
 
 
 

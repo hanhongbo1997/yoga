@@ -14,6 +14,17 @@ class VideosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public static function getPidVideo($pid=0)
+    {
+        $data = Clubsort::where('pid','=',$pid)->get();
+        foreach ($data as $k=>$v) {
+           $temp = self::getPidVideo($v->pid);
+           $v->sub= $temp;
+
+        }
+        return $data;
+    }
+
     public function index(request $request)
     {
         // echo '我是视频列表';

@@ -35,170 +35,17 @@
             <div class="chooseTj">
                 <span id="point" class="point1"></span>
                 <ul>
+                    @foreach($common_video as $k=>$v)
                     <li class="oh all choose3 choose4 choose6">
-                        <em class="fl">资费:</em>
-                        
+                        <em class="fl">{{$v->vsname}}</em>
+                            @foreach($v->sub as $kk=>$vv)
                             <a href="javascript:;" title="" class="fl zifei1" onclick="chooseType2('zifei1',this)">
-                                <input type="radio" name="ifree" value="1"/>免费</a>
-                            <a href="javascript:;" title="" class="fl zifei1" onclick="chooseType2('zifei1',this)">
-                                <input type="radio" name="ifree" value="2"/> 付费</a>
+                                <input type="radio" name="ifree" value="1"/>{{$vv->vsname}}</a>
+                            @endforeach
                     </li>
-                    <li class="oh all choose1 choose6">
-                        <em class="fl">流派:</em>
-                        
-                            <a href="javascript:;" title="" class="fl liupai1"
-                                            onclick="chooseType2('liupai1',this)">
-                                <input type="radio" name="lsstgovvi" value="1"/>阿斯汤加
-                            </a>
-                            <a href="javascript:;" title="" class="fl liupai1"
-                                            onclick="chooseType2('liupai1',this)">
-                                <input type="radio" name="lsstgovvi" value="2"/>哈他瑜伽
-                            </a>
-                            <a href="javascript:;" title="" class="fl liupai1"
-                                            onclick="chooseType2('liupai1',this)">
-                                <input type="radio" name="lsstgovvi" value="3"/>流瑜伽
-                            </a>
-                            <a href="javascript:;" title="" class="fl liupai1"
-                                            onclick="chooseType2('liupai1',this)">
-                                <input type="radio" name="lsstgovvi" value="4"/>阴瑜伽
-                            </a>
-                            <a href="javascript:;" title="" class="fl liupai1"
-                                            onclick="chooseType2('liupai1',this)">
-                                <input type="radio" name="lsstgovvi" value="5"/>艾扬格
-                            </a>
-                            <a href="javascript:;" title="" class="fl liupai1"
-                                            onclick="chooseType2('liupai1',this)">
-                                <input type="radio" name="lsstgovvi" value="6"/>普拉提
-                            </a>
-                            <a href="javascript:;" title="" class="fl liupai1"
-                                            onclick="chooseType2('liupai1',this)">
-                                <input type="radio" name="lsstgovvi" value="7"/>现代流行派系
-                            </a>
-                            <a href="javascript:;" title="" class="fl liupai1"
-                                            onclick="chooseType2('liupai1',this)">
-                                <input type="radio" name="lsstgovvi" value="8"/>独创派系
-                            </a>
-                    </li>
-                    <li class="oh all choose1 choose2 choose3 choose6">
-                        <em class="fl">功效:</em>
-                        
-                            <a href="javascript:;" title="" class="fl gongxiao1"
-                               onclick="chooseType2('gongxiao1',this)">
-                                <input type="radio" name="lsstgeffecti" value="1"/>理疗
-                            </a>
-                            <a href="javascript:;" title="" class="fl gongxiao1"
-                               onclick="chooseType2('gongxiao1',this)">
-                                <input type="radio" name="lsstgeffecti" value="2"/>塑形
-                            </a>
-                            <a href="javascript:;" title="" class="fl gongxiao1"
-                               onclick="chooseType2('gongxiao1',this)">
-                                <input type="radio" name="lsstgeffecti" value="3"/>减压
-                            </a>
-                            <a href="javascript:;" title="" class="fl gongxiao1"
-                               onclick="chooseType2('gongxiao1',this)">
-                                <input type="radio" name="lsstgeffecti" value="4"/>食疗
-                            </a>
-                    </li>
-                    <li class="oh all choose1 choose2 choose3 choose6">
-                        <em class="fl">部位:</em>
-                        
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="1"/>全身
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="2"/>肩颈
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="3"/>胸部
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="4"/>背部
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="5"/>腰腹
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="6"/>手臂
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="7"/>腿部
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="8"/>臀部
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="9"/>经络
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="10"/>呼吸
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="12"/>膝关节
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="13"/>髋关节
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="14"/>腕关节
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="15"/>脊椎/腰椎
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="16"/>肠胃
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="17"/>心肺
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="18"/>腺体
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="19"/>子宫/痛经
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="20"/>失眠
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="21"/>压力
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="22"/>疼痛
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="23"/>焦虑烦躁
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="24"/>专注力
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="25"/>禅坐
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="26"/>亲子
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="27"/>双人
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="28"/>拉伸
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="29"/>内在循环
-                            </a>
-                            <a href="javascript:;" title="" class="fl buwei1" onclick="chooseType2('buwei1',this)">
-                                <input name="lsstgaimati" type="radio" value="30"/>面部
-                            </a>
-                    </li>
-                   
-               
-
+                    @endforeach
                 </ul>
                 <!--已选条件-->
-                <div class="oh userChoose">
-                    <em class="fl">已选条件:</em>
-                    
-                </div>
             </div>
         </div>
     </div>
@@ -254,16 +101,6 @@
                                 <dd class="courseName">
                                     <div class="fireCourse oh">
                                         <var class="fl">{{ $v->vname }}</var>
-                                        
-                                    </div>
-                                    <div class="seeNum">
-                                        <i><img src="/home/picture/see.png"
-                                                alt=""/>{{ $v->status }}</i>
-                                        &nbsp;&nbsp;&nbsp;
-                                        <i class="fireTime"><img src="/home/picture/time.png" alt=""/>{{ $v->cost }}</i>
-                                    </div>
-                                    <div class="yellow_blue">
-                                        
                                         
                                     </div>
                                 </dd>

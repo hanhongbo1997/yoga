@@ -49,11 +49,11 @@
 						<div class="item">
 							<span class="angle">限时立减<em>￥</em>69.2</span>
 			        		<a href="lesson/{{ $v->id }}/edit" title="[教练进阶] 建立身体正确姿态丨私教应用" target="_blank">
-								<img src="/uploads/{{ $v->img }}" data-src="https://www.yujia.com//attached/image/20181230/dc82534a4baed18784d7f22a2938e446thumb.jpg" alt="[教练进阶] 建立身体正确姿态丨私教应用" onload="$app.loadImg(this)" />
+								<img src="/uploads/{{ $v->img }}" height="175" onload="$app.loadImg(this)" />
 							</a>
 							<div class="text">
 								<h2 class="aui-ellipsis-2">
-									<a href="/descript/10728.html" title="[教练进阶] 建立身体正确姿态丨私教应用" target="_blank">{{ $v->lname }}</a>
+									<a href="lesson/{{ $v->id }}/edit" title="[教练进阶] 建立身体正确姿态丨私教应用" target="_blank">{{ $v->lname }}</a>
 								</h2>
 								<div>
 									<span class="aui-iconfont aui-icon-date">{{ $v->status }}</span>

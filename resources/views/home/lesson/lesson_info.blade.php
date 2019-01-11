@@ -103,40 +103,52 @@
 	<!-- 开始拼单 -->
 	
 	<!--详情描述-->
+
 	<section class="detail">
 		<div>
 			<div class="aui-pull-left det-left">
-				<ul class="detnav aui-border-baui-border-b" id="detnav">
-						<li class="active"><span>课程大纲</span></li>
-						<li><span>课程详情</span></li>
-						<li><span>用户评价</span></li>
-				</ul>
 				<div class="aui-content-padded" id="articleBox">
+				<div class='tabs' id="tabs">
+			        <ul class='horizontal'>
+			            <li rel="tab-1" class="selectActive"><span>课程大纲</span></li>
+			            <li rel="tab-2"><span>课程详情</span></li>
+			            <li rel="tab-3"><span>用户评价</span></li>
+			        </ul>
+			        <div rel='tab-1' style="border: 1px solid #ccc">
+			        	<ul class="aui-list aui-list-in">
+			        		<li style="width: 100%;height: 100px;padding: 10px;border: 1px solid #ccc">
+					            <a href="javascript:;" onclick="alert('购买后观看')">
+									<img style="width: 100px;height: 70px;float: left;margin-right: 10px;" src="/uploads/{{ $data->img }}"alt="胡潇月01.课程概述与部分练习示范"/>
+					            	<span style="line-height: 70px;float: left;">{{$data->lname}}</span>
+						        	<span class="goVideo">我要学习</span>
+						        </a>
+					        </li>							            
+						</ul>
+			        </div>
+			        <div rel='tab-2'><span>这是一个课程详情</span></div>
+			        <div rel='tab-3'><span>这是一个用户评价</span></div>
+			    </div>
+			    <script type="text/javascript">
+				    tabs_takes.init("tabs");
+				</script>
+
+
+
+					<div class="aui-content">
+						<div class="polyPlayer" id="polyPlayer"></div>
 						<div class="aui-content">
-							<div class="polyPlayer" id="polyPlayer"></div>
-							<div class="aui-content">
-								<ul class="aui-list aui-list-in">
-						            <a href="javascript:;" onclick="alert('购买后观看')"  class="aui-list-item aui-padded-t-10 aui-padded-b-10" style="padding-right:5rem;">
-							            	<div class="aui-media-list-item-inner" style="width:100%;">
-							                    <div class="aui-list-item-media">
-							                    	<img src="/uploads/{{ $data->img }}"alt="胡潇月01.课程概述与部分练习示范" onload="$app.loadImg(this)"/>
-							                    </div>
-							                    <div class="aui-list-item-text" style="width: calc(100% - 100px);">
-						                            <div class="aui-list-item-title">
-						                            	<h3 class="aui-font-size-14 aui-ellipsis-2">胡潇月01.课程概述与部分练习示范</h3>
-						                            	<p class="aui-ellipsis-1 aui-font-size-12"></p>
-						                            </div>
-						                        </div>
-							                </div>
-							                <span class="goVideo">我要学习</span>
-							            </a>
-							        							            
-							    </ul>
-							</div>
+							
+						</div>
+					</div>
+
+
+
+						<div>
+							<h1>这TM应该是个评论啊！！！</h1>
 						</div>
 						<div class="aui-content aui-hide">
 							<div class="article"><p><img alt="" src="/home/picture/47575118b5e9c904e66088d40c8526bb.jpg" /></p>
-</div>
+							</div>
 							<img src="/home/picture/buy_explain.jpg" alt="">
 						</div>
 										<div class="aui-content aui-hide">

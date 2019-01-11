@@ -24,6 +24,8 @@
     <link href="/home/css/revision.css" rel="stylesheet">
     <link rel="stylesheet" href="/home/css/swiper.min.css">
     <script src="/home/js/require_1.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/home/css/dist/plyr.css">
+    <script src="/home/js/dist/plyr.js"></script>
     <script>        
       var mySwiper = new Swiper ('.swiper-container', {
         pagination: '.pagination',
@@ -70,6 +72,8 @@
         </style>
 
 </head>
+<script type="text/javascript" src="/home/js/tabs.js"></script>
+<link type="text/css" rel="stylesheet" href="/home/css/tabs.css"/>
 <body>
 <!--头部-->
 <!--头部-->
@@ -87,7 +91,12 @@ var _hmt = _hmt || [];
 </script>
 
 <header>
-    <h1 class="fl"><a href="http://wakeyoga.com/" title="Wake，瑜伽减肥塑形健身教练"><img src="/home/picture/logo.png" class="logo" alt="Wake，瑜伽减肥塑形健身教练" onclick="toLogin()"/></a></h1>
+    <h1 class="fl"><a href="http://wakeyoga.com/" title="Wake，瑜伽减肥塑形健身教练">
+        <img src="/home/images/logo.jpg" style="width: 50px;float: left;" class="logo" alt="Wake，瑜伽减肥塑形健身教练" onclick="toLogin()"/>
+        <div style="float: left;width: 180px;height: 50px;">
+            <span style="line-height: 65px;color: gold;padding: 0px;margin-bottom: 0px;">&nbsp;&nbsp;&nbsp;假装有个logo</span>
+            <span style="font-size: 10px;margin: 0px 0px 0px 45px;padding: 0px;color: white;">哎呀TM忘抠图了</span></a></h1>
+        </div>
     <div class="fr loginArea oh">
         <a href="javascript:;" class="fl loginBtn" style="display: block;" onclick="headLoginBtn()">登录</a>
         <a href="/home/register" class="fl loginBtn" style="display: block;">注册</a>
@@ -107,7 +116,7 @@ var _hmt = _hmt || [];
     <input type="hidden" id="showFlag" name="showFlag" value="1"/>
     <ul class="fr navList2">
 
-        <li class="fl"><a href="http://wakeyoga.com/" id="index" class="cur">首页</a></li>
+        <li class="fl"><a href="/" id="index" class="cur">首页</a></li>
         <li class="fl"><a href="/home/video">瑜伽视频</a></li>
         <li class="fl"><a href="/home/lesson">瑜伽课程</a></li>
         <li class="fl"><a href="/home/news" id="community">社区</a></li>
@@ -221,6 +230,29 @@ var _hmt = _hmt || [];
         })
 	})
 </script>
+<link rel="stylesheet" href="/home/css/asidenav.css">
+<div>
+    <svg width="0" height="0">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+            </filter>
+        </defs>
+    </svg>
+    <div class="aside-nav bounceInUp animated" id="aside-nav">
+        <label for="" class="aside-menu" title="按住拖动">临时用</label>
+
+        <a href="/home/userinfo/1" title="临时用的" class="menu-item menu-first">个人中心</a>
+        <a href="/admin/videos" title="后台页面，我真机智" class="menu-item menu-second">后台页面</a>
+        <a href="javascript:void(0)" title="点不了" style="cursor: no-drop;" class="menu-item menu-third">点不了</a>
+        <a href="javascript:void(0)" title="还是点不了" style="cursor: no-drop;" class="menu-item menu-line menu-fourth">广告<br>招租</a> <!-- *跳到商家微信推广* -->
+    </div>
+</div>    
+
+<!-- <script type="text/javascript" src="/home/js/jquery.min.js"></script> -->
+<script type="text/javascript" src="/home/js/asidenav.js"></script>
 
  @section('content')
             
@@ -231,6 +263,9 @@ var _hmt = _hmt || [];
     <div class="footCon">
         <div class="fl linkOut">
             <ul class="oh">
+                <br>
+                <br>
+                <br>
                 <li class="title fl">内容</li>
                 <li class="fl"><a href="http://wakeyoga.com/2lessons/a1z2/">课程</a></li>
                 <li class="fl"><a href="http://wakeyoga.com/2lessons/a6z2/">体式库</a></li>
@@ -268,6 +303,9 @@ var _hmt = _hmt || [];
                 Copyright2015 北京唤醒之光网络科技有限公司京ICP备15057355号
             </div>
         </div>
+        <br>
+        <br>
+        <br>
         <div class="fl copyOut">          
             <dl class="workDay">
 	          <dt>400-166-8393</dt>

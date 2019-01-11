@@ -4,34 +4,18 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Video;
-use App\Models\Comment;
-use App\Models\Videosort;
-use DB;
 
-class VideoController extends Controller
+class UserinfoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public static function getPidVideos($pid = 0)
-    {
-        $data = DB::table('video_sort')->where('pid',$pid)->get(); 
-
-        foreach ($data as $key => $value) {
-            // 获取所有下一级 子分类
-            $temp = self::getPidVideos($value->id);
-            $value->sub = $temp;
-        }
-        return $data;
-    }
-
     public function index()
     {
-        $data = Video::get();
-        return view('home.video.video_list',['data'=>$data]);
+        //
+        
     }
 
     /**
@@ -63,7 +47,8 @@ class VideoController extends Controller
      */
     public function show($id)
     {
-        echo '222222';
+        //
+        return view('home.userinfo.index');
     }
 
     /**
@@ -74,10 +59,7 @@ class VideoController extends Controller
      */
     public function edit($id)
     {
-        
-        $data = Video::find($id);
-        $comment = Comment::where('video_id', '=', $id)->get();
-        return view('home.video.video_info',['data'=>$data,'comment'=>$comment]);
+        //
     }
 
     /**
@@ -101,5 +83,40 @@ class VideoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function common()
+    {
+        return view('home.userinfo.common');
+    }
+
+    public function fav()
+    {
+        return view('home.userinfo.fav');
+    }
+
+    public function allbuy()
+    {
+        return view('home.userinfo.allbuy');
+    }
+
+    public function vip()
+    {
+        return view('home.userinfo.vip');
+    }
+
+    public function order()
+    {
+        return view('home.order.index');
+    }
+
+    public function cart()
+    {
+        return view('home.order.cart');
+    }
+
+    public function safe()
+    {
+        return view('home.userinfo.safe');
     }
 }

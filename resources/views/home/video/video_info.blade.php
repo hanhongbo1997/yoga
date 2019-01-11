@@ -23,7 +23,7 @@
     <script src="/js/videojs-flash.js"></script>
     <script src="/js/videojs-contrib-hls.js"></script>
     <script>
-        videojs.options.flash.swf = "/uploads/{{ $data->videodetails->video }}";
+        videojs.options.flash.swf = "/app/aetherupload/{{ $data->videodetails->video }}";
     </script>
     <style>
     	.video-js .vjs-big-play-button{
@@ -39,17 +39,11 @@
     	}
     </style>
 
-
-	<video id="player1" width=1100 height=618 class="video-js vjs-default-skin vjs-big-play-centered" controls poster="http://www.wakeyoga.com/image/pc/teachVideo.jpg">
-        <!-- <source src="http://w20.wakeyoga.com/VIDEO_BG_01_1516860900203.mp4?e=1519899334&token=NRt96COJgaNUYOIx5fGbi6z7uztfjmTH09UKN58M:5JCFuxy0bvZubpjpewu7xr2Yi7w=" type="video/mp4"> -->
-    </video>
-
-
-
-        </div>
-       
-       
-       
+    	<video id="player1" width=1100 height=618 controls poster="{{ $data->img }}">
+            <source src="/app/aetherupload/{{ $data->videodetails->video }}" type="video/mp4">
+        </video>
+        <script>plyr.setup();</script>
+        </div>    
     </div>
 
 </div>
@@ -66,111 +60,79 @@
         </dl>
     </div>
     <!--评论-->
-    <div class="meassage_out">
+<div class="videoWord" style="background: #f9f9f9;>
+    <form action="/home/comment" method="post">
+        {{ csrf_field() }}
+        <input type="hidden" name="user_id" value="1">
+        <input type="hidden" name="comment_id" value="0">
+        <input type="hidden" name="video_id" value="{{ $data->id }}">
+        <input type="text" value="视频的Id是：{{ $data->id }}">
+        <div class="discuss-cont">
+            <span class="discuss-img">
+                 <img src="/home/images/logo.jpg">
+            </span>
+            <div class="discuss-cont-inner">
+                <div class="discuss-cont-inner-box">
+                    <textarea placeholder="吐槽？膜拜？或者你还可以找老师聊聊！？" name="content" id="replyItem" style="background: #fff"></textarea>
+                </div>
+                <div class="xui-text-right xui-content xui-margin-t-15">
+                    <button type="submit" id="subDiscus" style="color: #fff;background-color: #43cd6e;border: 1px solid #34c360;width: 100px;height: 40px;font-size: 18px;" onmouseover="this.style.background = '#49de79';" onmouseout="this.style.background='#43cd6e';">发表评论</button>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </form>
+    @foreach($common_comment as $k=>$v)
+        <div style=" border-radius: 5px;padding: 5px;margin: 5px;">
+            <div class="xui-content xui-bg-white xui-margin-b-15 xui-padded-10 review-again-list" style="background: #f9f9f9!important;"> 
+                <div class="review-again-conL" style="height: auto;"> 
+                    <div class="discuss-cont xui-margin-b-10"> 
+                        <span class="discuss-img" style="width: 42px;height: 42px;display: block;float: left;border-radius: 50%;overflow: hidden;border: 1px solid #ebebeb" />
+                            <img src="/home/images/logo.jpg" style="width: 100%;height: 100%;" /> 
+                        </span> 
+                        <div class="discuss-cont-inner xui-border-b" style="padding-left:42px;margin-left: 15px;"> 
+                            <h4 class="xui-margin-0" style="display: block;margin-block-start: 1.33em;margin-block-end: 1.33em;margin-inline-start: 0px;margin-inline-end: 0px;font-weight: bold;font-size: 14.04px;line-height: 21.06px;">评论用户名ID是：{{ $v->user_id}}</h4> 
+                            <div class="xui-content xui-padded-t-5 xui-padded-b-5" style="display: table;width: 100%;height: auto;box-sizing: border-box;font-size: 14px;">
+                                {{ $v->content}} 
+                            </div> 
+                        </div> 
+                        <p style="color: #999;font-size: 12px;margin-left: 55px; margin-top: 10px;">{{ \Carbon\Carbon::parse($v->created_at)->diffForHumans() }}评论</p>
+                    </div>
+                </div>  
+            </div> 
+        @foreach($v->sub as $kk=>$vv)
+            <div class="xui-content xui-bg-white xui-margin-b-15 xui-padded-10 review-again-list" style="background: #fff!important;margin-left: 50px;width: 900px;border-radius: 5px;margin-bottom: 0px;padding-bottom: 0px;  "> 
+                <div class="review-again-conL" style="height: auto;margin-bottom: 0px;"> 
+                    <div class="discuss-cont xui-margin-b-10"> 
+                        <span class="discuss-img" style="width: 24px;height: 24px;display: block;float: left;border-radius: 50%;overflow: hidden;border: 1px solid #ebebeb" />
+                            <img src="/home/images/logo.jpg" style="width: 100%;height: 100%;" /> 
+                        </span> 
+                        <div class="discuss-cont-inner xui-border-b" style="padding-left:34px;margin-left: 15px;"> 
+                            <h4 class="xui-margin-0" style="display: block;margin-block-start: 1.33em;margin-block-end: 1.33em;margin-inline-start: 0px;margin-inline-end: 0px;font-weight: bold;font-size: 14.04px;line-height: 21.06px;">评论用户名ID是：{{ $vv->user_id}}</h4> 
+                            <div name="content" style="display: table;width: 100%;height: auto;box-sizing: border-box;font-size: 14px;margin-bottom: 10px;margin-top: 10px;">
+                                {{ $vv->content}} 
+                            </div> 
+                        </div> 
+                        <p style="color: #999;font-size: 12px;margin-left: 50px; margin-top: 10px;">{{ \Carbon\Carbon::parse($vv->created_at)->diffForHumans() }}回复</p>
+                    </div>  
+                </div>
+            </div>
+        @endforeach 
         
-            
-                <h3>评论(148)</h3>
-                <ul>
-                        <li>
-                            <dl class="oh">
-                                <dt class="fl">
-                                    <img src="/home/picture/006yttyajw8f7uoo0utbbj30c80ic75r.jpg">
-                                </dt>
-                                <dd class="message_name">
-                                        艾小山扇1314
-                                </dd>
-                                <dd class="message_time">
-                                    2018-10-27
-                                </dd>
-                            </dl>
-                            <div class="message_word">
-                                
-                                    
-                                    老师的课非常好，其实瑜伽不仅仅是修身更重要的是修心
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <dl class="oh">
-                                <dt class="fl">
-                                    <img src="/home/picture/1_1467189229349.jpg">
-                                </dt>
-                                <dd class="message_name">
-                                        Wake
-                                </dd>
-                                <dd class="message_time">
-                                    2018-10-26
-                                </dd>
-                            </dl>
-                            <div class="message_word">
-                                
-                                     回复<span class="reply">宋溫暖</span>：感谢您的喜欢，我们会多上线老师的课程哦~
-                                    
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <dl class="oh">
-                                <dt class="fl">
-                                    <img src="/home/picture/1_1467189229349.jpg">
-                                </dt>
-                                <dd class="message_name">
-                                        Wake
-                                </dd>
-                                <dd class="message_time">
-                                    2018-10-26
-                                </dd>
-                            </dl>
-                            <div class="message_word">
-                                
-                                     回复<span class="reply">136****2902</span>：不要着急，第一次练习是正常的，跟着自己的感觉，多加练习，坚持习练是会有很大的改善和效果的哦~
-                                    
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <dl class="oh">
-                                <dt class="fl">
-                                    <img src="/home/picture/411594_1505035059931.jpg">
-                                </dt>
-                                <dd class="message_name">
-                                        136****2902
-                                </dd>
-                                <dd class="message_time">
-                                    2018-10-24
-                                </dd>
-                            </dl>
-                            <div class="message_word">
-                                
-                                    
-                                    第一天打卡，刚开始时呼吸有点急促，后来肩膀放松了，呼吸就自然了，不过一关注，肩膀又紧张了，调整了好几次，才放松下来，然后就是杂念重生，跑掉了👿
-                            </div>
-                        </li>
-                    
-                        <li>
-                            <dl class="oh">
-                                <dt class="fl">
-                                    <img src="/home/picture/1486042577_1534629579966.jpg">
-                                </dt>
-                                <dd class="message_name">
-                                        张玉梅
-                                </dd>
-                                <dd class="message_time">
-                                    2018-10-24
-                                </dd>
-                            </dl>
-                            <div class="message_word">
-                                
-                                    
-                                    老师非常好，讲解的很清晰
-                            </div>
-                        </li>
-                    
-                </ul>
-                <div class="fixMore">
-                    <a href="http://www.wakeyoga.com/toDownLoad.html">下载Wake APP查看更多评论</a>
-                </div> 
-    </div>
+        <form action="/home/comment" method="post">
+        {{ csrf_field() }}
+            <input type="hidden" name="user_id" value="1">
+            <input type="hidden" name="video_id" value="{{ $data->id }}">
+            <input type="hidden" name="comment_id" value="{{ $v->id }}">
+            <div class="" style="width: 900px;margin-left:50px;margin-top:0px;background: #fff;padding: 10px;"> 
+                <textarea style="float: left;width: 808px;height:35px;background: #fff;box-shadow: 0px 0px 1px 1px #ccc;padding: 5px;" name="content" placeholder="绿色上网，文明回复" ></textarea> 
+                <button style="color: #fff;background-color: #f9c34f;border: 1px solid #f9b728;width: auto;height: 37px;font-size: 16px;margin-left: 10px;">回复</button>
+                <div style="clear: both;"></div>
+            </div>
+        </form>
+        </div> 
+    @endforeach
+</div>
     <!--相关推荐-->
     <div class="basicArea">
         

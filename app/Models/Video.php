@@ -11,6 +11,11 @@ class Video extends Model
     public function videodetails()
     {
     	return $this->hasOne('App\Models\VideoDetails','vid');
-    }  
+    } 
+
+    public function comment()
+    {
+    	return $this->hasOne('App\Models\Comment','video_id');
+    } 
 
 }

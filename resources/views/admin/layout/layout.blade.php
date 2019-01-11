@@ -53,8 +53,8 @@
             <div class="container-fluid">
                 <div class="navbar">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="index.html">
-                            <i class="im-windows8 text-logo-element animated bounceIn"></i><span class="text-logo">spr</span><span class="text-slogan">flat</span> 
+                        <a class="navbar-brand" href="/">
+                            <img src="/admin/img/yaoming.png" style="width: 40px;margin-top: -10px;"><span class="text-logo">先从这</span><span class="text-slogan">进首页</span> 
                         </a>
                     </div>
                     <nav class="top-nav" role="navigation">
