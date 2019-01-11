@@ -2,8 +2,8 @@
 
 @section('content')
 <!-- 轮播图 -->
-<div class="banner">
-    <img src="home/picture/listbj.jpg" alt="">
+<div class="">
+    <img src="/home/picture/listbj.jpg">
 </div>
 <!-- 轮播图 -->
 
@@ -212,7 +212,7 @@
                 <ul>
                 @foreach ($data as $k=>$v)
                          <li id="aaa">
-                            <a target="_blank" href="/club/{{ $v->cid }}">
+                            <a target="_blank" href="/home/club/{{ $v->cid }}">
                               <div class="tag">
                                 <span>{{  $v->pid }}</span></div>
                               <img src="{{ $v->cimg }}" data-src="" onload="loadPic(this)" style="height: 120px; width: 192px;">
@@ -223,6 +223,10 @@
               @endforeach                             
                 </ul>
             </div>
+</div>
+
+
+
         </div>
         <style>
             a:focus, a:hover {
@@ -238,13 +242,15 @@
                       /*box-shadow: 0 0 10px #f00; border:1px solid green*/
                   }
         </style>
-        
-</div>
-<div class="row-">
+
+<!--  <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12">
        {!! $data->appends(['search_nname'=>$data->cname])->render() !!}
         </div>
       </div>
-    </div>
+    </div> -->
+           
+</div>
+
 
 @endsection

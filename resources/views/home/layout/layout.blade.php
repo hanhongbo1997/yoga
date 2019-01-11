@@ -89,7 +89,7 @@ var _hmt = _hmt || [];
 <header>
     <h1 class="fl"><a href="http://wakeyoga.com/" title="Wake，瑜伽减肥塑形健身教练"><img src="/home/picture/logo.png" class="logo" alt="Wake，瑜伽减肥塑形健身教练" onclick="toLogin()"/></a></h1>
     <div class="fr loginArea oh">
-        <a href="javascript:;" class="fl loginBtn" style="display: block;" onclick="headLoginBtn()">登录</a>
+        <a href="/home/logon" class="fl loginBtn" style="display: block;" onclick="headLoginBtn()">登录</a>
         <a href="/home/register" class="fl loginBtn" style="display: block;">注册</a>
         <a href="javascript:;" class="fl loginBtn2" style="display: none;">开通VIP</a>
         <!--登录后头像+用户名-->
@@ -107,11 +107,12 @@ var _hmt = _hmt || [];
     <input type="hidden" id="showFlag" name="showFlag" value="1"/>
     <ul class="fr navList2">
 
-        <li class="fl"><a href="http://wakeyoga.com/" id="index" class="cur">首页</a></li>
+        <li class="fl"><a href="/" class="cur">首页</a></li>
         <li class="fl"><a href="/home/video">瑜伽视频</a></li>
         <li class="fl"><a href="/home/lesson">瑜伽课程</a></li>
         <li class="fl"><a href="/home/news" id="community">社区</a></li>
-        <li class="fl"><a href="club" id="clubYoga">瑜伽馆</a></li>
+        <li class="fl"><a href="/home/club" id="clubYoga">瑜伽馆</a></li>
+        <li class="fl"><a href="/home/teacher/index" >名师</a></li>
         <li class="fl"><a href="http://wakeyoga.com/2enterprise.html" id="enterpriseYoga">企业瑜伽</a></li>
         <li class="fl trainList">
         	<a href="./toTraining.html" id="trainingCoach">瑜伽教培</a>
@@ -121,6 +122,14 @@ var _hmt = _hmt || [];
 	        </div>
         </li>
         <div class="clear">&nbsp;</div>
+        <script>
+            $(function(){
+                $('.fl').click(function(){
+                    $(this).css('color','#f85f1c');
+                });
+            });
+        </script>
+
     </ul>
     <div class="clear">&nbsp;</div>
 </header>
@@ -228,8 +237,8 @@ var _hmt = _hmt || [];
 
  <!-- 底部 -->
 <footer>
-    <div class="footCon">
-        <div class="fl linkOut">
+    <div class="footCon" >
+        <div class="fl linkOut" style="margin-top: 40px; margin-bottom:30px">
             <ul class="oh">
                 <li class="title fl">内容</li>
                 <li class="fl"><a href="http://wakeyoga.com/2lessons/a1z2/">课程</a></li>
@@ -268,7 +277,7 @@ var _hmt = _hmt || [];
                 Copyright2015 北京唤醒之光网络科技有限公司京ICP备15057355号
             </div>
         </div>
-        <div class="fl copyOut">          
+        <div class="fl copyOut" style="margin-top: 40px; margin-bottom:30px">          
             <dl class="workDay">
 	          <dt>400-166-8393</dt>
 	          <dd class="work_dd1">工作日9：30-18：00</dd>

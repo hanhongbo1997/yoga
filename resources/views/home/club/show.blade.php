@@ -138,13 +138,13 @@
  </div>
         </div>
         <div class="xui-col-xs-10 hall-box xui-hide" id="hall-class">
-            <div style="font-size:22px;height:34px;line-height:34px;border-bottom:1px solid #ebebeb;">会馆课程</div>
+            <div style="font-size:22px;height:34px;line-height:34px;border-bottom:1px solid #ebebeb;margin-bottom:16px;">会馆课程</div>
             <div class="xui-content">
               {!! $data->clubdetails->lesson !!}
             </div>
         </div>
         <div class="xui-col-xs-10 hall-box xui-hide" id="hall-commont">
-            <div style="font-size:22px;height:34px;line-height:34px;border-bottom:1px solid #ebebeb;">会员评论</div>
+            <div style="font-size:22px;height:34px;line-height:34px;border-bottom:1px solid #ebebeb;margin-bottom:16px;">会员评论</div>
             <div class="xui-content xui-padded-15">
                 <!--评论模块-->
 }

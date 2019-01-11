@@ -86,7 +86,7 @@ class UsersController extends Controller
             $data['pass'] = Hash::make($pass);
             $uid = $users -> insertGetId($data);
 
-            dd($uid);
+            // dd($uid);
 
             //获取所添加的status
             $status = $request->input('status');

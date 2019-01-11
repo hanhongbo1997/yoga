@@ -63,9 +63,9 @@
     <div class="form-group">
         <label class="col-lg-2 col-md-2 col-sm-12 control-label">类型</label>
         <div class="col-lg-10 col-md-10">
-         <label> <input type="checkbox" class="form-control" value="1" name="status">瑜伽导师 </label>&nbsp; &nbsp; 
-          <label> <input type="checkbox" class="form-control" value="2" name="status">行业顾问</label>&nbsp; &nbsp;
-          <label> <input type="checkbox" class="form-control" value="3" name="status">官方认证</label>
+         <label> <input type="checkbox" class="form-control" value="1" name="status[]">瑜伽导师 </label>&nbsp; &nbsp; 
+          <label> <input type="checkbox" class="form-control" value="2" name="status[]">行业顾问</label>&nbsp; &nbsp;
+          <label> <input type="checkbox" class="form-control" value="3" name="status[]">官方认证</label>
 
           </div>   
       </div>

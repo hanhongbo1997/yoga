@@ -10,4 +10,9 @@ class Clubsort extends Model
     public $table = 'club_sort';
     //设置模型操作主件
     protected $primaryKey = 'csid';
+
+     public function clubsortinfo()
+    {
+    	return $this->hasMany('App\Models\Club','pid');
+    }
 }

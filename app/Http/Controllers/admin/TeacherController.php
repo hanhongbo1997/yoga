@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Teacher;
-use App\Models\Teacher_info;
+use APP\Models\Teacher_info;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\Teachinof;
 
 
 class TeacherController extends Controller
@@ -87,6 +87,15 @@ class TeacherController extends Controller
 
         $data = $where->paginate(10);
 
+       //  foreach ($data as $k=>$v)
+       //  {
+       //    $arr[] = explode('##',$v->status);
+         
+       //  }
+       //  $data->status = $arr;
+       // dump($data);
+        
+
         $data->tname = $request->search_nname;
         //加载模板
         return view('admin.teacher.index',['title'=>'名师列表','data'=>$data]);
@@ -112,34 +121,51 @@ class TeacherController extends Controller
     public function store(Request $request)
     {
         //获取数据
-        $user =  $request->all();
-        // dump($user);
-
+        $user = $request->all();
+       
+        // $file = $request->file('status');
+       
+        
         $data = new Teacher;
         $data->tname = $request->input('tname');
         $data->intor = $request->input('intor');
+        $a = $user['status'];
+        $a = implode('##',$a);  
+        $data->status = $a;
+        // $data->status = $user['status'];
         $data->seniority = $request->input('seniority');
         $data->adept = $request->input('adept');
-        $data->sex = $request->input('sex');
-        $data->status = $request->input('status');
-        $data->book = $request->input('book');
-        $data->book = $request->input('book');
-        $data->add = $request->input('add');
-       
 
-        $teach = new Teacher_info;
+        $data->sex = $request->input('sex');
         
+        $data->book = $request->input('book');
+        // $data->book = $request->input('book');
+        $data->add = $request->input('add');
+        $data->save();
+        // dump($data);
+        // dump($data->tid);
+
+        // exit();
+
+         // $data->status =  $request->only('status');
+        
+         // $a = implode('|@x@|',$user);
+         // $data->status = $user['status'];
+        
+        $teach = new Teachinof;
         $teach->tphone = $user['tphone'];
+        // $teach->tid = $data->tid;
+        // dump($data->tid);
         $teach->tid = $data->tid;
         $teach->course = $user['course'];
         //主图获取 timg
         $teach ->timg = '/uploads/'.self::profile($request);
 
-        $teach->imges = '/uploads/'.self::Timges($request);
-        dump($data);
-        dump($teach);exit;
+        $teach->imges = self::Timges($request);
+        // dump($data);
+        // dump($teach);exit;
         
-        if($data->save() && $teach->save()){
+        if($teach->save()){
 
             return redirect('admin/teacher')->with('success', '添加成功!');
            
@@ -182,9 +208,44 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teacher $teacher)
+    public function update(Request $request, $id)
     {
-        //
+        $user = $request->all();
+
+        //接收数据
+        $data = Teacher::find($id);
+        $data->tname = $request->input('tname'); 
+        $data->intor = $request->input('intor'); 
+        $a = $user['status']; 
+        $a = implode('##',$a);  
+        $data->status = $a;
+        $data->seniority = $request->input('seniority'); 
+        $data->adept = $request->input('adept'); 
+        $data->sex = $request->input('sex'); 
+        $data->book = $request->input('book'); 
+        $data->add = $request->input('add'); 
+
+        // dump($data);
+        // dump($user);
+        //详情页
+        $teach =Teachinof::find($id);
+        // dump($teach);exit();
+        // $teach->tphone = $user['tphone'];
+        // $teach->tid = $teach->tid;
+        // $teach->course = $user['course'];
+         //主图获取 timg
+        $teach ->timg = '/uploads/'.self::profile($request);
+
+        $teach->imges = self::Timges($request);
+        // dump($teach);exit();
+        if($data->save() && $teach->save()){
+
+            return redirect('admin/teacher')->with('success', '修改成功!');
+           
+        }else{
+             return back()->with('error', '修改失败!');
+        }
+
     }
 
     /**
@@ -193,8 +254,43 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teacher $teacher)
+    public function destroy($id)
     {
-        //
+        $data = Teacher::find($id);
+        $teach =Teachinof::find($id);
+
+        //删除
+        if($data->delete($data) && $teach->delete($teach)){
+
+            return redirect('admin/teacher')->with('success', '删除成功!');
+           
+        }else{
+             return back()->with('error', '删除失败!');
+        }
+
+    }
+
+    /**
+     * 查看详情
+     *
+     * @param  \App\Models\Teacher  $teacher
+     * @return \Illuminate\Http\Response
+     */
+    public function details($id)
+    {
+        //加载数据
+        $data = Teacher::find($id);
+        //获取状态
+        $status = $data->status;
+        $status = explode('##',$status);
+        $data->status = $status;
+       
+        //图片获取
+        $a = $data->teachinfoend->imges;
+        $arr = explode('|@x@|',$a);
+        // dump($arr);
+        // dump($data);exit();
+        //加載模板
+        return view('admin.teacher.details',['title'=>'名师详情','data'=>$data,'arr'=>$arr]);
     }
 }

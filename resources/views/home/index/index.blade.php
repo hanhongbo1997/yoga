@@ -44,43 +44,7 @@
 <div class="swiper-container">
 <a class="arrow-left" href="#"></a> 
 <a class="arrow-right" href="#"></a>
-<div class="swiper-wrapper">
-    <div class="swiper-slide slide1">
-        <a href="" class="inner">
-            <img src="/home/images/s0.png" class="ani img s0" swiper-animate-effect="zoomInDown" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
-            <img src="/home/images/s1.png" class="ani img s1" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s">
-            <img src="/home/images/s2.png" class="ani img s2" swiper-animate-effect="flipInY" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
-            <img src="/home/images/s3.png" class="ani img s3" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay=".2s">
-            <img src="/home/images/s4.png" class="ani img s4" swiper-animate-effect="fadeInUp" swiper-animate-duration="2.5s" swiper-animate-delay="0s">
-        </a>
-    </div>
-    <div class="swiper-slide slide2">
-        <a href="" class="inner">
-            <img src="/home/images/pigBanner_03.png" class="ani img zh-a-1" swiper-animate-effect="bounceInDown" swiper-animate-duration="2s" swiper-animate-delay="0.5s">
-            <img src="/home/images/pigBnnaer_1_03.png" class="ani img zh-a-2" swiper-animate-effect="zoomIn" swiper-animate-duration="2s" swiper-animate-delay="0s">
-        </a>
-    </div>
-    <div class="swiper-slide slide3">
-        <div class="inner">
-            <img src="/home/images/b-1.png" class="ani img b-1" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
-            <img src="/home/images/b-2.png" class="ani img b-2" swiper-animate-effect="bounceInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
-            <img src="/home/images/b-3.png" class="ani img b-3" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
-            <img src="/home/images/b-s.png" class="ani img b-s-1" swiper-animate-effect="zoomInDown" swiper-animate-duration="1.2s" swiper-animate-delay="0s">
-            <img src="/home/images/b-s.png" class="ani img b-s-2" swiper-animate-effect="zoomInDown" swiper-animate-duration="1.2s" swiper-animate-delay="0s">
-            <img src="/home/images/b-s.png" class="ani img b-s-3" swiper-animate-effect="zoomInDown" swiper-animate-duration="1.2s" swiper-animate-delay="0.6s">
-            <img src="/home/images/b-s.png" class="ani img b-s-4" swiper-animate-effect="zoomInDown" swiper-animate-duration="1.2s" swiper-animate-delay="0.8s">
-            <img src="/home/images/b-s.png" class="ani img b-s-5" swiper-animate-effect="zoomInDown" swiper-animate-duration="1.2s" swiper-animate-delay="1.5s">
-            <img src="/home/images/b-s.png" class="ani img b-s-6" swiper-animate-effect="zoomInDown" swiper-animate-duration="1.2s" swiper-animate-delay=".5s">
-            <img src="/home/images/b-y-1.png" class="ani img b-y-1 loop" swiper-animate-effect="moveRight" swiper-animate-duration="15s" swiper-animate-delay="4s">
-            <img src="/home/images/b-y-2.png" class="ani img b-y-2 loop" swiper-animate-effect="moveLeft" swiper-animate-duration="15s" swiper-animate-delay="0s">
-            <img src="/home/images/b-y-3.png" class="ani img b-y-3 loop" swiper-animate-effect="moveRight" swiper-animate-duration="15s" swiper-animate-delay="0s">
-            <div class="targetBtn clearfix ani" swiper-animate-effect="zoomInUp" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
-                <a class="a1" href="" target="_blank">了解更多</a>
-                <a class="a2" href="" style="" rel="media-gallery"><i></i>观看视频介绍</a>
-            </div>
-        </div>    
-    </div>
-</div>
+
 <div class="pagination"></div>
 </div>
 <div class="content">
@@ -122,7 +86,7 @@
                                         <i><img src="/home/picture/see.png"
                                                 alt=""/>7021077</i>
                                         &nbsp;&nbsp;&nbsp;
-                                        <i class="fireTime"><img src="/home/picture/time.png" alt=""/>26'7”</i>
+                                        <i class="fireTime" style="float:left;"><img src="/home/picture/time.png" alt=""/>26'7”</i>
                                     </div>
                                     <div class="yellow_blue">
                                         
