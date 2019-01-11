@@ -8,7 +8,7 @@
     <meta name="keywords" content="瑜伽课程,瑜伽视频,瑜伽教练培训,瑜伽减肥,每日瑜伽">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="/home/css/yoga_new.css">
+    <link rel="stylesheet" type="text/css" href="/home/css/yoga.css">
     <link href="/home/css/poposlides.css" rel="stylesheet" >
     <link rel="stylesheet" href="/home/css/idangerous.swiper2.7.6.css">
     <link rel="stylesheet" href="/home/css/animate.min.css">
