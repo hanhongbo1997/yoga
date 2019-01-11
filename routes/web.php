@@ -71,7 +71,8 @@ Route::get('admin/lessonsort/create/{id}','admin\LessonsortController@create');
 
 
 
-
+//后台主页
+Route::resource('admin/index','admin\IndexController');
 
 //用户控制器
 Route::resource('admin/users','admin\UsersController');
@@ -83,10 +84,29 @@ Route::resource('admin/slideshow','admin\SlideshowController');
 // Route::resource('admin/login','admin\LoginController');
 Route::get('admin/login','admin\LoginController@index'); 
 Route::post('admin/login/dologin','admin\LoginController@dologin'); 
+Route::get('admin/logout','admin\LoginController@logout'); 
 
 
 //前台注册
 Route::resource('home/register','home\RegisterController');
+
+//前台报名体验
+Route::resource('home/enroll','home\EnrollController');
+
+//后台报名者显示
+Route::resource('admin/enroll','admin\EnrollController');
+
+//前台个人中心
+Route::resource('home/personal','home\Personalcontroller');
+
+//前台页尾关于我们显示
+Route::get('home/aboutus','home\PagetailController@index');
+
+//前台页尾隐私条款
+Route::get('home/privacy','home\PagetailController@index1');
+
+//前台页尾社群规范
+Route::get('home/community','home\PagetailController@index2');
 
 
 

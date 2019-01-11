@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="/home/css/yoga_new.css">
-
+    <link rel="stylesheet" type="text/css" href="/home/css/yoga.css">
     <script type="text/javascript" src="/home/js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="/home/js/common.js"></script>
     <style>
@@ -191,21 +191,21 @@ var _hmt = _hmt || [];
         <div class="fl linkOut">
             <ul class="oh">
                 <li class="title fl">内容</li>
-                <li class="fl"><a href="http://wakeyoga.com/2lessons/a1z2/">课程</a></li>
+                <li class="fl"><a href="home/lesson">课程</a></li>
                 <li class="fl"><a href="http://wakeyoga.com/2lessons/a6z2/">体式库</a></li>
                 <li class="fl"><a href="http://wakeyoga.com/2community/z3/">社区</a></li>
             </ul>
             <ul class="oh">
                 <li class="title fl">服务</li>
-                <li class="fl"><a href="http://wakeyoga.com/2club.html">瑜伽馆</a></li>
-                <li class="fl"><a href="http://wakeyoga.com/2enterprise.html">企业服务</a></li>
-                <li class="fl"><a href="http://wakeyoga.com/2aboutus.html">关于我们</a></li>
+                <li class="fl"><a href="/club">瑜伽馆</a></li>
+                <li class="fl"><a href="/home/enroll/create">企业服务</a></li>
+                <li class="fl"><a href="/home/aboutus">关于我们</a></li>
                 <li class="fl"><a href="https://mall.jd.com/index-646364.html">Wake商城</a></li>
             </ul>
             <ul class="oh">
                 <li class="title fl">其他</li>
-                <li class="fl"><a href="http://wakeyoga.com/2term.html">隐私说明</a></li>
-                <li class="fl"><a href="http://wakeyoga.com/2rules.html">社群规范</a></li>
+                <li class="fl"><a href="/home/privacy">隐私说明</a></li>
+                <li class="fl"><a href="/home/community">社群规范</a></li>
             </ul>
             <dl class="concerUs">
                 <dt class="fl">

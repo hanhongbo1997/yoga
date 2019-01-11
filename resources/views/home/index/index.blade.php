@@ -2181,7 +2181,7 @@
         </dl>
         <ul class="logoList"></ul>
         <div class="checkMore">
-            <a href="http://wakeyoga.com/2enterprise.html" title="">报名体验 →</a>
+            <a href="/home/enroll/create" title="">报名体验 →</a>
         </div>
     </div>
 </div>
