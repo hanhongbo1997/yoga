@@ -48,7 +48,7 @@ a{
 	color: #313538;
 }
 a:hover,a:active,a:focus{
-	color: #71bd9c;
+	color: #f85f1c;
 	text-decoration: none;
 }
 header{
@@ -78,8 +78,8 @@ header{
 .loginArea a{
 	width: 72px;
 	height: 28px;
-	border:1px solid #71bd9c;
-	color: #71bd9c;
+	border:1px solid #f85f1c;
+	color: #f85f1c;
 	font-size: 18px;
 	border-radius: 20px;
 	text-align: center;
@@ -88,8 +88,8 @@ header{
 	margin-right: 38px;
 }
 .loginArea a:hover{
-	background:#71bd9c;
-	border:1px solid #71bd9c;
+	background:#f85f1c;
+	border:1px solid #f85f1c;
 	color: white;
 }
 .navList{
@@ -106,10 +106,10 @@ header{
 	color: #313538;
 }
 .navList li a:hover{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .navList li a.cur{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 footer{
 	background: #313538;
@@ -200,7 +200,7 @@ footer{
 	background: #f0f0f0;
 }
 .courseNav li.cur{
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 }
 .courseList{
@@ -215,7 +215,7 @@ footer{
 }
 .courseTitle{
 	font-size: 24px;
-	color: #71bd9c;
+	color: #f85f1c;
 	margin-top: 36px;
 }
 .courseGood{
@@ -273,7 +273,7 @@ footer{
 	background: #a4d1be;
 }
 .courseList dl dd.jibieList li i.cur3{
-	background: #71bd9c;
+	background: #f85f1c;
 }
 .courseList dl dd.jibieList li:hover{
 	background: #f0f0f0;
@@ -298,7 +298,7 @@ footer{
 	text-align: center;
 }
 .pageList ul li.cur{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .menu{
 	display: none;
@@ -312,7 +312,7 @@ footer{
 	overflow:hidden;
 	text-overflow:ellipsis; 
 	white-space: nowrap;
-	color: #71bd9c;
+	color: #f85f1c;
 	font-size: 14px;
 	line-height: 42px;
 	margin-right: 10px;
@@ -320,7 +320,7 @@ footer{
 .user img{
 	width: 38px;
 	height: 38px;
-	border:2px solid #71bd9c;
+	border:2px solid #f85f1c;
 	border-radius: 20px;
 }
 .loginCode{
@@ -335,7 +335,7 @@ footer{
 	margin-top: -322.5px;
 	display: none;
 	z-index: 1000;
-	border: 1px solid #71bd9c;
+	border: 1px solid #f85f1c;
 }
 .loginCode dl{
 	text-align: center;
@@ -353,7 +353,7 @@ footer{
 	line-height: 24px;
 }
 .loginCode dl dd a{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .baseVideo dt,.baseVideo dt img{
 	width: 316px;
@@ -421,10 +421,10 @@ footer{
   cursor: pointer;
 }
 .swiper-wrapper div.cur a span{
-  color: #71bd9c;
+  color: #f85f1c;
 }
 .swiper-wrapper div.cur img{
-  border:1px solid #71bd9c;
+  border:1px solid #f85f1c;
 }
 .append-buttons {
     text-align: center;
@@ -519,7 +519,7 @@ footer{
 	margin: 0 auto;
 	width: 160px;
 	height: 50px;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	text-align: center;
 	line-height: 50px;
@@ -531,7 +531,7 @@ footer{
 	width: 35px;
 	height: 35px;
 	border-radius: 17.5px;
-	border:1px solid #71bd9c;
+	border:1px solid #f85f1c;
 }
 .courseList dl dd.jibieList li .teachIntro dt img,.teachIntro dt img{
 	width: 35px;
@@ -595,7 +595,7 @@ footer{
 }
 .audioTitle{
 	font-size: 28px;
-	color: #71bd9c;
+	color: #f85f1c;
 	margin-top: 20px;
 	margin-bottom: 5px;
 }
@@ -652,11 +652,11 @@ footer{
 }
 .thinkRight ul li.cur{
 	background: #f6f6f6;
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .thinkRight ul li:hover{
 	background: #f6f6f6;
-	color: #71bd9c;
+	color: #f85f1c;
 }
 /*--------------------------------------------*/
 #wrapper {
@@ -665,10 +665,10 @@ footer{
   margin-top: 20px;
 }
 #wrapper ul div.cur span{
-  color: #71bd9c;
+  color: #f85f1c;
 }
 #wrapper ul div.cur img{
-  border:1px solid #71bd9c;
+  border:1px solid #f85f1c;
 }
 #wrapper h1 {
   font-size: 12px;
@@ -791,7 +791,7 @@ footer{
   top: 0;
 }
 .audioplayer-bar-loaded {
-    background-color: #71bd9c;
+    background-color: #f85f1c;
     z-index: 1;
 }
 .audioplayer-bar-played{
@@ -887,7 +887,7 @@ footer{
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #71bd9c;
+  background: #f85f1c;
 }
 .audioplayer-novolume .audioplayer-volume{
   display: none;
@@ -927,9 +927,9 @@ footer{
 	bottom: 112px;
 }
 .banner a:hover{
-	background:#71bd9c;
+	background:#f85f1c;
 	color:white;
-	border:1px solid #71bd9c;
+	border:1px solid #f85f1c;
 }
 
 .pracCourse{
@@ -970,7 +970,7 @@ footer{
 	height: 98px;
 	border-radius: 69px;
 	background: #fcfcfc;
-	color: #71bd9c;
+	color: #f85f1c;
 	font-size: 24px;
 	text-align: center;
 	padding-top: 40px;
@@ -1045,7 +1045,7 @@ footer{
 	font-size: 18px;
 	text-align: center;
 	line-height: 58px;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	margin: 136px auto;
 }
@@ -1192,9 +1192,9 @@ footer{
 	font-size: 24px;
 }
 .clubNav a.cur{
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
-	border:1px solid #71bd9c;
+	border:1px solid #f85f1c;
 }
 .lookClub{
 	text-align: right;
@@ -1269,7 +1269,7 @@ footer{
 	text-align: center;
 	font-size: 36px;
 	display: inline-block;
-	border-bottom: 2px solid #71bd9c;
+	border-bottom: 2px solid #f85f1c;
 	margin: 0 auto;
 	margin-bottom: 40px;
 }
@@ -1402,7 +1402,7 @@ footer{
 	color: #bbbbbb;
 }
 .meassage_out ul li dl dd.message_time a{
-	color: #71bd9c;
+	color: #f85f1c;
 	margin-left: 0.9rem;
 }
 .message_word{
@@ -1468,7 +1468,7 @@ footer{
 	height: 30px;
 	text-align: center;
 	line-height: 30px;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	border-radius: 5px;
 	font-size: 18px;
@@ -1567,7 +1567,7 @@ footer{
 	display: block;
 	text-align: center;
 	line-height: 32px;
-	color: #71bd9c;
+	color: #f85f1c;
 	font-size: 14px;
 	background: url(../images/num.png) no-repeat;
 }
@@ -1673,7 +1673,7 @@ footer{
 .chooseDZ dl dt{
 	width: 18px;
 	height: 18px;
-	border:1px solid #71bd9c;
+	border:1px solid #f85f1c;
 }
 .chooseDZ dl dd{
 	font-size: 20px;
@@ -1688,7 +1688,7 @@ footer{
 	height: 64px;
 	line-height: 64px;
 	text-align: center;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	font-size: 14px;
 }
@@ -1779,10 +1779,10 @@ footer{
 }
 .pracNav2 li.cur{
 	background: none!important;
-	border:1px dashed #71bd9c;
+	border:1px dashed #f85f1c;
 }
 .pracNav2 li.cur div{
-	background: #71bd9c!important;
+	background: #f85f1c!important;
 	color: white;
 }
 .courseAp{
@@ -1861,7 +1861,7 @@ footer{
 	height: 60px;
 	text-align: center;
 	line-height: 60px;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	font-size: 18px;
 	border-radius: 10px;
@@ -2062,7 +2062,7 @@ footer{
 }
 .page .pageItemActive {
     margin: 5px;
-    background-color: #71bd9c;
+    background-color: #f85f1c;
     color: white;
 }
 .page .pageItem{
@@ -2071,7 +2071,7 @@ footer{
     font-size:16px;
 }
 .page .pageItem:hover{
-    background-color: #71bd9c;
+    background-color: #f85f1c;
     color:white;
 }
 .page .pageItemDisable{
@@ -2142,7 +2142,7 @@ footer{
 	height: 50px;
 	line-height: 50px;
 	padding: 0 20px 0 70px;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	left: -60px;
 	top: 40px;
@@ -2232,7 +2232,7 @@ footer{
 	background: #fdfdfd;
 }
 .wake_advantage table tr td.advantage_td1{
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	font-size: 20px;
 }

@@ -16,9 +16,9 @@
   </div>
 <div class="panel-body">
  
-    <form  action="/admin/teacher" method="post" enctype="multipart/form-data" class="form-horizontal group-border hover-stripped"  role="form">
+    <form  action="/admin/teacher/{{ $data->tid}}" method="post" enctype="multipart/form-data" class="form-horizontal group-border hover-stripped"  role="form">
     {{ csrf_field() }}
-    
+    {{ method_field('PUT') }}
       <div class="form-group">
         <label class="col-lg-2 col-md-2 col-sm-12 control-label">名师名字</label>
         <div class="col-lg-10 col-md-10">
@@ -47,9 +47,10 @@
           <div id="sex">
    		@if ($data->sex == 'w')
           <label><input name="sex" type="radio" value="w" checked="">女 </label> 
+          <label><input name="sex" type="radio" value="m" >男 </label> 
          
          @else 
-          
+           <label><input name="sex" type="radio" value="w"">女 </label> 
           <label><input name="sex" type="radio" value="m" checked="">男</label> 
         
        @endif
@@ -64,9 +65,9 @@
     <div class="form-group">
         <label class="col-lg-2 col-md-2 col-sm-12 control-label">类型</label>
         <div class="col-lg-10 col-md-10">
-         <label> <input type="checkbox" class="form-control" value="1" name="status">瑜伽导师 </label>&nbsp; &nbsp; 
-          <label> <input type="checkbox" class="form-control" value="2" name="status">行业顾问</label>&nbsp; &nbsp;
-          <label> <input type="checkbox" class="form-control" value="3" name="status">官方认证</label>
+         <label> <input type="checkbox" class="form-control" value="1" name="status[]">瑜伽导师 </label>&nbsp; &nbsp; 
+          <label> <input type="checkbox" class="form-control" value="2" name="status[]">行业顾问</label>&nbsp; &nbsp;
+          <label> <input type="checkbox" class="form-control" value="3" name="status[]">官方认证</label>
 
           </div>   
       </div>

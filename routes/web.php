@@ -106,8 +106,7 @@ Route::get('admin/login','admin\LoginController@index');
 Route::post('admin/login/dologin','admin\LoginController@dologin'); 
 
 
-//前台注册
-Route::resource('home/register','home\RegisterController');
+
 
 
 
@@ -175,12 +174,42 @@ Route::get('admin/clubsort/create/{id}','admin\ClubsortController@create');
 
 //添加老师列表
 Route::resource('admin/teacher','admin\TeacherController');
+Route::get('admin/teacher/details/{id}','admin\TeacherController@details');
 
 
 //前台 首页 home
 Route::resource('/','home\IndexController');
 //前台 瑜伽馆
-Route::resource('club','home\ClubController');
+Route::resource('home/club','home\ClubController');
 
 //前台 名师
-Route::get('teacher/index','home\TeacherController@index');
+Route::get('home/teacher/index','home\TeacherController@index');
+Route::get('home/teacher/show/{id}','home\TeacherController@show');
+
+//前台 登录
+//软件许可及服务协议
+Route::get('home/logon/agreement','home\LogonController@agreement');
+//注册 手机号认证
+Route::get('home/logon/sendMessage','home\LogonController@sendMessage');
+//注册 ajx 用户是否存在验证
+Route::get('home/logon/verification','home\LogonController@verification');
+//忘记密码home/logon/passwd
+// 忘记密码
+Route::get('home/logon/passwd','home\LogonController@passwd');
+
+//cryptography 忘记密码AJX
+Route::get('home/logon/cryptography','home\LogonController@cryptography');
+Route::post('home/logon/pass','home\LogonController@pass');
+
+Route::resource('home/logon','home\LogonController');
+
+
+
+//前台注册
+Route::resource('home/register','home\RegisterController');
+
+//前台 首页 home
+Route::get('home/user/add',function(){
+ dump('后台商品');
+})->middleware('logon');
+

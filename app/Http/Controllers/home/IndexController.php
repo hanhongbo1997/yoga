@@ -25,6 +25,7 @@ class IndexController extends Controller
      */
     public function create()
     {
+        //加载模板
         //
     }
 

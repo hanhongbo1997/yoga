@@ -85,7 +85,7 @@
                                         <i><img src="/home/picture/see.png"
                                                 alt=""/>7021077</i>
                                         &nbsp;&nbsp;&nbsp;
-                                        <i class="fireTime"><img src="/home/picture/time.png" alt=""/>26'7”</i>
+                                        <i class="fireTime" style="float:left;"><img src="/home/picture/time.png" alt=""/>26'7”</i>
                                     </div>
                                     <div class="yellow_blue">
                                         

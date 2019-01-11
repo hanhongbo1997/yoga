@@ -26,20 +26,29 @@ class ClubController extends Controller
             $where = $where->where('cname','like','%'.$request->search_nname.'%');
         }
 
-        $data = $where->paginate(10);
+        $data = $where->paginate(16);
         $data->cname = $request->search_nname;
+        
+        // $aaa = Club::get();
+        // $bbb = Clubsort::get();
+        // dump($aaa);
+
+        // dump($bbb);
+        // foreach($data as $k=>$v){
+        //         dump($v->clubsortinfo);
+        // }
         // $user = Club::find(1);
         // dump($user->clubsortinfo->crname);
-        // dump($data);
-      
-        // foreach($data as $k=>$v){ 
-            
-        //     dump($v->clubsortinfo);
-       
-        // }exit;
-        $user = Lesson::all();
-        // dump($user);exit;
-        
+        //     dump($data);
+          
+        //     foreach($data as $k=>$v){ 
+                
+        //         dump($v->pid);
+           
+        //     }
+            $user = Lesson::all();
+        // // dump($user);exit;
+        // die;
         //加载视图
         return view('home.club.index',['title'=>'会馆','user'=>$user],compact('data'));
     }
@@ -79,7 +88,7 @@ class ClubController extends Controller
         $arr = explode('|@x@|',$data->clubdetails->cimges);
         $data->countimg = count($arr);
         
-        
+        // dump($data);exit;
         
         
         //加载模板
