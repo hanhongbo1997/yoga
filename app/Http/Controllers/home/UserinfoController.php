@@ -4,6 +4,8 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User_info;
+use App\Models\Logon;
 
 class UserinfoController extends Controller
 {
@@ -37,6 +39,7 @@ class UserinfoController extends Controller
     public function store(Request $request)
     {
         //
+       
     }
 
     /**
@@ -47,8 +50,13 @@ class UserinfoController extends Controller
      */
     public function show($id)
     {
-        //
-        return view('home.userinfo.index');
+
+        
+        $data = Logon::find(session('admin_login')->uid);
+        
+      
+       //加载视图
+        return view('home.userinfo.index',['title'=>'个人信息','data'=>$data]); 
     }
 
     /**
@@ -71,7 +79,31 @@ class UserinfoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //接收数据
+        $user = $request->all();
+       
+        $data = Logon::find($id);
+        $data->email = $request->input('email');
+        $data->birthday = $user['birthday'];
+        $data->email = $user['email'];
+        $data->save();
+        $info = User_info::find($id);
+        $info->uid = $id;
+        $info->sex = $user['sex'];
+        $info->add = $user['add'];
+        $info->sdf = $user['sdf'];
+        if($info->save()){
+                // dump(session('mobile_code') == $request->smsCode);
+                return redirect('/home/userinfo/$id')->with('success', '添加成功!');
+               
+                }else{
+                    
+                     return back()->with('error', '添加失败!');
+              
+        }
+        
+
+         
     }
 
     /**
@@ -115,8 +147,26 @@ class UserinfoController extends Controller
         return view('home.order.cart');
     }
 
-    public function safe()
+    /**
+     * 账号设置
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function safe(Request $request)
     {
         return view('home.userinfo.safe');
+    }
+    /**
+     * 密码设置提交
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function codon_pass(Request $request,$id)
+    {
+        //接收数据
+        $data = $request->all();
+        dump($data);
     }
 }

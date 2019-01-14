@@ -102,21 +102,62 @@ var _hmt = _hmt || [];
             <span style="font-size: 10px;margin: 0px 0px 0px 45px;padding: 0px;color: white;">哎呀TM忘抠图了</span></a></h1>
         </div>
     <div class="fr loginArea oh">
-        <a href="/home/logon" class="fl loginBtn" style="display: block;" onclick="headLoginBtn()">登录</a>
+        <a href="/home/logon" class="fl loginBtn"  onclick="headLoginBtn()">登录</a>
         <a href="/home/register" class="fl loginBtn" style="display: block;">注册</a>
-        <a href="javascript:;" class="fl loginBtn2" style="display: none;">开通VIP</a>
+        <a href="" class="fl loginBtn2" style="display: none;">开通VIP</a>
         <!--登录后头像+用户名-->
         <div class="fl user oh" style="display: none;">
-        	<var class="fl vipMark">
-	          <img src="/home/picture/zuanshi.png"/>
+        	<var class="fl vipMark" >
+	          <img src="/home/picture/zuanshi.png"/></a>
 	          <i>VIP</i>
 	        </var>
-            <img src="" class="fl" id="userImage"/>
+            <a href="/home/userinfo/{{ session('admin_login')['uid'] }} " id="VIP" style="border: none;">
+            
+            <img src="{{ session('admin_login')['uimg'] == 'null' ? session('admin_login')['uimg'] : '\home\images\1-14.jpg' }}" class="fl" id="userImage" alt="\home\images\1-14.jpg">
+            </a>
             <span class="fl" id="user"></span>
-            <a href="javascript:;" class="fl loginOutBtn" style="margin-left: 16px;" onclick="loginOut()">退出</a>
+            <a href="/home/logon" class="fl loginOutBtn" style="margin-left: 16px;list-style:none;" onclick="loginOuts()"  id="loginOut">退出</a>
+            
         </div>
         <!--登录后头像+用户名END-->
     </div>
+
+    <script>
+    //检测用户是否登录
+        $(function(){
+  
+            //发送ajx判断是否有
+           $.get('/home/logon/Register',{},function(msg){
+                                    
+             if(msg == 'success'){
+                
+                $('.loginBtn').css('display','none');
+                $('.loginBtn2').css('display','block');
+                $('.user').css('display','block');
+             }else if(msg == 'error'){
+                 $('#VIP').removeAttr ("href");
+                 $('#userImage').removeAttr ("src");
+                 $('.loginBtn').css('display','block');
+                 $('.user').css('display','none');
+                 $('.loginBtn2').css('display','none');
+             }
+                                    
+             },'html'); 
+             //退出  
+            function loginOuts()
+            {
+                $('#loginOut').click(function(){
+                   session.removeAttr("admin_login"); 
+                });
+               
+            } 
+
+        });
+        //退出
+        
+        
+    </script>
+
     <input type="hidden" id="showFlag" name="showFlag" value="1"/>
     <ul class="fr navList2">
 
@@ -284,10 +325,10 @@ var _hmt = _hmt || [];
             </ul>
             <ul class="oh">
                 <li class="title fl">服务</li>
-                <li class="fl"><a href="/club">瑜伽馆</a></li>
+                <li class="fl"><a href="/home/club">瑜伽馆</a></li>
                 <li class="fl"><a href="/home/enroll/create">企业服务</a></li>
                 <li class="fl"><a href="/home/aboutus">关于我们</a></li>
-                <li class="fl"><a href="https://mall.jd.com/index-646364.html">Wake商城</a></li>
+                <li class="fl"><a href="/home/video">瑜伽视频</a></li>
             </ul>
             <ul class="oh">
                 <li class="title fl">其他</li>
@@ -315,9 +356,7 @@ var _hmt = _hmt || [];
             </div>
         </div>
 
-        <br>
-        <br>
-        <br>
+        
         <div class="fl copyOut" style="margin-top: 40px; margin-bottom:30px">          
 
             <dl class="workDay">

@@ -53,7 +53,7 @@ class EnrollController extends Controller
         $data = $request->except(['_token','_method']);
         $res = Enroll::insert($data);
         if($res){
-            return redirect('/')->with('success', '报名成功');
+            return redirect('/home/enroll/create')->with('success', '报名成功');
         }else{
              return back()->with('error', '报名失败');
         }

@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-
+//个人中心 密码设置
+Route::post('home/userinfo/codon_pass/{id}','home\UserinfoController@codon_pass');
 
 //视频资源控制器
 Route::resource('admin/videos','admin\VideosController');
@@ -181,7 +181,8 @@ Route::get('home/community','home\PagetailController@index2');
 
 
 
-
+//js判断用户是否登录
+Route::get('home/logon/Register','home\LogonController@Register');
 //admin 后台
 //会馆列表
 Route::resource('admin/club','admin\ClubController');
@@ -208,6 +209,7 @@ Route::resource('home/club','home\ClubController');
 Route::get('home/teacher/index','home\TeacherController@index');
 Route::get('home/teacher/show/{id}','home\TeacherController@show');
 
+
 //前台 登录
 //软件许可及服务协议
 Route::get('home/logon/agreement','home\LogonController@agreement');
@@ -223,12 +225,16 @@ Route::get('home/logon/passwd','home\LogonController@passwd');
 Route::get('home/logon/cryptography','home\LogonController@cryptography');
 Route::post('home/logon/pass','home\LogonController@pass');
 
+
 Route::resource('home/logon','home\LogonController');
 
 
 
 //前台注册
 Route::resource('home/register','home\RegisterController');
+
+//后台 个人中心 home/userinfo/update/
+// Route::post('home/userinfo/update/{id}','home\UserinfoController@update');
 
 //前台 首页 home
 Route::get('home/user/add',function(){

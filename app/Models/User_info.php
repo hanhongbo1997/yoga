@@ -10,4 +10,6 @@ class User_info extends Model
     public $table = 'user_info';
     //设置模型操作主件
     protected $primaryKey = 'uid';
+
+    
 }

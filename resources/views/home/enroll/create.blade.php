@@ -1,6 +1,15 @@
 @extends('home.layout.layout')
 
 @section('content')
+                   @if (session('success'))
+                    <script>alert('{{ session("success") }}');</script>";
+                     
+                    @endif
+                    @if (session('error'))
+
+                    <script>alert('{{ session("error") }}');</script>";
+
+                    @endif
 <link rel="stylesheet" type="text/css" href="/home/css/yoga_new.css">
 <div class="bussManner">
 	<div class="company_topic">Wake企业瑜伽培训是国内为企业提供瑜伽服务的专业机构。服务城市包括：北京、上海、广州、深圳、杭州、南京、武汉等。<br/>
@@ -72,20 +81,17 @@
     {{ csrf_field() }}
         <ul class="attendUl">
             <li>
-                <input type="text" id="conpanyName" name="cname" value="" placeholder="公司/单位名称">
+                <input type="text" id="conpanyName" name="cname" value="" placeholder="公司/单位名称" autocomplete="off">
             </li>
             <li>
-                <input type="text" id="contactName" name="name" value=""
-                       placeholder="姓名">
+                <input type="text" id="contactName" name="name" value="" autocomplete="off" placeholder="姓名">
             </li>
 
             <li>
-                <input type="text" id="contactWay" name="phone" value=""
-                       placeholder="联系方式">
+                <input type="text" id="contactWay" name="phone" value="" placeholder="联系方式" autocomplete="off">
             </li>
             <li>
-                <input type="text" id="companyAddress" name="caddress" value=""
-                       placeholder="公司/单位地址">
+                <input type="text" id="companyAddress" name="caddress" value="" placeholder="公司/单位地址" autocomplete="off">
             </li>
         </ul>
 

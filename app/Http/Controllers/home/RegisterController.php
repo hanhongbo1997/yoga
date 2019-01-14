@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Logon;
 use Hash;
+use App\Models\User_info;
 
 class RegisterController extends Controller
 {
@@ -42,13 +43,16 @@ class RegisterController extends Controller
         //接收数据
         $user = $request->all();
         $data = new Logon;
+        $user = new User_info;
         $data->phone = $request->input('phone');
         $data->pass = Hash::make($request->input('pass'));
+        $data->save();
+        $user->uid = $data->uid;
       
 
          if(session('mobile_code') == $request->smsCode){
 
-           if($data->save()){
+           if($user->save()){
                 // dump(session('mobile_code') == $request->smsCode);
                 return redirect('/home/logon')->with('success', '添加成功!');
                
