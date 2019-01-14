@@ -77,22 +77,21 @@
 					</div>
 					<div class="aui-padded-l-15 aui-font-size-14 aui-margin-b-15 lestime" id="lesTime">
 						<label>属&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性：</label>
-													<span class="aui-margin-r-15 aui-border active" data-price="" data-value="228.80">90天</span>
-													<span class="aui-margin-r-15 aui-border" data-price="" data-value="518.80">永久</span>
-											</div>
-                    <form action="/pc/member/orderlist.html" id="now_buy" method="post">
-                        <input type="hidden" name="scvp_item" value="90天">
-                        <input type="hidden" name="goods_id" value="10728">
-                        <input type="hidden" name="is_tuan" value="">
-						<input type="hidden" name="tuan_id" value="">
-					</form>
-					<div class="lesline5 aui-padded-10">
-												<a href="javascript:;" class="aui-btn aui-btn-success aui-btn-block" data-url="/pc/goods/addcarts.html" id="addCart" style="width:auto;">
+						<span class="aui-margin-r-15 aui-border active" data-price="" data-value="228.80">90天</span>
+						<span class="aui-margin-r-15 aui-border" data-price="" data-value="518.80">永久</span>
+					</div>
+                    <form action="/home/cart" id="now_buy" method="post">
+                    	{{ csrf_field() }}
+                        <input type="hidden" name="cid" value="{{ $data->id }}">
+                        <input type="hidden" name="price" value="999">
+                        <input type="hidden" name="count" value="1">
+						<div class="lesline5 aui-padded-10">
+							<a type="submit" class="aui-btn aui-btn-success aui-btn-block" onclick="alert('已添加到购物车')" id="addCart" style="width:auto;">
 							<b class="aui-iconfont aui-icon-cart aui-font-size-18"></b>
 						</a>
-													<button class="aui-btn aui-btn-success aui-btn-block" type="submit" id="buyNow">立即购买</button>
-
-													<span class="aui-font-size-12">5681人想学习
+						<button class="aui-btn aui-btn-success aui-btn-block" type="submit" id="buyNow">立即购买</button>
+					</form>
+						<span class="aui-font-size-12">5681人想学习
 							<label style="margin:0 0.5rem;">|</label>20集*25分钟						</span>
 					</div>
 				</div>

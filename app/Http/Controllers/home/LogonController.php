@@ -52,13 +52,16 @@ class LogonController extends Controller
          // dump($data->pass);
           //密码
           //
+        session(['admin_login'=>$admin_login]);
          if (!Hash::check($pass,$admin_login['pass'] )) 
         {
             return back()->with('error','密码错误');
         }else{
+            dd(session('admin_login'));
             return redirect('/')->with('success', '登录成功!');
         }   
-        session(['admin_login'=>$admin_login]);
+        
+
 
     }
 

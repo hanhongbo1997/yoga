@@ -29,6 +29,7 @@
     <script src="/home/js/require_1.js" type="text/javascript"></script>
     <link rel="stylesheet" href="/home/css/dist/plyr.css">
     <script src="/home/js/dist/plyr.js"></script>
+    <script type="text/javascript" src="/home/js/jquery.comment.js" ></script>
     <script>        
       var mySwiper = new Swiper ('.swiper-container', {
         pagination: '.pagination',

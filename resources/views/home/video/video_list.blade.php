@@ -91,10 +91,11 @@
         </div>
         <ul class="courseList" id="initData" style="display: block">
             @foreach($data as $k=>$v)
-                
                     <li class="fl">
                         <dl>
+                            <a href="video/getComment/{{ $v->id }}"></a>
                             <a href="video/{{ $v->id }}/edit">
+                                
                                 <dt>
                                     <img src="/uploads/{{ $v->img }}" alt="{{ $v->vname }}"/>
                                 </dt>
@@ -104,6 +105,7 @@
                                         
                                     </div>
                                 </dd>
+                            </a>
                             </a>
                         </dl>
                     </li>

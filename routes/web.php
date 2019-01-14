@@ -62,6 +62,8 @@ Route::resource('home/order','home\OrderController');
 //视频评论控制器
 Route::get('home/comment/getcomment','home\CommentController@getcomment');
 Route::resource('home/comment','home\CommentController');
+//购物车控制器
+Route::resource('home/cart','home\CartController');
 
 
 

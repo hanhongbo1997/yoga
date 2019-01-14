@@ -36,12 +36,11 @@
 						&nbsp;&nbsp;/&nbsp;&nbsp;
 												<a href="/pc/activity/double_egg/channelId/27.html" title="训练计划" class=''>训练计划</a>
 						&nbsp;&nbsp;/&nbsp;&nbsp;
-												<!-- <a href="/vip/6935.html" title="vip服务" class=''>vip服务</a> -->
 						
 						<a href="/vip/6935.html" title="vip服务" class=''>
 							<img src="/home/picture/vip_card.gif" alt="" style="width:60px;display:inline-block;position:relative;top:3px;">
 						</a>
-											<input type="hidden" name="channelId" value="">
+					<input type="hidden" name="channelId" value="">
 				</p>
 				<ul class="classList" id="classList">
 					@foreach($data as $k=>$v)
@@ -49,11 +48,11 @@
 						<div class="item">
 							<span class="angle">限时立减<em>￥</em>69.2</span>
 			        		<a href="lesson/{{ $v->id }}/edit" title="[教练进阶] 建立身体正确姿态丨私教应用" target="_blank">
-								<img src="/uploads/{{ $v->img }}" height="175" onload="$app.loadImg(this)" />
+								<img src="/uploads/{{ $v->img }}" style="height: 175px; " onload="$app.loadImg(this)" />
 							</a>
 							<div class="text">
-								<h2 class="aui-ellipsis-2">
-									<a href="lesson/{{ $v->id }}/edit" title="[教练进阶] 建立身体正确姿态丨私教应用" target="_blank">{{ $v->lname }}</a>
+								<h2 class="aui-ellipsis-2" style="width: 220px;">
+									<a href="lesson/{{ $v->id }}/edit" title="[教练进阶] 建立身体正确姿态丨私教应用" target="_blank" style="font-size: 16px;white-space:nowrap; text-overflow: ellipsis;">{{ $v->lname }}</a>
 								</h2>
 								<div>
 									<span class="aui-iconfont aui-icon-date">{{ $v->status }}</span>
@@ -66,7 +65,7 @@
 							</div>
 						</div>
 					</li>
-					@endforeach						
+					@endforeach
 				</ul>
 				<div class="aui-btn aui-btn-success aui-btn-block aui-btn-sm" id="readMore" style="width:12rem;cursor:pointer;margin:0 auto;display:table;">查看更多</div>
 			</div>
