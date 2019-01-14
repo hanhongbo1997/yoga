@@ -14,8 +14,9 @@ class IndexController extends Controller
      */
     public function index()
     {
+        $data = session('admin_login');
         //加载模板
-        return view('home.index.index',['title'=>'首页']);
+        return view('home.index.index',['title'=>'首页','data'=>$data]);
     }
 
     /**

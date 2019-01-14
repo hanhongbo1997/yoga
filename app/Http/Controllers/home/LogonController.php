@@ -51,14 +51,16 @@ class LogonController extends Controller
          // dump(md5($pass));
          // dump($data->pass);
           //密码
-          //
+          session(['admin_login'=>$admin_login]);
+           // dump($data);
          if (!Hash::check($pass,$admin_login['pass'] )) 
         {
             return back()->with('error','密码错误');
         }else{
             return redirect('/')->with('success', '登录成功!');
         }   
-        session(['admin_login'=>$admin_login]);
+       
+        // dump(session('admin_login'));
 
     }
 
@@ -221,6 +223,27 @@ class LogonController extends Controller
              // echo "<script>alert('注册失败，验证码不正确');</script>";
               return redirect('/home/register')->with('error', '验证码不正确');
          }
+    }
+    /**
+     * 判断用户是否登录
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function Register()
+    {
+        //判断用户session是否有值
+        // dump(session('admin_login'));
+        if (empty(session('admin_login'))) { 
+            echo 'error';
+        }else{
+            echo 'success';
+        }
+    }
+    //loginOut
+    public function loginOut(Request $request)
+    {
+        $request->session()->forget('key');
     }
      
 
