@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 
 class VideocommentController extends Controller
 {
@@ -15,6 +16,9 @@ class VideocommentController extends Controller
     public function index()
     {
         //
+        $data = Comment::paginate(5);
+        return view('admin.video.comment',['data'=>$data]);
+
     }
 
     /**
@@ -81,35 +85,13 @@ class VideocommentController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function getCommentList($video_id, $page, $limit)
-    {
-        echo '11111';
-
-        // $count = DB::name('video_comment')->where('video_id',$video_id)->count('id');
-        // if (!$count) {
-        //     $data = [
-        //         'count' => 0,
-        //         'list' => []
-        //     ];
-        //     return $data;
-        // }
-
-        // $list = DB::name('video_comment')->alias('a')->where('video_id', $video_id)
-        //     ->join('user u1', 'a.uid = u1.id')
-        //     ->join('user u2', 'a.reply_uid = u2.id')
-        //     ->field('a.id, a.uid, a.reply_uid, a.comment, u1.username, u2.username as reply_username');
-        // if ($page && $limit) {
-        //     $list = $list->page($page, $limit);
-        // }
-        // $list = $list->select(); //需加上按时间排序
-        // $data = [
-        //     'count' => $count,
-        //     'list' => $list
-        // ];
-        // return $data;
-        // dd($data);
+        $res = Comment::destroy('id',$id);
+        if($res){
+             return back()->with('success', '删除成功');
+         }else{
+             return back()->with('error', '删除失败');
+         
+        }
     }
 
 }

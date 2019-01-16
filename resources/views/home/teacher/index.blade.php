@@ -197,75 +197,22 @@
     
     <ul>
         <h3>课堂推荐</h3>
+        @foreach ($lesson as $k=>$v)
                     <li>
-                <a href="/skip/7057.html" target="_blank">
-                    <img src="/home_club/picture/nopic_640_400.png" data-src="/attached/image/20171225/a102a9ce83216b530ac650a10fd31d2e.jpg" onload="loadPic(this)">
-                    <!-- <span class="cornerL shuang-egg"></span> -->
-                    <!-- <span class="cornerR zhekou"></span> -->
-                    <!-- <span class="cornerL egg-cornerL"></span> -->
-                    <!-- <span class="cornerL newyear2018"></span> -->
-                    <h4>[瑜伽入门] 孕产瑜伽丨女性必备</h4>
+                <a href="/skip/5850.html" target="_blank">
+                    <img src="/uploads/{{ $v->img }}" style="width: 190px;height: 118px;">
+                    <h4>{{ $v->lname }}  </h4>
                 </a>
                 <p class="xui-font-size-12">
                     <span class="xui-pull-l sui-text-warning">
-                        <em>￥</em>89                    </span>
+                        <em>￥</em>222                 </span>
                     <span class="xui-pull-r xui-text-right">
-                        <i class="sui-text-warning">21</i>人已购买
+                        <i class="sui-text-warning">52</i>人已购买
                     </span>
                 </p>
             </li>
-                    <li>
-                <a href="/skip/7058.html" target="_blank">
-                    <img src="/home_club/picture/nopic_640_400.png" data-src="/attached/image/20171225/f7024c161dbd89ed7d0d139722e810fc.jpg" onload="loadPic(this)">
-                    <!-- <span class="cornerL shuang-egg"></span> -->
-                    <!-- <span class="cornerR zhekou"></span> -->
-                    <!-- <span class="cornerL egg-cornerL"></span> -->
-                    <!-- <span class="cornerL newyear2018"></span> -->
-                    <h4>[瑜伽入门] 办公室瑜伽丨亲子瑜伽</h4>
-                </a>
-                <p class="xui-font-size-12">
-                    <span class="xui-pull-l sui-text-warning">
-                        <em>￥</em>89                    </span>
-                    <span class="xui-pull-r xui-text-right">
-                        <i class="sui-text-warning">2</i>人已购买
-                    </span>
-                </p>
-            </li>
-                    <li>
-                <a href="/skip/7059.html" target="_blank">
-                    <img src="/home_club/picture/nopic_640_400.png" data-src="/attached/image/20171225/fe92e8cf817031ff257bb26e4da1b400.jpg" onload="loadPic(this)">
-                    <!-- <span class="cornerL shuang-egg"></span> -->
-                    <!-- <span class="cornerR zhekou"></span> -->
-                    <!-- <span class="cornerL egg-cornerL"></span> -->
-                    <!-- <span class="cornerL newyear2018"></span> -->
-                    <h4>[瑜伽入门] 流瑜伽丨基础入门</h4>
-                </a>
-                <p class="xui-font-size-12">
-                    <span class="xui-pull-l sui-text-warning">
-                        <em>￥</em>89                    </span>
-                    <span class="xui-pull-r xui-text-right">
-                        <i class="sui-text-warning">17</i>人已购买
-                    </span>
-                </p>
-            </li>
-                    <li>
-                <a href="/skip/7060.html" target="_blank">
-                    <img src="/home_club/picture/nopic_640_400.png" data-src="/attached/image/20171225/ea38ad9bbdc140231823c5c6be792165.jpg" onload="loadPic(this)">
-                    <!-- <span class="cornerL shuang-egg"></span> -->
-                    <!-- <span class="cornerR zhekou"></span> -->
-                    <!-- <span class="cornerL egg-cornerL"></span> -->
-                    <!-- <span class="cornerL newyear2018"></span> -->
-                    <h4>[瑜伽入门] 高效塑形丨瘦身课堂</h4>
-                </a>
-                <p class="xui-font-size-12">
-                    <span class="xui-pull-l sui-text-warning">
-                        <em>￥</em>89                    </span>
-                    <span class="xui-pull-r xui-text-right">
-                        <i class="sui-text-warning">39</i>人已购买
-                    </span>
-                </p>
-            </li>
-            </ul>
+        @endforeach   
+    </ul>
 
   
 </div>

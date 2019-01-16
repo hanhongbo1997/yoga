@@ -179,14 +179,10 @@
     </style>
     <ul>
         <h3>课堂推荐</h3>
-        @foreach ($user as $k=>$v)
+        @foreach ($lesson as $k=>$v)
                     <li>
                 <a href="/skip/5850.html" target="_blank">
-                    <img src="{{ $v->img }} " data-src="" onload="loadPic(this)" style="height: 119px; width: 190px;">
-                    <!-- <span class="cornerL shuang-egg"></span> -->
-                    <!-- <span class="cornerR zhekou"></span> -->
-                    <!-- <span class="cornerL egg-cornerL"></span> -->
-                    <!-- <span class="cornerL newyear2018"></span> -->
+                    <img src="/uploads/{{ $v->img }}" style="width: 190px;height: 118px;">
                     <h4>{{ $v->lname }}  </h4>
                 </a>
                 <p class="xui-font-size-12">
@@ -198,7 +194,7 @@
                 </p>
             </li>
         @endforeach   
-            </ul>
+    </ul>
 
     
 </div>

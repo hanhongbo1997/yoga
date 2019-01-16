@@ -5,6 +5,8 @@ namespace App\Http\Controllers\home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Lesson;
+use App\Models\Logon;
+use DB;
 
 class LessonController extends Controller
 {
@@ -58,10 +60,28 @@ class LessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public static function getComment($comment_id = 0)
+    { 
+        $data = DB::table('lesson_comment')->where('comment_id',$comment_id)->get();
+        foreach ($data as $key => $value) {
+            // 获取所有下一级 子分类
+            $temp = self::getComment($value->id);
+            $value->sub = $temp;
+        }
+        return $data;
+    }
+
     public function edit($id)
     {
         $data = Lesson::find($id);
-        return view('home.lesson.lesson_info',['data'=>$data]);
+        $comment = self::getComment(0)->where('lesson_id',$id);
+        if(session('admin_login')){
+            $info = Logon::find(session('admin_login')->uid);
+        }else{
+            $info = null; 
+        }
+        return view('home.lesson.lesson_info',['data'=>$data,'comment'=>$comment,'info'=>$info]);
     }
 
     /**

@@ -61,15 +61,33 @@
     </div>
     <!--评论-->
     <div class="videoWord" style="background: #f9f9f9;">
-        <form action="/home/comment" method="post">
+            @if($info == null)
+                <div class="discuss-cont">
+                <span class="discuss-img">
+                     <img src="/home/picture/user_moren.png">
+                </span>
+                <div class="discuss-cont-inner">
+                    <div class="discuss-cont-inner-box">
+                        <div name="content" id="replyItem" style="background: #fff;height: 80px;">
+                            <a href="/home/logon">
+                           <button style="margin-left: 430px;margin-top: 20px;border: 1px solid #46c1f3;background: skyblue;color: white;"> 请登录后评论 </button></a>
+                        </div>
+                    </div>
+                    <div class="xui-text-right xui-content xui-margin-t-15">
+                        <button type="submit" id="subDiscus" style="color: #fff;background-color: #43cd6e;border: 1px solid #34c360;width: 100px;height: 40px;font-size: 18px;" onmouseover="this.style.background = '#49de79';" onmouseout="this.style.background='#43cd6e';">发表评论</button>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+            @else
+            <form action="/home/comment" method="post">
             {{ csrf_field() }}
-            <input type="hidden" name="user_id" value="1">
+            <input type="hidden" name="user_id" value="{{ $info->uid }}">
             <input type="hidden" name="comment_id" value="0">
             <input type="hidden" name="video_id" value="{{ $data->id }}">
-            <input type="text" value="视频的Id是：{{ $data->id }}">
             <div class="discuss-cont">
                 <span class="discuss-img">
-                     <img src="/home/images/logo.jpg">
+                     <img src="{{ $info->uimg }}">
                 </span>
                 <div class="discuss-cont-inner">
                     <div class="discuss-cont-inner-box">
@@ -81,6 +99,7 @@
                 </div>
             </div>
             <div style="clear: both"></div>
+            @endif
         </form>
         @if($comment->isEmpty())
         <p style="text-align: center;height: 200px;font-size: 20px;line-height: 200px;">还没有评论哦~快来留下你的评价吧</p>
@@ -94,7 +113,7 @@
                                     <img src="/home/images/logo.jpg" style="width: 100%;height: 100%;" /> 
                                 </span> 
                                 <div class="discuss-cont-inner xui-border-b" style="padding-left:42px;margin-left: 15px;"> 
-                                    <h4 class="xui-margin-0" style="display: block;margin-block-start: 1.33em;margin-block-end: 1.33em;margin-inline-start: 0px;margin-inline-end: 0px;font-weight: bold;font-size: 14.04px;line-height: 21.06px;">评论用户名ID是：{{ $v->user_id}}</h4> 
+                                    <h4 class="xui-margin-0" style="display: block;margin-block-start: 1.33em;margin-block-end: 1.33em;margin-inline-start: 0px;margin-inline-end: 0px;font-weight: bold;font-size: 14.04px;line-height: 21.06px;">评论用户名ID是：</h4> 
                                     <div class="xui-content xui-padded-t-5 xui-padded-b-5" style="display: table;width: 100%;height: auto;box-sizing: border-box;font-size: 14px;">
                                         {{ $v->content}} 
                                     </div> 
@@ -121,10 +140,9 @@
                         </div>
                     </div>
                     @endforeach 
-            
             <form action="/home/comment" method="post">
             {{ csrf_field() }}
-                <input type="hidden" name="user_id" value="1">
+                <input type="hidden" name="user_id" value="">
                 <input type="hidden" name="video_id" value="{{ $data->id }}">
                 <input type="hidden" name="comment_id" value="{{ $v->id }}">
                 <div class="" style="width: 900px;margin-left:50px;margin-top:0px;background: #fff;padding: 10px;"> 
@@ -136,7 +154,7 @@
             </div> 
         @endforeach
     @endif
-</div>
+    </div>
     <!--相关推荐-->
     <div class="basicArea">
         
@@ -173,19 +191,9 @@
                                                 </div>
                                             </dd>
                                         </a>
-                                    </dl>
-                                
-                                
-                                
-                            </li>
-                        
-                        
-                    
-                        
+                                    </dl>    
+                            </li>         
                             <li class="fl">
-                                
-                                
-                                
                                     <dl>
                                         <a href="http://www.wakeyoga.com/auth/2comprehensivelesd378.html"
                                            title="">
@@ -194,8 +202,7 @@
                                             </dt>
                                             <dd class="courseName">
                                                 <div class="fireCourse oh">
-                                                    <var class="fl">流动中的冥想流瑜伽</var>
-                                                    
+                                                    <var class="fl">流动中的冥想流瑜伽</var>   
                                                 </div>
                                                 <div class="seeNum">
                                                     <i><img src="/home/picture/see.png"
@@ -205,10 +212,7 @@
                                                                              alt=""/>3节</i>
                                                 </div>
                                                 <div class="yellow_blue">
-                                                    
-                                                    <img
-                                                            src="/home/picture/vip.png" alt=""
-                                                            class="yellowVip">
+                                                    <img src="/home/picture/vip.png" alt="" class="yellowVip">
                                                 </div>
                                             </dd>
                                         </a>
@@ -216,10 +220,6 @@
                                 
                                 
                             </li>
-                        
-                        
-                    
-                        
                             <li class="fl">
                                 
                                 
@@ -240,26 +240,13 @@
                                                     <i class="fireTime"><img src="/home/picture/jie.png"
                                                                              alt=""/>15节</i>
                                                 </div>
-                                                <div class="yellow_blue">
-                                                    
-                                                    
+                                                <div class="yellow_blue">   
                                                 </div>
                                             </dd>
                                         </a>
-                                    </dl>
-                                
-                                
-                                
+                                    </dl>  
                             </li>
-                        
-                        
-                    
-                        
                             <li class="fl">
-                                
-                                
-                                
-                                
                                     <dl>
                                         <a href="http://www.wakeyoga.com/auth/2pland4452.html" title="">
                                             <dt>
@@ -277,8 +264,7 @@
                                                     <i class="fireTime"><img src="/home/picture/jie.png"
                                                                              alt=""/>7节</i>
                                                 </div>
-                                                <div class="yellow_blue">
-                                                    
+                                                <div class="yellow_blue"> 
                                                     <img
                                                             src="/home/picture/vip.png" alt=""
                                                             class="yellowVip">

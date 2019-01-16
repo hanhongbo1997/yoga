@@ -83,7 +83,7 @@
             </a>
         </li>
         <li>
-            <a href="/home/userinfo/cart">我的购物车
+            <a href="/home/cart">我的购物车
                 <span class="sui-icon icon-angle-right"></span>
             </a>
         </li>

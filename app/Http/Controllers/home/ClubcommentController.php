@@ -4,37 +4,20 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Video;
-use App\Models\Comment;
-use App\Models\Videosort;
-use App\Models\Logon;
-use App\Models\User_info;
+use App\Models\Clubcomment;
 use DB;
 
-class VideoController extends Controller
+class ClubcommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public static function getPidVideos($pid = 0)
-    {
-        $data = DB::table('video_sort')->where('pid',$pid)->get(); 
-
-        foreach ($data as $key => $value) {
-            // 获取所有下一级 子分类
-            $temp = self::getPidVideos($value->id);
-            $value->sub = $temp;
-        }
-        return $data;
-    }
-
     public function index()
     {
-        $data = Video::get();
-        return view('home.video.video_list',['data'=>$data]);
-    }
+        //
+    } 
 
     /**
      * Show the form for creating a new resource.
@@ -55,6 +38,17 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         //
+        $comment = new Clubcomment;
+        $comment->user_id = $request->user_id;
+        $comment->club_id = $request->club_id;
+        $comment->content = $request->content;
+        $comment->comment_id = $request->comment_id;
+        $res = $comment->save();
+        if($res){
+            return back()->with('添加成功');
+        }else{
+            return back()->with('添加失败');
+        }
     }
 
     /**
@@ -65,7 +59,7 @@ class VideoController extends Controller
      */
     public function show($id)
     {
-        echo '222222';
+        //
     }
 
     /**
@@ -74,30 +68,9 @@ class VideoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-
-    public static function getComment($comment_id = 0)
-    { 
-        $data = DB::table('video_comment')->where('comment_id',$comment_id)->get();
-        foreach ($data as $key => $value) {
-            // 获取所有下一级 子分类
-            $temp = self::getComment($value->id);
-            $value->sub = $temp;
-        }
-        return $data;
-    }
-
-
     public function edit($id)
     {
-        $data = Video::find($id);
-        $comment = self::getComment(0)->where('video_id',$id);
-        if(session('admin_login')){
-            $info = Logon::find(session('admin_login')->uid);
-        }else{
-            $info = null; 
-        }
-        return view('home.video.video_info',['data'=>$data,'comment'=>$comment,'info'=>$info]); 
+        //
     }
 
     /**

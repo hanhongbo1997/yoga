@@ -165,7 +165,7 @@
                             </li>
                             <li><a href="/admin/videos/create"><i class="im-plus"></i> 视频添加</a>
                             </li>
-                            <li><a href="/admin/videocomment/getCommentList"><i class="ec-pencil2"></i> 视频评论</a>
+                            <li><a href="/admin/videocomment"><i class="ec-pencil2"></i> 视频评论</a>
                             </li>
                         </ul>
                     </li>
@@ -189,7 +189,7 @@
                             <li><a href="/admin/class/create"><i class="im-plus"></i> 课程添加</a>
 
                             </li>
-                            <li><a href="form-validation.html"><i class="ec-pencil2"></i> 课程评论</a>
+                            <li><a href="/admin/lessoncomment"><i class="ec-pencil2"></i> 课程评论</a>
                             </li>
                         </ul>
                     </li>

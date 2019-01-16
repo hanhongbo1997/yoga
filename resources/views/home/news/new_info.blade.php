@@ -155,107 +155,50 @@
      <div class="master bg-white-natant"> 
       <div class="master-header xui-border-b"> 
        <h3 class="xui-pull-l">相关名师</h3> 
-       <a class="xui-pull-r" href="/teacher.html">查看更多</a> 
+       <a class="xui-pull-r" href="/home/teacher/index">查看更多</a> 
       </div> 
       <div class="master-content"> 
-       <ul> 
-        <li> <a href="/skip/6001.html" class="xui-pull-l master-content-img" target="_blank"> <img src="picture/nopic_120.png" onload="loadPic(this)" data-src="/attached/image/20171007/1b18df7d32a5ab2fd536ce0205a0dc32.jpg" /> </a> 
+       <ul>
+       @foreach($teacher as $k=>$v) 
+        <li> <a href="/home/teacher/show/{{ $v->tid }}" class="xui-pull-l master-content-img" target="_blank"> <img src="{{$v->teachinfoend->timg}}" onload="loadPic(this)" style="width: 30px;height: 30px;" /> </a> 
          <div class="master-content-txt"> 
-          <h3><a href="/skip/6001.html">郭晓丽</a></h3> 
-          <span>艾扬格瑜伽</span> 
-          <p class="xui-ellipsis-2">2004年开始瑜伽，由于错误的练习造成身体伤痛，开始跟随印度Mohan系统学习Hatha Yoga，教学10余年，累积授课10000小时以上。是一位虔诚的瑜伽练习者。</p> 
-         </div> </li> 
-        <li> <a href="/skip/5085.html" class="xui-pull-l master-content-img" target="_blank"> <img src="picture/nopic_120.png" onload="loadPic(this)" data-src="/Public/attached/image/20160815/20160815105633_84662.jpg" /> </a> 
-         <div class="master-content-txt"> 
-          <h3><a href="/skip/5085.html">李菁</a></h3> 
-          <span>理疗瑜伽</span> 
-          <p class="xui-ellipsis-2">从事瑜伽教学十年，完成超过6000小时的瑜伽课程教学。目前从事高级私教课程，孕期瑜伽、产后修复瑜伽、反重力瑜伽、热瑜伽，能量流瑜伽的教学工作。</p> 
-         </div> </li> 
-        <li> <a href="/skip/5276.html" class="xui-pull-l master-content-img" target="_blank"><img src="picture/nopic_120.png" onload="loadPic(this)" data-src="/attached/image/20171007/523c63c6ac304e31e5e69d7242a193f0.jpg" /></a> 
-         <div class="master-content-txt"> 
-          <h3><a href="/skip/5276.html">张一</a></h3> 
-          <span>哈他瑜伽</span> 
-          <p class="xui-ellipsis-2">近十年来始终在瑜伽修习和教学路上，研习内容涉及瑜伽 、中医经络与养生、运动解剖与理疗、 心理学等。她清晰地表达方式和平易近人的处世态度在瑜伽行业圈粉无数。</p> 
-         </div> </li> 
-        <li> <a href="/skip/3155.html" class="xui-pull-l master-content-img" target="_blank"><img src="picture/nopic_120.png" onload="loadPic(this)" data-src="/attached/image/20170922/added49dd62d7881cbd535727a105fd8.jpg" /></a> 
-         <div class="master-content-txt"> 
-          <h3><a href="/skip/3155.html">杨莹Kusuma</a></h3> 
-          <span>Prana Flow</span> 
-          <p class="xui-ellipsis-2">重庆那瑜伽创办人，教学风格清新，灵动，具有身心灵兼修的特点。深入浅出的教学风格和扎实的瑜伽知识涵养赢得众多伽人喜爱。 </p> 
-         </div> </li> 
-        <li> <a href="/skip/100.html" class="xui-pull-l master-content-img" target="_blank"><img src="picture/nopic_120.png" onload="loadPic(this)" data-src="/Public/attached/image/20151204/20151204093513_13319.jpg" /></a> 
-         <div class="master-content-txt"> 
-          <h3><a href="/skip/100.html">宋光明</a></h3> 
-          <span>理疗瑜伽</span> 
-          <p class="xui-ellipsis-2"> 资深国际瑜伽导师，主要教授经络瑜伽理疗课程，将中医的经络理论，借助经络精油刺激神经，融入印度的瑜伽体位中，用轻松的瑜伽伸展，刺激经络能量，借着调理经络、顺体内的气。</p> 
-         </div> </li> 
-        <li> <a href="/skip/107.html" class="xui-pull-l master-content-img" target="_blank"><img src="picture/nopic_120.png" onload="loadPic(this)" data-src="/attached/image/20170912/57f8ec4172d23d740be662eb8318a3d6.jpg" /></a> 
-         <div class="master-content-txt"> 
-          <h3><a href="/skip/107.html">王楚函</a></h3> 
-          <span>空中瑜伽</span> 
-          <p class="xui-ellipsis-2">王楚函，女，1982年12月7日生，祖籍辽宁，出生于内蒙古自治区赤峰市。本科北京舞蹈学院毕业生，王楚函是著名演员王珞丹的姐姐。</p> 
-         </div> </li> 
+          <h3><a href="/home/teacher/show/{{ $v->tid }}">{{$v->tname}}</a></h3> 
+          <span>{{$v->adept}}</span> 
+          <p class="xui-ellipsis-2">{{$v->intor}}</p> 
+         </div> 
+       </li> 
+       @endforeach
        </ul> 
       </div> 
      </div> 
      <!--热门视频--> 
-     <div class="hotVideo bg-white-natant"> 
-      <div class="hotVideo-header xui-border-b"> 
-       <h3 class="xui-pull-l">热门视频</h3> 
-       <a class="xui-pull-r" href="/courserec.html">查看更多</a> 
-      </div> 
-      <div class="hotVideo-content"> 
-       <ul class="xui-row"> 
-        <li class="xui-col-xs-6"> 
-         <div> 
-          <a href="/skip/1076.html" target="_blank"> <img src="picture/nopic_640_400.png" style="width: 100%;" alt="" onload="loadPic(this)" data-src="/Public/attached/image/20150413/20150413164723_61592.jpg" /> </a> 
-         </div> <h3> <a class="xui-ellipsis-2" href="/skip/1076.html" target="_blank">‖完整版60分钟流瑜伽练习课程</a> </h3> 
-         <div class="xui-font-size-12" style="color:#bfbfbf;">
-          播放: 
-          <span>99956</span>次
-         </div> </li> 
-        <li class="xui-col-xs-6"> 
-         <div> 
-          <a href="/skip/2318.html" target="_blank"> <img src="picture/nopic_640_400.png" style="width: 100%;" alt="" onload="loadPic(this)" data-src="/Public/attached/image/20150611/20150611105841_19498.jpg" /> </a> 
-         </div> <h3> <a class="xui-ellipsis-2" href="/skip/2318.html" target="_blank">‖七招搞定教你练习“一字马”</a> </h3> 
-         <div class="xui-font-size-12" style="color:#bfbfbf;">
-          播放: 
-          <span>51637</span>次
-         </div> </li> 
-        <li class="xui-col-xs-6"> 
-         <div> 
-          <a href="/skip/8354.html" target="_blank"> <img src="picture/nopic_640_400.png" style="width: 100%;" alt="" onload="loadPic(this)" data-src="/Public/attached/image/20170525/20170525195431_713901.jpg" /> </a> 
-         </div> <h3> <a class="xui-ellipsis-2" href="/skip/8354.html" target="_blank">R.S.博格：冥想为我们带来更深入的放松</a> </h3> 
-         <div class="xui-font-size-12" style="color:#bfbfbf;">
-          播放: 
-          <span>50730</span>次
-         </div> </li> 
-        <li class="xui-col-xs-6"> 
-         <div> 
-          <a href="/skip/8355.html" target="_blank"> <img src="picture/nopic_640_400.png" style="width: 100%;" alt="" onload="loadPic(this)" data-src="/Public/attached/image/20170525/20170525195458_918105.jpg" /> </a> 
-         </div> <h3> <a class="xui-ellipsis-2" href="/skip/8355.html" target="_blank">O.P.缇瓦瑞：心中无念则自然进入冥想</a> </h3> 
-         <div class="xui-font-size-12" style="color:#bfbfbf;">
-          播放: 
-          <span>50103</span>次
-         </div> </li> 
-        <li class="xui-col-xs-6"> 
-         <div> 
-          <a href="/skip/6041.html" target="_blank"> <img src="picture/nopic_640_400.png" style="width: 100%;" alt="" onload="loadPic(this)" data-src="/Public/attached/image/20160517/20160517212723_86184.jpg" /> </a> 
-         </div> <h3> <a class="xui-ellipsis-2" href="/skip/6041.html" target="_blank">Veronica Zador维诺妮卡大师：好妈妈的四个基本点</a> </h3> 
-         <div class="xui-font-size-12" style="color:#bfbfbf;">
-          播放: 
-          <span>47878</span>次
-         </div> </li> 
-        <li class="xui-col-xs-6"> 
-         <div> 
-          <a href="/skip/2108.html" target="_blank"> <img src="picture/nopic_640_400.png" style="width: 100%;" alt="" onload="loadPic(this)" data-src="/Public/attached/image/20150529/20150529132425_77383.jpg" /> </a> 
-         </div> <h3> <a class="xui-ellipsis-2" href="/skip/2108.html" target="_blank">吴振巍老师为您解答：“瑜伽和普拉提的区别”</a> </h3> 
-         <div class="xui-font-size-12" style="color:#bfbfbf;">
-          播放: 
-          <span>46140</span>次
-         </div> </li> 
-       </ul> 
-      </div> 
+     <br>
+     <br>
+     <br>
+     <div class="master bg-white-natant">
+            <div class="master-header xui-border-b">
+                <h3 class="xui-pull-l">热门视频</h3>
+                <a class="xui-pull-r" href="/home/video">查看更多 &gt;</a>
+            </div>
+            <div style="clear: both;"></div>
+            <div class="hotVideo-content">
+                <ul class="xui-row">
+                  @foreach($video as $k=>$v)
+                    <li class="xui-col-xs-6" style="margin: 10px;float: left;width: 120px;height:174px;">
+                        <div>
+                            <a href="/home/video/{{ $v->id }}/edit" target="_blank">
+                                <img src="/uploads/{{ $v->img }}" style="width: 120px; height: 76px;" alt="" onload="loadPic(this)" data-src="">
+                            </a>
+                        </div>
+                        <h3>
+                            <a class="xui-ellipsis-2" href="/home/video/{{ $v->id }}/edit" target="_blank" style="font-size: 16px;">{{$v->vname }}</a>
+                        </h3>
+                        <div class="xui-font-size-12" style="color:#bfbfbf;">播放: <span>100787</span>次</div>
+                    </li>
+                    @endforeach    
+                </ul>
+                </div>
+            </div>
      </div>  
     </div>
    </div>

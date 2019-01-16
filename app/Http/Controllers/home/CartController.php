@@ -5,6 +5,7 @@ namespace App\Http\Controllers\home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
+use App\Models\Lesson;
 
 class CartController extends Controller
 {
@@ -16,6 +17,9 @@ class CartController extends Controller
     public function index()
     {
         //
+        $data = Cart::get();
+        $sum = Cart::get()->sum('price');
+        return view('home.order.cart',['data'=>$data,'sum'=>$sum]);
     }
 
     /**
@@ -59,6 +63,7 @@ class CartController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -93,5 +98,28 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
+        $res = Cart::destroy('id',$id);
+        if($res){
+             return back()->with('success', '删除成功');
+         }else{
+             return back()->with('error', '删除失败');
+         
+        }
     }
+
+    public function order(Request $request)
+    {
+        //
+        $data = Cart::get();
+        $sum = $request->price;
+        return view('/home/order/order',['data'=>$data,'sum'=>$sum]);
+    }
+
+    public function success()
+    {
+        //
+        return view('/home/order/success');
+    }
+    
+
 }

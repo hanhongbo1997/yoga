@@ -5,6 +5,8 @@
 <link href="css/aui.css" rel="stylesheet">
 <link href="css/revision.css" rel="stylesheet">
 <script src="js/require.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/home/css/zzsc.css" type="text/css">
+<script type="text/javascript" src="/home/js/zzsc.js"></script>
 <body>
 
 	<style>
@@ -80,16 +82,15 @@
 						<span class="aui-margin-r-15 aui-border active" data-price="" data-value="228.80">90天</span>
 						<span class="aui-margin-r-15 aui-border" data-price="" data-value="518.80">永久</span>
 					</div>
-                    <form action="/home/cart" id="now_buy" method="post">
+                    <form action="/home/cart" method="post">
                     	{{ csrf_field() }}
                         <input type="hidden" name="cid" value="{{ $data->id }}">
                         <input type="hidden" name="price" value="999">
                         <input type="hidden" name="count" value="1">
 						<div class="lesline5 aui-padded-10">
-							<a type="submit" class="aui-btn aui-btn-success aui-btn-block" onclick="alert('已添加到购物车')" id="addCart" style="width:auto;">
-							<b class="aui-iconfont aui-icon-cart aui-font-size-18"></b>
-						</a>
-						<button class="aui-btn aui-btn-success aui-btn-block" type="submit" id="buyNow">立即购买</button>
+						<input type="submit" type="submit" onclick="alert('已添加到购物车')" style="width:50px;height:48px;cursor:pointer; background: url('/home/images/cart.png') no-repeat center;display:block;font-size:0;line-height:0;text-indent:-9999px;float: left;margin-right: 10px;">
+						
+						<button class="aui-btn aui-btn-success aui-btn-block" type="submit" id="buyNow" style="float: left;">立即购买</button>
 					</form>
 						<span class="aui-font-size-12">5681人想学习
 							<label style="margin:0 0.5rem;">|</label>20集*25分钟						</span>
@@ -107,30 +108,139 @@
 		<div>
 			<div class="aui-pull-left det-left">
 				<div class="aui-content-padded" id="articleBox">
-				<div class='tabs' id="tabs">
-			        <ul class='horizontal'>
-			            <li rel="tab-1" class="selectActive"><span>课程大纲</span></li>
-			            <li rel="tab-2"><span>课程详情</span></li>
-			            <li rel="tab-3"><span>用户评价</span></li>
-			        </ul>
-			        <div rel='tab-1' style="border: 1px solid #ccc">
-			        	<ul class="aui-list aui-list-in">
-			        		<li style="width: 100%;height: 100px;padding: 10px;border: 1px solid #ccc">
-					            <a href="javascript:;" onclick="alert('购买后观看')">
-									<img style="width: 100px;height: 70px;float: left;margin-right: 10px;" src="/uploads/{{ $data->img }}"alt="胡潇月01.课程概述与部分练习示范"/>
-					            	<span style="line-height: 70px;float: left;">{{$data->lname}}</span>
-						        	<span class="goVideo">我要学习</span>
-						        </a>
-					        </li>							            
-						</ul>
-			        </div>
-			        <div rel='tab-2'><span>这是一个课程详情</span></div>
-			        <div rel='tab-3'><span>这是一个用户评价</span></div>
-			    </div>
-			    <script type="text/javascript">
-				    tabs_takes.init("tabs");
-				</script>
-
+			    <div class="case">
+				    <div class="title cf">
+				      <ul class="title-list fr cf ">
+				        <li class="on">课程大纲</li>
+				        <li>课程详情</li>
+				        <li>课程评论</li>
+				        <p><b></b></p>
+				      </ul>
+				    </div>
+				    <div class="product-wrap">
+				     <!--案例1-->
+				      <div class="product show">
+				        <ul class="aui-list aui-list-in">
+						    <a href="javascript:;" onclick="alert('购买后观看')" class="aui-list-item aui-padded-t-10 aui-padded-b-10" style="padding-right:5rem;">
+				            	<div class="aui-media-list-item-inner" style="width:100%;">
+				                    <div class="aui-list-item-media">
+				                    	<img src="/uploads/{{ $data->lessondetails->imgs }}" data-src="" alt="张一阴瑜伽：01你不了解的阴瑜伽概念" onload="$app.loadImg(this)">
+				                    </div>
+				                    <div class="aui-list-item-text" style="width: calc(100% - 100px);">
+			                            <div class="aui-list-item-title">
+			                            	<h3 class="aui-font-size-14 aui-ellipsis-2">{{$data->lname}}</h3>
+			                            	<p class="aui-ellipsis-1 aui-font-size-12"></p>
+			                            </div>
+			                        </div>
+				                </div>
+				                <span class="goVideo" style="height: 25px;line-height: 20px;">我要学习</span>
+					        </a>
+					    </ul>
+				      </div>
+				      <!--案例2-->
+				      <div class="product">
+				        {!!$data->lessondetails->details!!}
+				      </div>
+				      <!--案例3-->
+				      <div class="product">
+				        <div class="videoWord" style="background: #f9f9f9;width: 100%;">
+				        	@if($info == null)
+				                <div class="discuss-cont">
+				                <span class="discuss-img">
+				                     <img src="/home/picture/user_moren.png">
+				                </span>
+				                <div class="discuss-cont-inner">
+				                    <div class="discuss-cont-inner-box">
+				                        <div name="content" id="replyItem" style="background: #fff;height: 80px;">
+				                            <a href="/home/logon">
+				                           <button style="margin-left: 230px;margin-top: 20px;border: 1px solid #46c1f3;background: skyblue;color: white;"> 请登录后评论 </button></a>
+				                        </div>
+				                    </div>
+				              
+				                </div>
+				            </div>
+				            <div style="clear: both"></div>
+				            @else
+					        <form action="/home/lessoncomment" method="post">
+					            {{ csrf_field() }}
+					            <input type="hidden" name="user_id" value="{{ session('admin_login')->uid }}">
+					            <input type="hidden" name="comment_id" value="0">
+					            <input type="hidden" name="lesson_id" value="{{ $data->id }}">
+					            <div class="discuss-cont">
+					                <span class="discuss-img">
+					                     <img src="{{ $info->uimg }}">
+					                </span>
+					                <div class="discuss-cont-inner">
+					                    <div class="discuss-cont-inner-box">
+					                        <textarea placeholder="吐槽？膜拜？或者你还可以找老师聊聊！？" name="content" id="replyItem" style="background: #fff"></textarea>
+					                    </div>
+					                    <div class="xui-text-right xui-content xui-margin-t-15">
+					                        <button type="submit" id="subDiscus" style="color: #fff;background-color: #43cd6e;border: 1px solid #34c360;width: 100px;height: 40px;font-size: 18px;" onmouseover="this.style.background = '#49de79';" onmouseout="this.style.background='#43cd6e';">发表评论</button>
+					                    </div>
+					                </div>
+					            </div>
+					            <div style="clear: both"></div>
+					        </form>
+					
+					        @if($comment->isEmpty())
+					        <p style="text-align: center;height: 200px;font-size: 20px;line-height: 200px;">还没有评论哦~快来留下你的评价吧</p>
+					        @else
+					            @foreach($comment as $k=>$v)
+					                <div style=" border-radius: 5px;padding: 5px;margin: 5px;">
+					                    <div class="xui-content xui-bg-white xui-margin-b-15 xui-padded-10 review-again-list" style="background: #f9f9f9!important;"> 
+					                        <div class="review-again-conL" style="height: auto;"> 
+					                            <div class="discuss-cont xui-margin-b-10"> 
+					                                <span class="discuss-img" style="width: 42px;height: 42px;display: block;float: left;border-radius: 50%;overflow: hidden;border: 1px solid #ebebeb" />
+					                                    <img src="/home/images/logo.jpg" style="width: 100%;height: 100%;" /> 
+					                                </span> 
+					                                <div class="discuss-cont-inner xui-border-b" style="padding-left:42px;margin-left: 15px;"> 
+					                                    <h4 class="xui-margin-0" style="display: block;margin-block-start: 1.33em;margin-block-end: 1.33em;margin-inline-start: 0px;margin-inline-end: 0px;font-weight: bold;font-size: 14.04px;line-height: 21.06px;">评论用户名ID是：{{ $info->uname}}</h4> 
+					                                    <div class="xui-content xui-padded-t-5 xui-padded-b-5" style="display: table;width: 100%;height: auto;box-sizing: border-box;font-size: 14px;">
+					                                        {{ $v->content}} 
+					                                    </div> 
+					                                </div> 
+					                                <p style="color: #999;font-size: 12px;margin-left: 55px; margin-top: 10px;">{{ \Carbon\Carbon::parse($v->created_at)->diffForHumans() }}评论</p>
+					                            </div>
+					                        </div>  
+					                    </div> 
+					                    @foreach($v->sub as $kk=>$vv)
+					                    <div class="xui-content xui-bg-white xui-margin-b-15 xui-padded-10 review-again-list" style="background: #fff!important;margin-left: 50px;width: 900px;border-radius: 5px;margin-bottom: 0px;padding-bottom: 0px;  "> 
+					                        <div class="review-again-conL" style="height: auto;margin-bottom: 0px;"> 
+					                            <div class="discuss-cont xui-margin-b-10"> 
+					                                <span class="discuss-img" style="width: 24px;height: 24px;display: block;float: left;border-radius: 50%;overflow: hidden;border: 1px solid #ebebeb" />
+					                                    <img src="/home/images/logo.jpg" style="width: 100%;height: 100%;" /> 
+					                                </span> 
+					                                <div class="discuss-cont-inner xui-border-b" style="padding-left:34px;margin-left: 15px;"> 
+					                                    <h4 class="xui-margin-0" style="display: block;margin-block-start: 1.33em;margin-block-end: 1.33em;margin-inline-start: 0px;margin-inline-end: 0px;font-weight: bold;font-size: 14.04px;line-height: 21.06px;">评论用户名ID是：{{ $vv->user_id}}</h4> 
+					                                    <div name="content" style="display: table;width: 100%;height: auto;box-sizing: border-box;font-size: 14px;margin-bottom: 10px;margin-top: 10px;">
+					                                        {{ $vv->content}} 
+					                                    </div> 
+					                                </div> 
+					                                <p style="color: #999;font-size: 12px;margin-left: 50px; margin-top: 10px;">{{ \Carbon\Carbon::parse($vv->created_at)->diffForHumans() }}回复</p>
+					                            </div>  
+					                        </div>
+					                    </div>
+					                    @endforeach 
+					            
+					            <form action="/home/lessoncomment" method="post">
+					            {{ csrf_field() }}
+					                <input type="hidden" name="user_id" value="{{ $info->uid }}">
+					                <input type="hidden" name="lesson_id" value="{{ $data->id }}">
+					                <input type="hidden" name="comment_id" value="{{ $v->id }}">
+					                <div class="" style="width: auto;margin-left:50px;margin-top:0px;background: #fff;padding: 10px;"> 
+					                    <textarea style="float: left;width: 540px;height:35px;background: #fff;box-shadow: 0px 0px 1px 1px #ccc;padding: 5px;" name="content" placeholder="绿色上网，文明回复" ></textarea> 
+					                    <button style="color: #fff;background-color: #f9c34f;border: 1px solid #f9b728;width: 60px;height: 37px;font-size: 16px;margin-left: 10px;">回复</button>
+					                    <div style="clear: both;"></div>
+					                </div>
+					            </form>
+					            </div> 
+					        @endforeach
+					    @endif
+					    @endif
+					    </div>
+				      </div>
+				  </div>
+				</div>
 
 
 					<div class="aui-content">
@@ -139,12 +249,6 @@
 							
 						</div>
 					</div>
-
-
-
-						<div>
-							<h1>这TM应该是个评论啊！！！</h1>
-						</div>
 						<div class="aui-content aui-hide">
 							<div class="article"><p><img alt="" src="/home/picture/47575118b5e9c904e66088d40c8526bb.jpg" /></p>
 							</div>
@@ -152,9 +256,6 @@
 						</div>
 										<div class="aui-content aui-hide">
 						<div class="usereview" id="review-list"></div>
-						<div class="aui-content-padded">
-							<div class="aui-btn aui-btn-success" id="loadMore" style="display:table;margin:0 auto;cursor:pointer;">查看更多 >></div>
-						</div>
 					</div>
 				</div>
 			</div>

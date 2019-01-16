@@ -8,6 +8,8 @@ use App\Models\Clubsort;
 use App\Models\Club;
 use App\Models\Lesson;
 use App\Models\Clubinfo;
+use App\Models\Logon;
+use DB;
 
 class ClubController extends Controller
 {
@@ -50,7 +52,10 @@ class ClubController extends Controller
         // // dump($user);exit;
         // die;
         //加载视图
-        return view('home.club.index',['title'=>'会馆','user'=>$user],compact('data'));
+        $lesson = Lesson::orderBy(\DB::raw('RAND()'))
+        ->take(4)
+        ->get();
+        return view('home.club.index',['title'=>'会馆','user'=>$user,'lesson'=>$lesson],compact('data'));
     }
 
     /**
@@ -80,6 +85,19 @@ class ClubController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public static function getComment($comment_id = 0)
+    { 
+        $data = DB::table('club_comment')->where('comment_id',$comment_id)->get();
+        foreach ($data as $key => $value) {
+            // 获取所有下一级 子分类
+            $temp = self::getComment($value->id);
+            $value->sub = $temp;
+        }
+        return $data;
+    }
+
+
     public function show($id)
     {
         //提取数据
@@ -92,7 +110,13 @@ class ClubController extends Controller
         
         
         //加载模板
-        return view('home.club.show',['title'=>'场馆详情','arr'=>$arr,'data'=>$data]);
+        $comment = self::getComment(0)->where('club_id',$id);
+        if(session('admin_login')){
+            $info = Logon::find(session('admin_login')->uid);
+        }else{
+            $info = null; 
+        }
+        return view('home.club.show',['title'=>'场馆详情','arr'=>$arr,'data'=>$data,'comment'=>$comment,'info'=>$info]);
     }
 
     /**

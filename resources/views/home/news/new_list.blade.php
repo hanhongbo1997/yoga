@@ -96,96 +96,25 @@
         </div>
     </ul>
     
-    <style>
-        /* 活动角标 */
-        .cornerL {position: absolute;top: 2px;left: 3px;background-size: contain;}
-        .cornerR {position: absolute;top: 2px;right: 3px;background-size: contain;}
-        .shuang11 {width:76px;height: 24px;background-image: url('images/activity11.png');filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/static/pc/image/activity11.png",sizingMethod='scale');}
-        .shuang12 {width:76px;height: 24px;background-image: url('images/activity12.png');filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/static/pc/image/activity11.png",sizingMethod='scale');}
-        .shuang-egg {width:76px;height: 24px;background-image: url('images/db_egg_76_24.png');filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/static/pc/image/act/double_egg/egg_zhekou_76_24.png",sizingMethod='scale');}
-        .egg-zhekou{width:76px;height: 24px;background-image: url('images/egg_zhekou_76_24.png');filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/static/pc/image/activity11.png",sizingMethod='scale');}
-        .egg-cornerL{width:30px;height: 30px;background-image: url('images/egg_cornerl.png');background-repeat: no-repeat; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/static/pc/image/act/double_eggegg_cornerL.png",sizingMethod='scale');}
-        .newyear2018 {width:76px;height: 24px;background-image: url('images/newyear_76_24.png');background-repeat: no-repeat; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/static/pc/image/act/newyear/small/newyear_76_24.png",sizingMethod='scale');}
-        .lijian {width:76px;height: 24px;background-image: url('images/corner_01_76_24.png')}
-        .miaosha {width:76px;height: 24px;background-image: url('images/corner_02_76_24.png')}
-        .mansong {width:76px;height: 24px;background-image: url('images/corner_03.jpg')}
-        .zhekou {width:76px;height: 24px;background-image: url('images/corner_04.jpg')}
-        .remen {width:44px;height: 24px;background-image: url('images/corner_05.jpg')}
-        .chaozhi {width:44px;height: 24px;background-image: url('images/corner_06.jpg')}
-        .tuijian {width:44px;height: 24px;background-image: url('images/corner_07.jpg')}
-        .zuixin {width:44px;height: 24px;background-image: url('images/corner_08.jpg')}
-    </style>
+
     <ul>
         <h3>课堂推荐</h3>
-                    <li>
+        @foreach($lesson as $k=>$v)
+            <li>
                 <a href="/skip/7658.html" target="_blank">
-                    <img src="picture/nopic_640_400.png" data-src="/attached/image/20181230/cc52f688761ea721f3aa0b1e6e8f8754thumb.jpg" onload="loadPic(this)">
-                    <!-- <span class="cornerL shuang-egg"></span> -->
-                    <!-- <span class="cornerR zhekou"></span> -->
-                    <!-- <span class="cornerL egg-cornerL"></span> -->
-                    <!-- <span class="cornerL newyear2018"></span> -->
-                    <h4>[提升课程] 中高级丨空中瑜伽串联</h4>
+                    <img src="/uploads/{{ $v->img }}" style="width: 190px;height: 118px;">
+                    <h4>{{$v->lname}}</h4>
                 </a>
                 <p class="xui-font-size-12">
                     <span class="xui-pull-l sui-text-warning">
-                        <em>￥</em>309                    </span>
+                        <em>￥</em>309</span>
                     <span class="xui-pull-r xui-text-right">
                         <i class="sui-text-warning">81</i>人已购买
                     </span>
                 </p>
-            </li>
-                    <li>
-                <a href="/skip/7744.html" target="_blank">
-                    <img src="picture/nopic_640_400.png" data-src="/attached/image/20181230/60d0171942ef1cc7b2a18177115c6103thumb.jpg" onload="loadPic(this)">
-                    <!-- <span class="cornerL shuang-egg"></span> -->
-                    <!-- <span class="cornerR zhekou"></span> -->
-                    <!-- <span class="cornerL egg-cornerL"></span> -->
-                    <!-- <span class="cornerL newyear2018"></span> -->
-                    <h4>[流动串联] 正位流瑜伽丨序列练习</h4>
-                </a>
-                <p class="xui-font-size-12">
-                    <span class="xui-pull-l sui-text-warning">
-                        <em>￥</em>229                    </span>
-                    <span class="xui-pull-r xui-text-right">
-                        <i class="sui-text-warning">37</i>人已购买
-                    </span>
-                </p>
-            </li>
-                    <li>
-                <a href="/skip/7927.html" target="_blank">
-                    <img src="picture/nopic_640_400.png" data-src="/attached/image/20181230/46f083e9bfc77d08c7ebdfba06401a12thumb.jpg" onload="loadPic(this)">
-                    <!-- <span class="cornerL shuang-egg"></span> -->
-                    <!-- <span class="cornerR zhekou"></span> -->
-                    <!-- <span class="cornerL egg-cornerL"></span> -->
-                    <!-- <span class="cornerL newyear2018"></span> -->
-                    <h4>[热力燃脂] 小器械与私教应用</h4>
-                </a>
-                <p class="xui-font-size-12">
-                    <span class="xui-pull-l sui-text-warning">
-                        <em>￥</em>179                    </span>
-                    <span class="xui-pull-r xui-text-right">
-                        <i class="sui-text-warning">14</i>人已购买
-                    </span>
-                </p>
-            </li>
-                    <li>
-                <a href="/skip/7933.html" target="_blank">
-                    <img src="picture/nopic_640_400.png" data-src="/attached/image/20190102/8b5b9cbf2bd4a314d1dbbac2d8eae7eethumb.jpg" onload="loadPic(this)">
-                    <!-- <span class="cornerL shuang-egg"></span> -->
-                    <!-- <span class="cornerR zhekou"></span> -->
-                    <!-- <span class="cornerL egg-cornerL"></span> -->
-                    <!-- <span class="cornerL newyear2018"></span> -->
-                    <h4>[减脂塑形] 急速瘦身丨健身动感瑜伽</h4>
-                </a>
-                <p class="xui-font-size-12">
-                    <span class="xui-pull-l sui-text-warning">
-                        <em>￥</em>229                    </span>
-                    <span class="xui-pull-r xui-text-right">
-                        <i class="sui-text-warning">13</i>人已购买
-                    </span>
-                </p>
-            </li>
-            </ul>
+            </li>  
+        @endforeach     
+        </ul>
 
    
 </div>

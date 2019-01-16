@@ -21,12 +21,14 @@ Route::post('home/userinfo/codon_pass/{id}','home\UserinfoController@codon_pass'
 Route::resource('admin/videos','admin\VideosController');
 //视频详情资源控制器
 Route::resource('admin/videoinfo','admin\VideoinfoController');
-//评论表控制器
+//视频评论控制器
 Route::resource('admin/videocomment','admin\VideocommentController');
 //课程资源控制器
 Route::resource('admin/class','admin\ClassController');
 //课程详情资源控制器
 Route::resource('admin/classinfo','admin\ClassinfoController');
+//课程评论控制器
+Route::resource('admin/lessoncomment','admin\LessoncommentController');
 //资讯资源控制器
 Route::resource('admin/news','admin\NewsController');
 //课程详情资源控制器
@@ -60,9 +62,14 @@ Route::resource('home/userinfo','home\UserinfoController');
 Route::get('home/order/order','home\OrderController@order');
 Route::resource('home/order','home\OrderController');
 //视频评论控制器
-Route::get('home/comment/getcomment','home\CommentController@getcomment');
 Route::resource('home/comment','home\CommentController');
+//会馆评论控制器
+Route::resource('home/clubcomment','home\ClubcommentController');
+//课程评论控制器
+Route::resource('home/lessoncomment','home\LessoncommentController');
 //购物车控制器
+Route::post('home/cart/order','home\CartController@order');
+Route::get('home/cart/success','home\CartController@success');
 Route::resource('home/cart','home\CartController');
 
 

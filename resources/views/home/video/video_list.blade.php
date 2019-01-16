@@ -62,38 +62,10 @@
     </div>
 </form>
 <div class="content2" style="margin:1rem auto;">
-    <!--排序-->
-
-    <div class="alltypeCourse">
-        <!--正在加载-->
-        <div class="loadSign tc">
-            <dl>
-                <dt><img src="/home/picture/loadsign.gif"/></dt>
-                <dd class="refresh_word">
-                    正在努力加载...
-                </dd>
-            </dl>
-        </div>
-        <!--查找失败-->
-        <div class="refresh tc" style="display: none" id="isNull">
-            <dl>
-                <dt><img src="/home/picture/sad.png"/></dt>
-                <dd class="refresh_word"> 暂无对应的筛选结果，请尝试其他类型</dd>
-            </dl>
-        </div>
-        <!--查找失败-->
-        <div class="refresh tc" id="isError" style="display: none">
-            <dl>
-                <dt><img src="/home/picture/sad.png"/></dt>
-                <dd class="refresh_word">查找请求失败，请刷新一下吧</dd>
-                <dd class="refresh_btn"><a href="javascript:;" onclick="getData()">点我刷新</a></dd>
-            </dl>
-        </div>
         <ul class="courseList" id="initData" style="display: block">
             @foreach($data as $k=>$v)
                     <li class="fl">
                         <dl>
-                            <a href="video/getComment/{{ $v->id }}"></a>
                             <a href="video/{{ $v->id }}/edit">
                                 
                                 <dt>

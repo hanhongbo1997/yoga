@@ -1,39 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\home;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Video;
-use App\Models\Comment;
-use App\Models\Videosort;
-use App\Models\Logon;
-use App\Models\User_info;
-use DB;
+use App\Models\Lessoncomment;
 
-class VideoController extends Controller
+class LessoncommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public static function getPidVideos($pid = 0)
-    {
-        $data = DB::table('video_sort')->where('pid',$pid)->get(); 
-
-        foreach ($data as $key => $value) {
-            // 获取所有下一级 子分类
-            $temp = self::getPidVideos($value->id);
-            $value->sub = $temp;
-        }
-        return $data;
-    }
-
     public function index()
     {
-        $data = Video::get();
-        return view('home.video.video_list',['data'=>$data]);
+        //
+        $data = Lessoncomment::paginate(5);
+        return view('admin.class.comment',['data'=>$data]);
     }
 
     /**
@@ -65,7 +49,7 @@ class VideoController extends Controller
      */
     public function show($id)
     {
-        echo '222222';
+        //
     }
 
     /**
@@ -74,30 +58,9 @@ class VideoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-
-    public static function getComment($comment_id = 0)
-    { 
-        $data = DB::table('video_comment')->where('comment_id',$comment_id)->get();
-        foreach ($data as $key => $value) {
-            // 获取所有下一级 子分类
-            $temp = self::getComment($value->id);
-            $value->sub = $temp;
-        }
-        return $data;
-    }
-
-
     public function edit($id)
     {
-        $data = Video::find($id);
-        $comment = self::getComment(0)->where('video_id',$id);
-        if(session('admin_login')){
-            $info = Logon::find(session('admin_login')->uid);
-        }else{
-            $info = null; 
-        }
-        return view('home.video.video_info',['data'=>$data,'comment'=>$comment,'info'=>$info]); 
+        //
     }
 
     /**
@@ -121,5 +84,12 @@ class VideoController extends Controller
     public function destroy($id)
     {
         //
+        $res = Lessoncomment::destroy('id',$id);
+        if($res){
+             return back()->with('success', '删除成功');
+         }else{
+             return back()->with('error', '删除失败');
+         
+        }
     }
 }

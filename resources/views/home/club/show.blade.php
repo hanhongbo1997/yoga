@@ -147,298 +147,100 @@
             <div style="font-size:22px;height:34px;line-height:34px;border-bottom:1px solid #ebebeb;margin-bottom:16px;">会员评论</div>
             <div class="xui-content xui-padded-15">
                 <!--评论模块-->
-}
-}
-<style>
-    /*点赞样式*/
-    .pointer-power.active {color:#4dc060;}
-
-    .review-again-list .review-again-conL {overflow: hidden;}
-</style>
-<div class="video-cont-list xui-margin-t-15">
-    <h3 class="video-cont-list-title">评论</h3>
-    <div id="discuss" class="xui-discuss xui-margin-t-10">
-        <div class="discuss-cont">
+<div class="videoWord" style="background: #f9f9f9;">
+@if($info == null)
+            <div class="discuss-cont">
             <span class="discuss-img">
-                                    <img src="/home_club/picture/user_moren.png">
-                            </span>
+                 <img src="/home/picture/user_moren.png">
+            </span>
             <div class="discuss-cont-inner">
                 <div class="discuss-cont-inner-box">
-                    <textarea placeholder="吐槽？膜拜？或者你还可以找老师聊聊！？" id="replyItem"></textarea>
-                </div>
-                <div class="xui-text-right xui-content xui-margin-t-15">
-                    <span id="subDiscus" class="sui-btn btn-xlarge btn-success">发表评论</span>
+                    <div name="content" id="replyItem" style="background: #fff;height: 80px;">
+                        <a href="/home/logon">
+                       <button style="margin-left: 430px;margin-top: 20px;border: 1px solid #46c1f3;background: skyblue;color: white;"> 请登录后评论 </button></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="xui-border-b">
-            <p class="discuss-sort xui-margin-b-10">
-                <a href="javascript:;" id="orderSup">默认排序</a>
-                <a href="javascript:;" class="on" id="orderTim">时间排序</a>
-            </p>
-            <div id="discuss-list">
-                
-            </div>
-        </div>
-        <div id="loading-more" class="sui-btn btn-xlarge" style="display:table;margin:20px auto;">加载更多 <i class="sui-icon icon-angle-right"></i></div>
-    </div>
-</div>
-<script type="text/x-dot-template" id="saveTemp">
-    <div class="discuss-cont xui-padded-t-15 xui-border-t discuss-temp">
-        $$~it:value:index$$
-            <div class="discuss-body">
+        <div style="clear: both"></div>
+        @else
+        <form action="/home/clubcomment" method="post">
+            {{ csrf_field() }}
+            <input type="hidden" name="user_id" value="{{ session('admin_login')->uid }}">
+            <input type="hidden" name="comment_id" value="0">
+            <input type="hidden" name="club_id" value="{{ $data->cid }}">
+            <div class="discuss-cont">
                 <span class="discuss-img">
-                    $$? value.userinfo.figure$$
-                        <img src="$$= value.userinfo.figure$$">
-                    $$??$$
-                        <img src="//home_club/pc/image/user_moren.png">
-                    $$?$$
+                     <img src="{{ $info->uimg }}">
                 </span>
                 <div class="discuss-cont-inner">
-                    <h4 class="xui-margin-0">$$= value.userinfo.nickname$$</h4>
-                    <div class="xui-content xui-padded-t-10 xui-padded-b-10">$$= value.content$$</div>
-                    <p class="xui-content xui-text-gary xui-margin-t-0 xui-font-size-12">
-                        <span class="xui-pull-l">$$= value.r_times$$评论</span>
-                        <span class="xui-pull-r discuss-mutua">
-                            <i class="sui-icon icon-tb-commentfill review-again">$$= value.r_count$$</i>
-                            $$? value.mysup === 1$$
-                                <i class="sui-icon icon-tb-appreciatefill pointer-power active" data-id="$$= value.id$$">$$= value.support$$</i>
-                            $$??$$
-                                <i class="sui-icon icon-tb-appreciatefill pointer-power" data-id="$$= value.id$$">$$= value.support$$</i>
-                            $$?$$
-                        </span>
-                    </p>
-                    $$? value.reply_list$$
-                        <div class="xui-content xui-bg-white xui-margin-b-15 xui-padded-10 review-again-list">
-                            <div class="review-again-conL">
-                                $$~value.reply_list:val:ind$$
-                                    <div class="discuss-cont xui-margin-b-10">
-                                        <span class="discuss-img" style="width:24px;height:24px;">
-                                            $$? val.userinfo.figure$$
-                                                <img src="$$= val.userinfo.figure$$">
-                                            $$??$$
-                                                <img src="/home_club/picture/user_moren.png">
-                                            $$?$$
-                                        </span>
-                                        <div class="discuss-cont-inner xui-border-b" style="padding-left:34px;">
-                                            <h4 class="xui-margin-0">$$= val.userinfo.nickname$$</h4>
-                                            <div class="xui-content xui-padded-t-5 xui-padded-b-5">$$= val.content$$</div>
-                                            <p class="xui-content xui-text-gary xui-margin-t-0 xui-font-size-12">
-                                                <span class="xui-pull-l">$$= val.r_times$$回复</span>
-                                                <span class="xui-pull-r discuss-mutua">
-                                                    $$? val.mysup === 1$$
-                                                        <i class="sui-icon icon-tb-appreciatefill pointer-power active" data-id="$$= val.id$$">$$= val.support$$</i>
-                                                    $$??$$
-                                                        <i class="sui-icon icon-tb-appreciatefill pointer-power" data-id="$$= val.id$$">$$= val.support$$</i>
-                                                    $$?$$
-                                                </span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                $$~$$
-                            </div>
-                            <div class="packBtn xui-text-center" style="padding: 10px 0;" onclick="packBtnTog(this,192)"> 
-                                <span class="sui-btn btn-large btn-success packBtnTxt">加载更多<em class="sui-icon icon-tb-unfold"></em></span>
-                            </div>
-                            <div class="review-again-list-inner">
-                                <textarea placeholder="绿色上网，文明回复"></textarea>
-                                <span class="sui-btn btn-large reply_sub" data-repid='$$= value.id$$' data-pid="$$= value.author_id$$">提交回复</span>
-                            </div>
-                        </div>
-                    $$?$$
+                    <div class="discuss-cont-inner-box">
+                        <textarea placeholder="吐槽？膜拜？或者你还可以找老师聊聊！？" name="content" id="replyItem" style="background: #fff"></textarea>
+                    </div>
+                    <div class="xui-text-right xui-content xui-margin-t-15">
+                        <button type="submit" id="subDiscus" style="color: #fff;background-color: #43cd6e;border: 1px solid #34c360;width: 100px;height: 40px;font-size: 18px;" onmouseover="this.style.background = '#49de79';" onmouseout="this.style.background='#43cd6e';">发表评论</button>
+                    </div>
                 </div>
             </div>
-        $$~$$
+            <div style="clear: both"></div>
+        </form>
+        @if($comment->isEmpty())
+        <p style="text-align: center;height: 200px;font-size: 20px;line-height: 200px;">还没有评论哦~快来留下你的评价吧</p>
+        @else
+            @foreach($comment as $k=>$v)
+                <div style=" border-radius: 5px;padding: 5px;margin: 5px;">
+                    <div class="xui-content xui-bg-white xui-margin-b-15 xui-padded-10 review-again-list" style="background: #f9f9f9!important;"> 
+                        <div class="review-again-conL" style="height: auto;"> 
+                            <div class="discuss-cont xui-margin-b-10"> 
+                                <span class="discuss-img" style="width: 42px;height: 42px;display: block;float: left;border-radius: 50%;overflow: hidden;border: 1px solid #ebebeb" />
+                                    <img src="/home/images/logo.jpg" style="width: 100%;height: 100%;" /> 
+                                </span> 
+                                <div class="discuss-cont-inner xui-border-b" style="padding-left:42px;margin-left: 15px;"> 
+                                    <h4 class="xui-margin-0" style="display: block;margin-block-start: 1.33em;margin-block-end: 1.33em;margin-inline-start: 0px;margin-inline-end: 0px;font-weight: bold;font-size: 14.04px;line-height: 21.06px;">评论用户名ID是：</h4> 
+                                    <div class="xui-content xui-padded-t-5 xui-padded-b-5" style="display: table;width: 100%;height: auto;box-sizing: border-box;font-size: 14px;">
+                                        {{ $v->content}} 
+                                    </div> 
+                                </div> 
+                                <p style="color: #999;font-size: 12px;margin-left: 55px; margin-top: 10px;">{{ \Carbon\Carbon::parse($v->created_at)->diffForHumans() }}评论</p>
+                            </div>
+                        </div>  
+                    </div> 
+                    @foreach($v->sub as $kk=>$vv)
+                    <div class="xui-content xui-bg-white xui-margin-b-15 xui-padded-10 review-again-list" style="background: #fff!important;margin-left: 50px;width: 900px;border-radius: 5px;margin-bottom: 0px;padding-bottom: 0px;  "> 
+                        <div class="review-again-conL" style="height: auto;margin-bottom: 0px;"> 
+                            <div class="discuss-cont xui-margin-b-10"> 
+                                <span class="discuss-img" style="width: 24px;height: 24px;display: block;float: left;border-radius: 50%;overflow: hidden;border: 1px solid #ebebeb" />
+                                    <img src="/home/images/logo.jpg" style="width: 100%;height: 100%;" /> 
+                                </span> 
+                                <div class="discuss-cont-inner xui-border-b" style="padding-left:34px;margin-left: 15px;"> 
+                                    <h4 class="xui-margin-0" style="display: block;margin-block-start: 1.33em;margin-block-end: 1.33em;margin-inline-start: 0px;margin-inline-end: 0px;font-weight: bold;font-size: 14.04px;line-height: 21.06px;">评论用户名ID是：{{ $vv->user_id}}</h4> 
+                                    <div name="content" style="display: table;width: 100%;height: auto;box-sizing: border-box;font-size: 14px;margin-bottom: 10px;margin-top: 10px;">
+                                        {{ $vv->content}} 
+                                    </div> 
+                                </div> 
+                                <p style="color: #999;font-size: 12px;margin-left: 50px; margin-top: 10px;">{{ \Carbon\Carbon::parse($vv->created_at)->diffForHumans() }}回复</p>
+                            </div>  
+                        </div>
+                    </div>
+                    @endforeach 
+            
+            <form action="/home/clubcomment" method="post">
+            {{ csrf_field() }}
+                <input type="hidden" name="user_id" value="{{ $info->uid }}">
+                <input type="hidden" name="club_id" value="{{ $data->cid }}">
+                <input type="hidden" name="comment_id" value="{{ $v->id }}">
+                <div class="" style="width: 900px;margin-left:50px;margin-top:0px;background: #fff;padding: 10px;"> 
+                    <textarea style="float: left;width: 808px;height:35px;background: #fff;box-shadow: 0px 0px 1px 1px #ccc;padding: 5px;" name="content" placeholder="绿色上网，文明回复" ></textarea> 
+                    <button style="color: #fff;background-color: #f9c34f;border: 1px solid #f9b728;width: auto;height: 37px;font-size: 16px;margin-left: 10px;">回复</button>
+                    <div style="clear: both;"></div>
+                </div>
+            </form>
+            </div> 
+        @endforeach
+    @endif
+@endif
     </div>
-</script>
-<script src="/home_club/js/dot.js"></script>
-<script src="/home_club/js/require.js"></script>
 
-<script type="text/javascript">
-    var toast = new UToast(),
-        page = 1,
-        orderType='';
-    $(function(){
-        // console.log('7748');
-        onload();
-        function onload(){
-            $app.AjaxPost('content/commtent_list',{
-                id: '7748',
-                page: page,
-                ordertype: orderType
-            },function(data_sku){
-                if(data_sku.list.length > 0){
-                    if(data_sku.list.length < 15){
-                        $('#loading-more').hide();
-                    }
-                    var saveTemp = doT.template($('#saveTemp').html());
-                    if(page == 1){
-                        $('#discuss-list').html(saveTemp(data_sku.list));
-                    }else{
-                        $('#discuss-list').append(saveTemp(data_sku.list));
-                    }
-                    hive();
-                }else{
-                    $('#loading-more').hide();
-                }
-            });
-        }
-        $('#discuss-list').on('click','.review-again',function(){
-            $(this).parents('.discuss-cont-inner').children('.review-again-list').toggleClass('xui-hide');
-        })
-       
-        //点赞
-        $('#discuss-list').on('click','.pointer-power',function(){
-            var _this = $(this);
-            if(!""){
-                toast.fail({
-                    title:"您尚未登录",
-                    duration:1500
-                });
-                return false;
-            }
-            $.post('/pc/content/go_support.html',{r_id:_this.data('id')},function(data){
-                if(data.status == 'ok'){
-                    _this.text(parseInt(_this.text())+1);
-                    _this.addClass('active');
-                }else{
-                    toast.fail({
-                        title:data.msg,
-                        duration:1500
-                    });
-                }
-            });
-        })
-
-        //回复提交
-        $('#discuss-list').on('click','.reply_sub',function(){
-            var _this = $(this),
-                r_content = _this.prev('textarea').val();
-            if(!""){
-                toast.fail({
-                    title:"您尚未登录",
-                    duration:1500
-                });
-                return false;
-            }
-            if($app.isNull(r_content)){
-                $app.AjaxPost('content/go_reply',{
-                    content_id: '7748',
-                    reply_id: _this.data('repid'),
-                    pid: _this.data('pid'),
-                    r_content: r_content
-                },function(data_sku){
-                    if(data_sku.status == 'ok'){
-                        toast.success({
-                            title:"评论成功",
-                            duration:1500
-                        });
-                        onload();
-                    }else{
-                        toast.fail({
-                            title:data_sku.msg,
-                            duration:1500
-                        });
-                        return false;
-                    }
-                });
-            }else{
-                toast.fail({
-                    title:"请填写内容",
-                    duration:1500
-                });
-            }
-        })
-
-        /**
-         * 提交评论
-         * @Author   slz@yujia.com
-         * @DateTime 2017-07-25T10:34:02+0800
-         * @param    {[type]}                 ){                     } [description]
-         * @return   {[type]}                     [description]
-         */
-        $('#subDiscus').click(function(){
-            var content = $('#replyItem').val();
-            if(!""){
-                toast.fail({
-                    title:"您尚未登录",
-                    duration:1500
-                });
-                return false;
-            }
-            if($app.isNull(content)){
-                $app.AjaxPost('content/setReplyItem',{
-                    content: content,
-                    content_id: '7748'
-                },function(data_sku){
-                    if(data_sku.status == 'ok'){
-                        $('#replyItem').val('');
-                        toast.success({
-                            title:"评论成功",
-                            duration:1500
-                        });
-                        onload();
-                    }else{
-                        toast.fail({
-                            title:data_sku.msg,
-                            duration:1500
-                        });
-                        return false;
-                    }
-                });
-            }else{
-                toast.fail({
-                    title:"请填写内容",
-                    duration:1500
-                });
-            }
-        });
-
-        $('#loading-more').click(function(){
-            page++;
-            onload();
-        });
-
-        $('#orderSup').click(function(){
-            page = 1;
-            orderType = 'support';
-            $('#orderSup').addClass('on').next().removeClass('on');
-            onload();
-        });
-
-        $('#orderTim').click(function(){
-            page = 1;
-            orderType = '';
-            $('#orderTim').addClass('on').prev().removeClass('on');
-            onload();
-        });
-
-        // 评论内容展示、隐藏
-        function hive(){
-            var disListArr = $('.discuss-body');
-            for (var i = disListArr.length - 1; i >= 0; i--) {
-                var disCon = $(disListArr[i]).find('.review-again-conL')
-                var disConH = $(disListArr[i]).find('.review-again-conL').height();
-                var Btn = $(disListArr[i]).find('.packBtn');
-                if(disConH <= 192) {
-                    $(disCon).css({'height': 'auto'});
-                    $(Btn).remove();
-                }else {
-                    $(disCon).css({'height': '192px'});
-                }
-            }
-        }
-    })
-    function packBtnTog(ele,h){
-        if($(ele).prev().height() == h){
-            $(ele).prev().css({height: 'auto'});
-            $(ele).children().html('收起内容 <em class="sui-icon icon-tb-fold"></em>');
-        }else {
-            $(ele).prev().css({height: h});
-            $(ele).children().html('加载更多 <em class="sui-icon icon-tb-unfold"></em>');
-        }
-    }
-</script>
             </div>
         </div>
     </div>

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\News;
+use App\Models\Lesson;
+use App\Models\Teacher;
+use App\Models\Video;
 
 class NewsController extends Controller
 {
@@ -16,7 +19,10 @@ class NewsController extends Controller
     public function index()
     {
         $data = News::get();
-        return view('home.news.new_list',['data'=>$data]);
+        $lesson = Lesson::orderBy(\DB::raw('RAND()'))
+        ->take(4)
+        ->get();
+        return view('home.news.new_list',['data'=>$data,'lesson'=>$lesson]);
     }
 
     /**
@@ -60,7 +66,13 @@ class NewsController extends Controller
     public function edit($id)
     {
         $data = News::find($id);
-        return view('home.news.new_info',['data'=>$data]);
+        $teacher = Teacher::orderBy(\DB::raw('RAND()'))
+        ->take(6)
+        ->get();
+        $video = Video::orderBy(\DB::raw('RAND()'))
+        ->take(6)
+        ->get();
+        return view('home.news.new_info',['data'=>$data,'teacher'=>$teacher,'video'=>$video]);
     }
 
     /**

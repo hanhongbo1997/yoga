@@ -5,6 +5,7 @@ namespace App\Http\Controllers\home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Teacher;
+use App\Models\Lesson;
 
 class TeacherController extends Controller
 {
@@ -32,7 +33,10 @@ class TeacherController extends Controller
         // dump($data);exit;
         $data->cname = $request->search_nname;
     	//加载模板
-    	return view('home.teacher.index',['title'=>'名师列表'],compact('data'));
+        $lesson = Lesson::orderBy(\DB::raw('RAND()'))
+        ->take(4)
+        ->get();
+    	return view('home.teacher.index',['title'=>'名师列表','lesson'=>$lesson],compact('data'));
     }
     /**
      * 名师详情

@@ -49,28 +49,31 @@
     <div class="xui-content">
         <h4>订单编号：<span class="xui-font-size-12 xui-text-gary">201812211711113660</span></h4>
         <p class="older_lose" style="text-align:center;color:lightslategrey;display:none;font-size:22px;font-weight:bold;">当前订单已失效请重新购买</p>
+        @foreach($data as $k=>$v)
         <div class="xui-margin-b-15">
                 <ul class="xui-bg-gary pro-order" style="margin-bottom: 0;overflow: hidden;
     padding: 20px 30px;
     margin-bottom: 4px;background: #f8fafc!important;">
                     <li class="xui-pull-l xui-margin-r-15 pro-img">
                         <a href="javascript:;">
-                            <img src="/home/images/1.png" width="150">
+                            <img src="/uploads/{{ $v->lessoncart->img }}" style="width: 150px;height: 110px;">
                         </a>
                     </li>
                     <li class="xui-pull-l pro-cont">
                         <h2>
-                            <a href="javascript:;">[教练进阶] 建立身体正确姿态丨私教应用</a>
-                            <span style="float:right;padding-left:10px;font-size:14px;color:#ff7300;line-height:20px;"> 1 件</span>
+                            <a href="javascript:;">{{ $v->lessoncart->lname }}</a>
+                            <span style="float:right;padding-left:10px;font-size:14px;color:#ff7300;line-height:20px;"> {{ $v->count }} 件</span>
                         </h2>
                         <p class="xui-text-gary">付款成功后，提供<strong class="xui-margin-l-5 xui-margin-r-5 sui-text-warning">90天</strong>学习服务</p>
                     </li>
                     <li class="xui-pull-r pro-price">
                         <span class="xui-font-size-18 sui-text-warning">
-                            <i class="xui-font-size-12">￥</i>228.80                        </span>
+                            <i class="xui-font-size-12">￥</i>{{ $v->price }}                       
+                        </span>
                     </li>
                 </ul>
-                    </div>
+        </div>
+        @endforeach
         <div class="xui-nature xui-text-right">
             <a href="/yuketang.html" class="sui-btn btn-xlarge btn-danger" style="display:none;" id="afresh_buy">重新购买</a>
         </div>
@@ -89,7 +92,7 @@
                     <div class="xui-nature" style="float: left;">实付金额：</div>
                     <div class="xui-nature xui-text-left sui-text-warning" style="float: left;">
                         <em>￥</em>
-                        <strong class="xui-font-size-18" id="actual-price">228.80</strong>
+                        <strong class="xui-font-size-18" id="actual-price">{{$sum}}</strong>
                     </div>
                     <div style="clear: both;"></div>
                 </div>
@@ -104,7 +107,7 @@
                     </div>
                     <div class="xui-nature"></div>
                     <div class="xui-nature xui-text-left" style="float: right;">
-                        <a href="javascript:void(0);" class="sui-btn btn-xlarge btn-danger" id="payNow">立即支付</a>
+                        <a href="/home/cart/success" class="sui-btn btn-xlarge btn-danger" id="payNow">立即支付</a>
                     </div>
                 </div>
             </div>
