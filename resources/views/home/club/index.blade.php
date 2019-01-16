@@ -46,7 +46,7 @@
 
     <ul class="box-1" >
             <li class="course-nav-item labels on" data-id="-1">
-              <a href="javascript:;" style="background-color: #fb9966;">全部</a>
+              <a href="/home/teacher/index" style="background-color: #fb9966;">全部</a>
             </li>
               @foreach ($common_clubsort as $k=>$v)
 

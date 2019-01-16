@@ -77,7 +77,7 @@ a{
 	color: #313538;
 }
 a:hover,a:active,a:focus{
-	/*color: #71bd9c;*/
+	/*color: #f85f1c;*/
 	text-decoration: none;
 }
 header{
@@ -107,7 +107,7 @@ header{
 	overflow:hidden;
 	text-overflow:ellipsis; 
 	white-space: nowrap;
-	color: #71bd9c;
+	color: #f85f1c;
 	font-size: 14px;
 	line-height: 42px;
 	margin-right: 10px;
@@ -115,7 +115,7 @@ header{
 .user img{
 	width: 38px;
 	height: 38px;
-	border:2px solid #71bd9c;
+	border:2px solid #f85f1c;
 	border-radius: 20px;
 	margin-right: 5px;
 }
@@ -134,8 +134,8 @@ header{
 .loginArea a{
 	width: 98px;
 	height: 28px;
-	border:1px solid #71bd9c;
-	color: #71bd9c;
+	border:1px solid #f85f1c;
+	color: #f85f1c;
 	font-size: 18px;
 	border-radius: 8px;
 	text-align: center;
@@ -144,17 +144,17 @@ header{
 	margin-right: 8px;
 }
 .loginArea a.loginBtn2{
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 }
 .loginArea a:hover{
-	background:#71bd9c;
-	border:1px solid #71bd9c;
+	background:#f85f1c;
+	border:1px solid #f85f1c;
 	color: white;
 }
 .loginArea a.loginBtn2:hover{
 	background: white;
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .navList2{
 	font-size: 18px;
@@ -170,10 +170,10 @@ header{
 	color: #313538;
 }
 .navList2 li a:hover{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .navList2 li a.cur{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 footer{
 	background: #313538;
@@ -344,7 +344,7 @@ footer{
 	font-size: 18px;
 	text-align: center;
 	line-height: 58px;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	margin: 3rem auto;
 }
@@ -387,11 +387,11 @@ footer{
 	cursor: pointer;
 }
 .navList li:hover{
-	background:#71bd9c;
+	background:#f85f1c;
 	color: white;
 }
 .navList li.cur{
-	background:#71bd9c;
+	background:#f85f1c;
 	color: white;
 }
 .content{
@@ -416,7 +416,7 @@ footer{
 	width: 0.66rem;
 	height: 0.66rem;
 	border-radius: 0.33rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	margin-left: 0.26rem;
 	display: none;
 }
@@ -425,7 +425,7 @@ footer{
 	width: 0.42rem;
 	height: 0.42rem;
 	border-radius: 0.21rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	margin-left: 0.26rem;
 	display: none;
 }
@@ -434,7 +434,7 @@ footer{
 	width: 0.26rem;
 	height: 0.26rem;
 	border-radius: 0.13rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	margin-left: 0.26rem;
 	display: none;
 }
@@ -451,7 +451,7 @@ footer{
 	margin:0 1rem;
 }
 .sortCourse span.cur{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .introBasic{
 	line-height: 3.16rem;
@@ -594,7 +594,7 @@ a .courseMask:hover{
 	position: absolute;
 	width: 7rem;
 	height: 1.25rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	font-size: 0.8rem;
 	padding-left: 4rem;
@@ -786,11 +786,11 @@ a .courseMask:hover{
 	-webkit-appearance:none;
 }
 .chooseTj ul li a:hover{
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 }
 .chooseTj ul li a.cur{
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 }
 .userChoose{
@@ -809,7 +809,7 @@ a .courseMask:hover{
 	padding: 0 0.3rem;
 	line-height: 1rem;
 	background: #f0f0f0;
-	color: #71bd9c;
+	color: #f85f1c;
 	float: left;
 }
 .userChoose span img{
@@ -837,7 +837,7 @@ a .courseMask:hover{
 	width: 0.5rem;
 	height: 0.5rem;
 	border-radius: 0.25rem;
-	border:1px solid #71bd9c;
+	border:1px solid #f85f1c;
 	margin-right: 0.3rem;
 	box-sizing:border-box;
     -moz-box-sizing:border-box; /* Firefox */
@@ -881,7 +881,7 @@ a .courseMask:hover{
 	text-align: center;
 }
 .guessFavorate .otherLove li:hover{
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 }
 .guessFavorate .otherLove li:hover a{
@@ -908,7 +908,7 @@ a .courseMask:hover{
     margin-top: -322.5px;
     display: none;
     z-index: 1000;
-    border: 1px solid #71bd9c;
+    border: 1px solid #f85f1c;
 }
 .m {
     position: relative;
@@ -946,7 +946,7 @@ a .courseMask:hover{
 	margin: 0 auto;
 	width: 160px;
 	height: 50px;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	text-align: center;
 	line-height: 50px;
@@ -970,7 +970,7 @@ a .courseMask:hover{
 	line-height: 24px;
 }
 .loginCode dl dd a{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .submitName{
 	margin: 45px 0;
@@ -981,7 +981,7 @@ a .courseMask:hover{
 	height: 60px;
 	text-align: center;
 	line-height: 60px;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	font-size: 18px;
 	border-radius: 10px;
@@ -1066,7 +1066,7 @@ a .courseMask:hover{
 	color: #bbbbbb;
 }
 .meassage_out ul li dl dd.message_time a{
-	color: #71bd9c;
+	color: #f85f1c;
 	margin-left: 0.9rem;
 }
 .message_word{
@@ -1090,7 +1090,7 @@ a .courseMask:hover{
 	height: 2.5rem;
 	text-align: center;
 	line-height: 2.5rem;
-	background:#71bd9c;
+	background:#f85f1c;
 	color: white;
 	border-radius: 2rem;
 	font-size: 0.75rem;
@@ -1108,7 +1108,7 @@ a .courseMask:hover{
 	margin-top: 1rem;
 }
 .liveTitle .livePay{
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	font-size: 0.75rem;
 	padding:0.1rem 0.4rem;
@@ -1130,7 +1130,7 @@ a .courseMask:hover{
 	width: 3.2rem;
 	height: 3.2rem;
 	border-radius: 1.7rem;
-	border:2px solid #71bd9c;
+	border:2px solid #f85f1c;
 	overflow: hidden;
 }
 .liveHost dt img{
@@ -1156,7 +1156,7 @@ a .courseMask:hover{
 	line-height: 2rem;
 	color: white;
 	font-size: 1rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	border-radius: 0.2rem;
 	top: 1.3rem;
 }
@@ -1205,7 +1205,7 @@ a .courseMask:hover{
 	background: #3d5060;
 }
 #boxscroll ul li dl dt a.zhibo{
-	background: #71bd9c;
+	background: #f85f1c;
 }
 #boxscroll ul li dl dt a.yugao{
 	background: #e97900;
@@ -1314,7 +1314,7 @@ a .courseMask:hover{
 }
 .audioTitle{
 	font-size: 28px;
-	color: #71bd9c;
+	color: #f85f1c;
 	margin-top: 20px;
 	margin-bottom: 5px;
 }
@@ -1359,11 +1359,11 @@ a .courseMask:hover{
 }
 .thinkRight ul li.cur{
 	background: #f6f6f6;
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .thinkRight ul li:hover{
 	background: #f6f6f6;
-	color: #71bd9c;
+	color: #f85f1c;
 }
 #mep_0 *{
 	text-decoration:none!important;
@@ -1452,8 +1452,8 @@ a .courseMask:hover{
 	box-sizing:border-box;
     -moz-box-sizing:border-box; /* Firefox */
     -webkit-box-sizing:border-box; /* Safari */
-    border:1px solid #71bd9c;
-    background: #71bd9c;
+    border:1px solid #f85f1c;
+    background: #f85f1c;
     color: white;
     text-align: center;
     line-height: 0.9rem;
@@ -1500,7 +1500,7 @@ a .courseMask:hover{
 }
 .needService:hover span{
 	background: white;
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .seeVideoOut .loginCode dl{
 	padding-top: 70px;
@@ -1536,7 +1536,7 @@ a .courseMask:hover{
 }
 .page .pageItemActive {
     margin: 5px;
-    background-color: #71bd9c;
+    background-color: #f85f1c;
     color: white;
 }
 .page .pageItem{
@@ -1545,7 +1545,7 @@ a .courseMask:hover{
     font-size:16px;
 }
 .page .pageItem:hover{
-    background-color: #71bd9c;
+    background-color: #f85f1c;
     color:white;
 }
 .page .pageItemDisable{
@@ -1580,7 +1580,7 @@ a .courseMask:hover{
 	background: url(../images/refresh.png) no-repeat;
 	background-size: 14%;
 	background-position: 12% center;
-	background-color: #71bd9c;
+	background-color: #f85f1c;
 	color: white;
 	text-align: right;
 	line-height: 1.75rem;
@@ -1596,7 +1596,7 @@ a .courseMask:hover{
 	height: 2.5rem;
 	text-align: center;
 	line-height: 2.5rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	border:none;
 	border-radius: 0.58rem;
@@ -1656,7 +1656,7 @@ textarea{
 	width: 100%;
 }
 .btnOut input.cur,.btnOut a.cur{
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 }
 .toast_inner{
@@ -1688,7 +1688,7 @@ textarea{
 	color: white;
 	font-size: 1.42rem;
 	position: relative;
-	background: #71bd9c;
+	background: #f85f1c;
 	text-align: center;
 }
 .titleH1 span{
@@ -1719,7 +1719,7 @@ textarea{
 	height: 1.7rem;
 	text-align: center;
 	line-height: 1.7rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	font-size: 0.75rem;
 	border-radius: 0.2rem;
@@ -1799,7 +1799,7 @@ input[type="radio"]{
 	color: #3c3c3c;
 }
 .method_nav span.cur i{
-	border-bottom: 3px solid #71bd9c;
+	border-bottom: 3px solid #f85f1c;
 	padding-bottom: 0.2rem;
 }
 .loginList{
@@ -1833,7 +1833,7 @@ input[type="radio"]{
 	width: 60%;
 }
 .loginList li.registerLi a{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .loginAcsess{
 	margin-top: 1.5rem;
@@ -1841,7 +1841,7 @@ input[type="radio"]{
 .loginAcsess a{
 	width: 60%;
 	height: 2rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	text-align: center;
 	line-height: 2rem;
@@ -1934,7 +1934,7 @@ input[type="radio"]{
 	line-height: 1.4rem;
 }
 .codeLogin dd a{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .dengluArea{
 	display: none;
@@ -1956,11 +1956,11 @@ input[type="radio"]{
 	transform:scale(1.3);
 }
 .method_nav2 span{
-	border-bottom: 3px solid #71bd9c;
+	border-bottom: 3px solid #f85f1c;
 	padding-bottom: 0.2rem;
 }
 .method_nav3 span i{
-	border-bottom: 3px solid #71bd9c;
+	border-bottom: 3px solid #f85f1c;
 	padding-bottom: 0.2rem;
 }
 #sendMessage{
@@ -1981,7 +1981,7 @@ input[type="radio"]{
 	margin-left: 0;
 }
 .yzCode input.cur{
-	background: #71bd9c;
+	background: #f85f1c;
 	
 }
 .agreeTitle{
@@ -2011,7 +2011,7 @@ input[type="radio"]{
 	height: 1.5rem;
 	line-height: 1.5rem;
 	font-size: 0.8rem;
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .agree_out dl dd{
 	font-size: 0.7rem;
@@ -2312,7 +2312,7 @@ input[type="radio"]{
 }
 .signNow{
 	padding-bottom: 3rem;
-	color: #71bd9c;
+	color: #f85f1c;
 	font-size: 1.5rem;
 }
 .signNow a{
@@ -2323,7 +2323,7 @@ input[type="radio"]{
     font-size: 18px;
     text-align: center;
     line-height: 58px;
-    background: #71bd9c;
+    background: #f85f1c;
     color: white;
     margin:5rem auto;
 }
@@ -2365,7 +2365,7 @@ input[type="radio"]{
 	color: white;
 }
 .checkDd2 a:hover{
-	background: #71bd9c
+	background: #f85f1c
 }
 .pos_pa1{
 	-webkit-animation: bounceInLeft 2s;
@@ -2623,7 +2623,7 @@ input[type="radio"]{
 .checkCerti a{
 	width: 10rem;
 	height: 2rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	font-size: 1.16rem;
 	margin: 7rem auto 0;
@@ -2654,7 +2654,7 @@ input[type="radio"]{
 	padding-top: 2rem;
 }
 .termMember{
-	border-bottom: 2px solid #71bd9c;
+	border-bottom: 2px solid #f85f1c;
 	margin: 0 1rem;
 	margin-top: 2rem;
 	padding-bottom: 0.5rem;
@@ -2662,7 +2662,7 @@ input[type="radio"]{
 .termMember span{
 	width: 50%;
 	text-align: center;
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .txtScroll-top{ 
 	overflow:hidden;
@@ -2794,13 +2794,13 @@ input[type="radio"]{
 	-webkit-animation: bounce 1s;
 }
 .videoWord dl dt i{
-	border-bottom: 3px solid #71bd9c;
+	border-bottom: 3px solid #f85f1c;
 	padding-bottom: 2px;
 }
 .openSuper{
 	width: 7rem;
 	height: 2rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 	border-radius: 2rem;
 	text-align: center;
@@ -3039,7 +3039,7 @@ input[type="radio"]{
 .ingVideo{
 	display: inline-block;
 	padding: 0.1rem 0.3rem;
-	background: #71bd9c;
+	background: #f85f1c;
 	border-radius: 0.2rem;
 	font-size: 0.66rem;
     color: white;    
@@ -3296,7 +3296,7 @@ input[type="radio"]{
 	white-space: nowrap;
 }
 .articleList .falseOl var:hover{
-	background: #71bd9c;
+	background: #f85f1c;
 	color: white;
 }
 .articleList .falseOl var:hover a{
@@ -3352,7 +3352,7 @@ input[type="radio"]{
 	display: none;
 }
 .wordMember a{
-	color: #71bd9c;
+	color: #f85f1c;
 	text-decoration: underline;
 	margin:0 10px;
 	font-size: 18px;
@@ -3368,7 +3368,7 @@ input[type="radio"]{
 .openWakeOpenVip dt a{
 	padding: 10px 25px;
 	color: white;
-	background: #71bd9c;
+	background: #f85f1c;
 	border-radius: 20px;
 	font-size: 16px;
 }
@@ -3384,7 +3384,7 @@ input[type="radio"]{
 	width: 92px;
 	height: 92px;
 	border-radius: 46px;
-	border:2px solid #71bd9c;
+	border:2px solid #f85f1c;
 	margin-right: 70px;
 	display: inline-block;
 }
@@ -3395,7 +3395,7 @@ input[type="radio"]{
 	width: 88px;
 	height: 88px;
 	border-radius: 44px;
-	background:#71bd9c;
+	background:#f85f1c;
 	color: white;
 	line-height: 88px;
 	font-size: 18px;
@@ -3440,7 +3440,7 @@ input[type="radio"]{
 .user .vipMark i{
 	font-size: 14px;
 	padding-top: 2px;
-	color: #71bd9c;
+	color: #f85f1c;
 	display: block;
 	width: 26px;
 	text-align: center;
@@ -3473,7 +3473,7 @@ input[type="radio"]{
 	left: 0;
 	display: none;
 	background:white;
-	border:1px solid #71bd9c;
+	border:1px solid #f85f1c;
 	border-top:none;
 	border-radius:0.2rem;
 	display:none;
@@ -3488,14 +3488,14 @@ input[type="radio"]{
 }
 .navList2 li .train_inner a:hover{
 	background: rgba(255,255,255,0.7);
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .mainTop{
 	margin-top:84px;
 	margin-bottom:2rem;
 }
 .reply{
-	color: #71bd9c;
+	color: #f85f1c;
 }
 .vjs-control-bar{
 	opacity:1!important;

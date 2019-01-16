@@ -63,7 +63,7 @@
 
     
             <div class="modal-dialog">
-   <form class="sui-form form-horizontal sui-validate" style="min-height:130px;" novalidate="novalidate" action="/home/userinfo/codon_pass/{{ session('admin_login')->uid }}" method="post">
+   <form class="sui-form form-horizontal sui-validate" style="min-height:130px;" novalidate="novalidate" action="/home/userinfo/codon_pass/{{ session('admin_login')->uid }}" method="post" id="form_fl">
      {{ csrf_field() }}
                 <div class="modal-content">
 
@@ -77,19 +77,22 @@
                             <div class="control-group">
                                 <label class="control-label">原密码：</label>
                                 <div class="controls">
-                                    <input type="password" class="input-large input-xfat" name="ori_pwd" data-rules="required"  id="ori_pwd" >
+                                    <input type="password" class="input-large input-xfat" name="ori_pwd"   id="ori_pwd" >
+                                    <span  class="show_fi"></span>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label">新密码：</label>
                                 <div class="controls">
-                                    <input type="password" class="input-large input-xfat" name="pass" data-rules="required|maxlength=12"  id="pass">
+                                    <input type="password" class="input-large input-xfat" name="pass" id="pass" value="">
+                                     <span  class="show_fi"></span>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label">确认密码：</label>
                                 <div class="controls">
-                                    <input type="password" class="input-large input-xfat" name="password" data-rules="required|match=new_pwd|maxlength=12"  id="password">
+                                    <input type="password" class="input-large input-xfat" name="password" id="password" value="">
+                                     <span  class="show_fi"></span>
                                 </div>
                             </div>
                             
@@ -109,6 +112,78 @@
         <!-- //添加商品属性 -->
     </div>
     <script>
+    $(function(){
+                    var isOri_pwd,isPass,isPasswd = false;
+                    //原始密码
+                    $('#ori_pwd').blur(function(){
+                            var ori_pwd = $('#ori_pwd').val();
+
+                                 $.get('/home/userinfo/pass',{'ori_pwd':ori_pwd},function(msg){
+                                        
+                            
+                                        if(msg == 'success'){
+                                            isOri_pwd = true;
+                                            
+                                        }else{
+                                            isOri_pwd = false;
+                                            $('.show_fi').eq(0).html('<font style="color:#fb9966">密码不正确</font>');
+                                        }
+                                    
+                                 },'html'); 
+                    });
+
+                    //密码
+                    $('#pass').focus(function(){                        
+                        $('.show_fi').eq(1).html('<font style="color:#71bd9c">请输以字母开头6-16数字、字母、下划线</font>');         
+                    });
+                    $('#pass').blur(function(){
+                       //密码
+                        var pass = $(this).val();
+                        // 验证
+                        var pass_preg = /^[a-zA-Z]{1}[\w]{5,15}$/;
+                         //验证用户名 
+                         
+                        if(pass_preg.test(pass)){
+                            isPass = true;
+                             $('.show_fi').eq(1).html('<font style="color:#71bd9c">恭喜密码可用</font>');
+                        }else{
+                            isPass = false;
+                            $('.show_fi').eq(1).html('<font style="color:#fb9966">密码格式不正确</font>');
+                        }
+                        
+                    });
+                    //确认密码
+                    $('#password').blur(function(){
+                         $('.show_fi').eq(1).html('<font style="color:#fb9966"></font>');
+                            
+                        //获取确认密码
+                        var passwd = $(this).val();
+
+                        //验证
+                       // console.log(passwd);
+                       // console.log($('#pass').val());
+
+                        if(passwd == $('#pass').val()){     
+                            isPasswd = true;
+                        }else{
+                            isPasswd = false;
+                            $('.show_fi').eq(2).html('<font style="color:#fb9966">两次密码不一致</font>');
+                        }        
+                    });
+
+
+                    $('#form_fl').submit(function(){
+                            if(isPass && isPhone && isPasswd){
+                                return true;
+                            }
+                            // 阻止表单提交
+                            return false;
+                         });
+
+                    // $('#form_fl').reset(function(){
+                    //         return false;
+                    //      });
+    });
 
     window.onload = function () {
         //定时器每秒调用一次fnDate()

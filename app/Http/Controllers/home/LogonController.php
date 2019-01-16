@@ -59,6 +59,9 @@ class LogonController extends Controller
         {
             return back()->with('error','密码错误');
         }else{
+
+            // dd(session('admin_login'));
+
             return redirect('/')->with('success', '登录成功!');
         }   
 

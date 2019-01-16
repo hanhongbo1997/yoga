@@ -16,6 +16,14 @@ Route::get('/', function () {
 });
 //个人中心 密码设置
 Route::post('home/userinfo/codon_pass/{id}','home\UserinfoController@codon_pass');
+//个人中心 密码验证 
+Route::get('home/userinfo/pass','home\UserinfoController@pass');
+//个人中心 头像无刷新上传
+Route::post('home/userinfo/profile/{id}','home\UserinfoController@profile');
+//个人中心 vip 确定订单
+Route::post('home/vip/updates/{id}','home\VipController@updates');
+//个人中心 VIP 支付中心
+Route::get('home/vip/order/{id}','home\VipController@order');
 
 //视频资源控制器
 Route::resource('admin/videos','admin\VideosController');
@@ -215,6 +223,8 @@ Route::resource('home/club','home\ClubController');
 //前台 名师
 Route::get('home/teacher/index','home\TeacherController@index');
 Route::get('home/teacher/show/{id}','home\TeacherController@show');
+//搜索
+Route::post('home/teacher/add','home\TeacherController@add');
 
 
 //前台 登录
