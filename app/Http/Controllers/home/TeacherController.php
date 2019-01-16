@@ -67,7 +67,7 @@ class TeacherController extends Controller
         return view('home/teacher/show',['title'=>'名师详情','data'=>$data,'arr'=>$arr]);
     }
     /**
-     * 搜索
+     * 按照首字母查找
      *
      * @return \Illuminate\Http\Response
      */
@@ -87,10 +87,30 @@ class TeacherController extends Controller
         
                 $data = Teacher::where('abc','=',$letter['letter'])->get();
                 return view('home.teacher.add',['title'=>'名师列表','data'=>$data]);
-        }
-       
+        }    
+    }
+    /**
+     * 按照首字母查找
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function agg(Request $request)
+    {
+        //接收数据
+        $status = $request->all();
+
+        //判断是否存在数据
+        if(empty($status)){
+            
+            return back()->with('error', '查找不能为空!');
+
+       }else{
+
         
-       
+                $data = Teacher::where('status','=',$status)->get();
+
+                return view('home.teacher.add',['title'=>'名师列表','data'=>$data]);
+        }  
     }
 
     

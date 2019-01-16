@@ -68,11 +68,12 @@
 <div class="xui-content xui-bg-white">
     <div class="xui-container course-list">
                     <div class="course-nav-row">
-                <span class="hd xui-pull-l">按字母：</span>
-                <div class="bd">
             <form action="/home/teacher/add" method="post">
-                 {{ csrf_field() }}
-                <input type="text" value="" name="letter" id="letter">
+             {{ csrf_field() }}
+                
+                <span class="hd xui-pull-l">按字母：<input type="text" value="" name="letter" id="letter" style="display:none;"></span>
+                <div class="bd">
+           
                     <button style="border: none;background-color:rgba(0,0,0,0);">
                     <ul class="">
                           <li class="course-nav-item  on">
@@ -131,8 +132,9 @@
                              <a >Z</a></li>
                     </ul>
                     </button>
-                    </form>
+                    
                 </div>
+    </form>
             </div>
 <script>
     $(function(){
@@ -144,59 +146,42 @@
     });
 </script>
 
-<form action="" method="get">
+<form action="/home/teacher/agg" method="get">
  <div class="course-nav-row">
-                <span class="hd xui-pull-l">按类型：</span>
+                <span class="hd xui-pull-l">按类型：<input type="text" value="" name="status" id="genre" style="display:none;"></span>
                 <div class="bd">
-                   <!-- <ul class="">
+                <button style="border: none;background-color:rgba(0,0,0,0);">
+                   <ul class="">
                           <li class="course-nav-item labels on">
                             <a href="/home/teacher/index">全部</a></li>
-                          <li class="course-nav-item labels" data-id="16">
-                            <a href="">
-                              <button style="outline:0 none !important;border:none;background-color:#fff;outline:none;
-                              background-color: transparent;">
-                                <input type="text" value="1" name="status" style="display: none;">瑜伽导师</button></a>
+                          <li class="course-nav-item labels_v" data-id="16">
+                            <span style="display:none;">1</span>
+                            <a>瑜伽导师</a>
                           </li>
-                          <li class="course-nav-item labels" data-id="17">
-                            <a href="">
-                              <button style="outline:0 none !important;border:none;background-color:#fff;outline:none;
-                              background-color: transparent;">
-                                <input type="text" value="2" name="status" style="display: none;">行业顾问</button></a>
+                          <li class="course-nav-item labels_v" data-id="17">
+                           <span style="display:none;">2</span>
+                            <a>行业顾问</a>
                           </li>
-                          <li class="course-nav-item labels" data-id="18">
-                            <a href="javascript:;">
-                              <button style="outline:0 none !important;border:none;background-color:#fff;outline:none;
-                              background-color: transparent;">
-                                <input type="text" value="3" name="status" style="display: none;">官方认证</button></a>
-                          </li>
-                    </ul> -->
-                   <form action="/teacher"> 
-                    <ul class="">
-                          <li class="course-nav-item labels on">
-                            <a href="/home/teacher/index">全部</a></li>
-                          <li class="course-nav-item labels" data-id="16">
-                            <a href="">
-                              
-                                <input type="hidden" value="1" name="status">瑜伽导师</a>
-                          </li>
-                          <li class="course-nav-item labels" data-id="17">
-                            <a href="">
-                              
-                                <input type="hidden" value="2" name="status" >行业顾问</a>
-                          </li>
-                          <li class="course-nav-item labels" data-id="18">
-                            <a href="">
-                              
-                                <input type="hidden" value="3" name="status">官方认证</a>
+                          <li class="course-nav-item labels_v" data-id="18">
+                           <span style="display:none;">3</span>
+                            <a>官方认证</a>
                           </li>
                     </ul>
-                    </form>
+                    </button>
+               
+                    
                 </div>
   </div>
-
+</form>
 
 <script>
-
+    $(function(){
+        $('.labels_v').mouseover(function(){
+            var letter = $(this).children(":first").html();
+            console.log(letter);
+            $('#genre').attr('value',letter);
+        });
+    });
 </script>
 
 </div>

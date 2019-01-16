@@ -1,6 +1,15 @@
 @extends('home.layout.layout')
 
 @section('content')
+                    @if (session('success'))
+                    <script>alert('{{ session("success") }}');</script>";
+                     
+                    @endif
+                    @if (session('error'))
+
+                    <script>alert('{{ session("error") }}');</script>";
+
+                    @endif
 <!-- 轮播图 -->
 <div class="">
     <img src="/home/picture/listbj.jpg">
@@ -60,19 +69,29 @@
                                 @foreach ($v->sub as $kk=>$vv )
                                   <li class="course-nav-item labels" data-id="19" id="box1_b">
                                    <a href="javascript:;" id="box1_b_1">{{ $vv->crname }}</a>
-
-                                             <ul  class="box-3">
+                                     
+                                             <ul  class="box-3" style="width: 1200px;">
+                                      <form action="/home/club/add" method="get">
+                                      {{ csrf_field() }}
+                                      <input type="text" value="" name="pid" style="display:none;">
                                               <li class="course-nav-item labels on" data-id="-1">
-                                                <a href="javascript:;" style="background-color: #fb9966;">全部</a>
+                                                <a href="javascript:;" style="background-color: #fb9966; margin: 0;">全部</a>
                                               </li>
                                                 @foreach ($vv->sub as $kkk=>$vvv)
-                                                <li class="course-nav-item labels" data-id="19">
-                                                <a href="javascript:;">{{ $vvv->crname }}</a></li>
+                                                <button style="border: none;margin-right: -12px;margin-left:-12px;background-color:rgba(0,0,0,0);">
+                                                <span style="display:none;">{{ $vvv->id }}</span>
+                                                <li class="course-nav-item labels" data-id="19" id="labels_c">
+                                                <a id="box1_b_1" href="javascript:;">{{ $vvv->crname }}</a>
+                                                </li>
+                                                </button>
                                                  @endforeach
+
                                              </ul>
+                                        </form>
                                    </li>
                                   @endforeach  
                             </ul>
+                            
                  </li>
            @endforeach
       </ul>
@@ -121,12 +140,24 @@
     $('#box1_b').click(function(){
          $('.box-3').css('display','block');
         $('#box1_b_1').css('color','#f85f1c');
+        
     }).dblclick(function(){
       $('.box-3').css('display','');
         $('#box1_b_1').css('color','');
+
     });
+    
+   
 
   });
+
+   $(function(){
+        $('.labels_c').mouseover(function(){
+            var pid = $(this).children(":first").html();
+            console.log(pid);
+            $('#letter').attr('value',pid);
+        });
+    });
  
 
 </script>

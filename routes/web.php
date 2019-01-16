@@ -218,6 +218,8 @@ Route::get('admin/teacher/details/{id}','admin\TeacherController@details');
 //前台 首页 home
 Route::resource('/','home\IndexController');
 //前台 瑜伽馆
+Route::get('/home/club/add','home\ClubController@add');
+//前台 瑜伽馆
 Route::resource('home/club','home\ClubController');
 
 //前台 名师
@@ -225,6 +227,7 @@ Route::get('home/teacher/index','home\TeacherController@index');
 Route::get('home/teacher/show/{id}','home\TeacherController@show');
 //搜索
 Route::post('home/teacher/add','home\TeacherController@add');
+Route::get('home/teacher/agg','home\TeacherController@agg');
 
 
 //前台 登录

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Users;
 use DB;
 use Hash;
+use App\Models\User_info;
 
 class LoginController extends Controller
 {
@@ -41,6 +42,15 @@ class LoginController extends Controller
 
         // dd($params);
         $home_login = Users::where('uname',$params['uname'])->first();
+
+        //取出userinfo表中的数据
+        $res = User_info::where('uid',$home_login['uid'])->first();
+        // dd($res);
+        $res1 = $res['status'] == 1;
+        if (!$res1) {
+            return back()->with('error','你没有权限');
+        }
+
         if (!$home_login) {
              return back()->with('error','没有这个用户');
         }
