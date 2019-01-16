@@ -123,28 +123,17 @@
       <div class="xui-content xui-padded-15"> 
        <!--评论模块--> 
        <div class="video-cont-list xui-margin-t-15"> 
-        <h3 class="video-cont-list-title">评论</h3> 
+         
         <div id="discuss" class="xui-discuss xui-margin-t-10"> 
          <div class="discuss-cont"> 
-          <span class="discuss-img"> <img src="picture/user_moren.png" /> </span> 
+           
           <div class="discuss-cont-inner"> 
-           <div class="discuss-cont-inner-box"> 
-            <textarea placeholder="吐槽？膜拜？或者你还可以找老师聊聊！？" id="replyItem"></textarea> 
-           </div> 
-           <div class="xui-text-right xui-content xui-margin-t-15"> 
-            <span id="subDiscus" class="sui-btn btn-xlarge btn-success">发表评论</span> 
-           </div> 
+            
+            
           </div> 
          </div> 
-         <div class="xui-border-b"> 
-          <p class="discuss-sort xui-margin-b-10"> <a href="javascript:;" id="orderSup" class="on">默认排序</a> <a href="javascript:;" id="orderTim">时间排序</a> </p> 
-          <div id="discuss-list"> 
-          </div> 
-         </div> 
-         <div id="loading-more" class="sui-btn btn-xlarge" style="display:table;margin:20px auto;">
-          加载更多 
-          <i class="sui-icon icon-angle-right"></i>
-         </div> 
+         
+          
         </div> 
        </div> 
       </div> 
