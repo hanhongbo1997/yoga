@@ -50,8 +50,6 @@
                                                 <th>ID</th>
                                                 <th>视频名称</th>
                                                 <th>缩略图</th>
-                                                <th>热门程度</th>
-                                                <th>上线/下线</th>
                                                 <th>添加时间</th>
                                                 <th>操作</th>
                                             </tr>
@@ -72,14 +70,6 @@
                                                             </div>
                                                         </section>
                                                     </div>
-                                                </td>
-                                                <td>{{ $v->status }}</td>
-                                                <td>
-                                                    @if( $v->online == '1上线')
-                                                    上线
-                                                    @else
-                                                    下线
-                                                    @endif
                                                 </td>
                                                 <td>{{ $v->created_at }}</td>
                                                 <td>

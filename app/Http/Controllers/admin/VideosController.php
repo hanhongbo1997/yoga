@@ -44,10 +44,24 @@ class VideosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+
+    public function getCates()
+    {
+        //获取数据
+        // $data = DB::select("select *,concat(path,',',id) as paths from club_sort order by paths asc");
+        $data = DB::table('video_sort')->select('*',DB::raw("concat(path,',',id) as paths"))->orderBy('paths','asc')->get();
+        foreach ($data as $k=>$v) {
+            //统计，出现次数
+            $n = substr_count($v->path,',');
+            $data[$k]->vsname = str_repeat('|— — ', $n).$v->vsname;
+        }
+        return $data;
+    }
+
+    public function create($id = 0)
     {
         // echo '我是视频添加';
-        return view('admin.video.create');
+        return view('admin.video.create',['id'=>$id,'data'=>self::getCates()]);
     }
 
     /**
@@ -61,12 +75,14 @@ class VideosController extends Controller
 
         $video = new Video;
         $video->vname = $request->vname;
+        $video->sort = $request->sort;
         $img = $request->file('img');
         $ext = $img->extension('img');
         $filename = time().'.'.$ext;
         $res = $img->storeAs('images',$filename);
         $video->img = $res;
         $res1 = $video->save();
+
 
         $detail = new VideoDetails;
         $detail->vid = $video->id;

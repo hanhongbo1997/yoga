@@ -44,11 +44,6 @@ class VideosortController extends Controller
      */
     public function create($id=0)
     {
-        //添加子分类
-        echo $id;
-        //读取分类
-       // $data = Clubsort::all();
-       // dump($data);exit;
         
         //加载视图
         return view('admin.videosort.create',['id'=>$id,'title'=>'添加分类','data'=>self::getCates()]);

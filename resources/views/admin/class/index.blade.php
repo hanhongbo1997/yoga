@@ -42,7 +42,6 @@
                                 <th>ID</th>
                                 <th>课程名称</th>
                                 <th>缩略图</th>
-                                <th>热门程度</th>
                                 <th>添加时间</th>
                                 <th>操作</th>
                             </tr>
@@ -63,7 +62,6 @@
                                         </section>
                                     </div>
                                 </td>
-                                <td>{{ $v->status }}</td>
                                 <td>{{ $v->created_at }}</td>
                                 <td>
                                 	<a href="/admin/class/{{ $v->id }}/edit" class="btn btn-primary">修改</a>

@@ -8,6 +8,7 @@ use App\Models\News;
 use App\Models\Lesson;
 use App\Models\Teacher;
 use App\Models\Video;
+use App\Models\Club;
 
 class IndexController extends Controller
 {
@@ -20,13 +21,16 @@ class IndexController extends Controller
     {
         $data = session('admin_login');
         //加载模板
-        $new = News::orderBy(\DB::raw('RAND()'))
-        ->take(3)
-        ->get(); 
-        $video = Video::orderBy(\DB::raw('RAND()'))
-        ->take(5)
-        ->get();
-        return view('home.index.index',['title'=>'首页','data'=>$data,'new'=>$new,'video'=>$video]);
+        $new = News::orderBy(\DB::raw('RAND()'))->take(3)->get(); 
+        $video = Video::orderBy(\DB::raw('RAND()'))->take(5)->get();
+        $look = Video::orderBy(\DB::raw('RAND()'))->take(4)->get();
+        $lesson = Lesson::orderBy(\DB::raw('RAND()'))->take(4)->get();
+        $news = News::orderBy(\DB::raw('RAND()'))->take(4)->get();
+        $club = Club::orderBy(\DB::raw('RAND()'))->take(4)->get();
+        $teacher = Teacher::orderBy(\DB::raw('RAND()'))->take(4)->get();
+
+
+        return view('home.index.index',['title'=>'首页','data'=>$data,'new'=>$new,'video'=>$video,'look'=>$look,'lesson'=>$lesson,'news'=>$news,'teacher'=>$teacher,'club'=>$club]);
     }
 
     /**

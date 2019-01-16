@@ -28,6 +28,10 @@
 				<br>
 				<br>
 				<br>
+				<div class="bread" style="width:52.8rem;background: #fff">
+				    <a href="http://wakeyoga.com/" title="">首页</a><span>|</span>
+				    <a href="http://wakeyoga.com/2lessons/a1z2/" title="">瑜伽课程</a>
+				</div>
 				<h3 class="title aui-margin-b-15">精品课程</h3>
 				
 				<ul class="classList" id="classList">

@@ -240,7 +240,7 @@
                     <li>
                         <a href="#"> 资讯管理 <i class="im-earth"></i></a>
                         <ul class="nav sub">
-                            <li><a href="/admin/news/index"><i class="im-list"></i> 资讯列表</a>
+                            <li><a href="/admin/news"><i class="im-list"></i> 资讯列表</a>
                             </li>
                             <li><a href="/admin/news/create"><i class="im-plus"></i> 资讯添加</a>
 

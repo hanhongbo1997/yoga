@@ -5,35 +5,14 @@
 <div class="banner">
     <img src="/home/picture/listbj.jpg" alt="" style="height: 420px" />
 </div>
-<div class="bread" style="width:52.8rem">
+<div class="bread" style="width:52.8rem;background: #f9f9f9">
     <a href="http://wakeyoga.com/" title="">首页</a><span>|</span>
-    <a href="http://wakeyoga.com/2lessons/a1z2/" title="">瑜伽课程</a>
+    <a href="http://wakeyoga.com/2lessons/a1z2/" title="">瑜伽视频</a>
 </div>
 <form id="myForm">
     <div class="chooseLike">
         <div class="content2" style="margin:1rem auto;">
-            <div class="hotChoose">
-                <ul>
-                    <input type="hidden" id="page" name="page" value="1"/>
-                    <li class="fasten">
-                        <a href="http://wakeyoga.com/2lessons/a1z2/" title="" class="fl leixing hotLike1" id="baseLesson"
-                           onclick="chooseType1('leixing',this)"><input name="lesson" type="radio" value="1" checked/>练基础</a>
-                        <a href="http://wakeyoga.com/2lessons/a2z2/" title="" class="fl leixing hotLike2" id="meditation"
-                           onclick="chooseType1('leixing',this)"><input name="lesson" type="radio" value="2"/>去冥想</a>
-                        <a href="http://wakeyoga.com/2lessons/a3z2/" title="" class="fl leixing hotLike3" id="master"
-                           onclick="chooseType1('leixing',this)"><input name="lesson" type="radio" value="3"/>跟名师</a>
-                        <a href="http://wakeyoga.com/2lessons/a4z2/" title="" class="fl leixing hotLike4" id="plans"
-                           onclick="chooseType1('leixing',this)"><input name="lesson" type="radio" value="4"/>定计划</a>
-                        <a href="http://wakeyoga.com/2lessons/a5z2/" title="" class="fl leixing hotLike5" id="live"
-                           onclick="chooseType1('leixing',this)"><input name="lesson" type="radio" value="5"/>直播课堂</a>
-                        <a href="http://wakeyoga.com/2lessons/a6z2/" title="" class="fl leixing hotLike6" id="style"
-                           onclick="chooseType1('leixing',this)"><input name="lesson" type="radio" value="6"/>体式库</a>
-                        <div class="clear">&nbsp;</div>
-                    </li>
-                </ul>
-            </div>
             <div class="chooseTj">
-                <span id="point" class="point1"></span>
                 <ul>
                     @foreach($common_video as $k=>$v)
                     <li class="oh all choose3 choose4 choose6">
@@ -48,17 +27,6 @@
                 <!--已选条件-->
             </div>
         </div>
-    </div>
-    <div class="sortArea" style="
-    
-    
-    display: block;">
-        <em>排序：</em>
-        <span onclick="getData()" name="sort" id="reduSort"><i class="cur"> <input type="radio" value="3"
-                                                                                   name="baseSort"
-                                                                                   checked/></i>最新</span>
-        <span onclick="getData()" name="sort"><i><input type="radio" value="1" name="baseSort"/></i>热门</span>
-        <span onclick="getData()" name="sort"><i><input type="radio" value="2" name="baseSort"/></i>好评</span>
     </div>
 </form>
 <div class="content2" style="margin:1rem auto;">

@@ -38,12 +38,12 @@
     		color:transparent;
     	}
     </style>
-
-    	<video id="player1" width=1100 height=618 controls poster="{{ $data->img }}">
+    <div style="width: 1110px;height: 650px;">
+    	<video id="player1" width=100% controls poster="/uploads/{{ $data->img }}">
             <source src="/app/aetherupload/{{ $data->videodetails->video }}" type="video/mp4">
         </video>
-        <script>plyr.setup();</script>
-        </div>    
+        </div>
+    </div>    
     </div>
 
 </div>
@@ -140,18 +140,21 @@
                         </div>
                     </div>
                     @endforeach 
-            <form action="/home/comment" method="post">
-            {{ csrf_field() }}
-                <input type="hidden" name="user_id" value="">
-                <input type="hidden" name="video_id" value="{{ $data->id }}">
-                <input type="hidden" name="comment_id" value="{{ $v->id }}">
-                <div class="" style="width: 900px;margin-left:50px;margin-top:0px;background: #fff;padding: 10px;"> 
-                    <textarea style="float: left;width: 808px;height:35px;background: #fff;box-shadow: 0px 0px 1px 1px #ccc;padding: 5px;" name="content" placeholder="绿色上网，文明回复" ></textarea> 
-                    <button style="color: #fff;background-color: #f9c34f;border: 1px solid #f9b728;width: auto;height: 37px;font-size: 16px;margin-left: 10px;">回复</button>
-                    <div style="clear: both;"></div>
-                </div>
-            </form>
-            </div> 
+                    @if($info == null)
+                    @else
+                    <form action="/home/comment" method="post">
+                    {{ csrf_field() }}
+                        <input type="hidden" name="user_id" value="">
+                        <input type="hidden" name="video_id" value="{{ $data->id }}">
+                        <input type="hidden" name="comment_id" value="{{ $v->id }}">
+                        <div class="" style="width: 900px;margin-left:50px;margin-top:0px;background: #fff;padding: 10px;"> 
+                            <textarea style="float: left;width: 808px;height:35px;background: #fff;box-shadow: 0px 0px 1px 1px #ccc;padding: 5px;" name="content" placeholder="绿色上网，文明回复" ></textarea> 
+                            <button style="color: #fff;background-color: #f9c34f;border: 1px solid #f9b728;width: auto;height: 37px;font-size: 16px;margin-left: 10px;">回复</button>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </form>
+                    @endif
+                    </div> 
         @endforeach
     @endif
     </div>
@@ -165,29 +168,27 @@
                 <ul class="courseList">
                     @foreach($video as $k=>$v)
                         
-                            <li class="fl">
-                                
-                                
-                                    <dl>
-                                        <a href="/home/video/{{ $v->id }}/edit" title="">
-                                            <dt>
-                                                <img src="/uploads/{{ $v->img }}" alt=""/>
-                                            </dt>
-                                            <dd class="courseName">
-                                                <div class="fireCourse oh">
-                                                    <var class="fl">{{ $v->vname }}</var>
-                                                    
-                                                </div>
-                                
-                                                <div class="yellow_blue">
-                                                    
-                                                    
-                                                </div>
-                                            </dd>
-                                        </a>
-                                    </dl>    
-                            </li>         
-                      @endforeach     
+                    <li class="fl">
+                        <dl>
+                            <a href="/home/video/{{ $v->id }}/edit" title="">
+                                <dt>
+                                    <img src="/uploads/{{ $v->img }}" alt=""/>
+                                </dt>
+                                <dd class="courseName">
+                                    <div class="fireCourse oh">
+                                        <var class="fl">{{ $v->vname }}</var>
+                                        
+                                    </div>
+                    
+                                    <div class="yellow_blue">
+                                        
+                                        
+                                    </div>
+                                </dd>
+                            </a>
+                        </dl>    
+                    </li>         
+                    @endforeach     
                     <div class="clear">&nbsp;</div>
                 </ul>
             </div>

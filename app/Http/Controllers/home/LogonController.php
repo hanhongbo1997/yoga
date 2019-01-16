@@ -17,7 +17,7 @@ class LogonController extends Controller
     public function index()
     {
         //加载模板
-        return view('home.logon.index');
+        return view('home.logon.index',['title'=>'登录']);
     }
 
     /**

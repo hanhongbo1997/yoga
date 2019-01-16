@@ -24,6 +24,13 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label class="col-lg-2 col-md-2 col-sm-12 control-label">视频分类</label>
+                                            <div class="col-lg-10 col-md-10">
+                                                <input type="text" class="form-control" name="vname" placeholder="请填写视频名称" autofocus="autofocus" value="{{ $data->vname }}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label class="col-lg-2 col-md-2 col-sm-12 control-label">视频简介</label>
                                             <div class="col-lg-10 col-md-10">
                                                 <input type="text" class="form-control" name="details" placeholder="请填写视频简介" autofocus="autofocus" value="{{ $data->videodetails->details }}">

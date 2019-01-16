@@ -8,12 +8,6 @@
       <div class="col-lg-6 col-md-6 col-sm-12 text-center">
         <div id="datatable_length" class="dataTables_length">
           <label>
-            <span>
-              <select size="1" name="datatable_length" aria-controls="datatable" class="form-control input-small">
-                <option value="10" selected="selected">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option></select>entries</span>
           </label>
         </div>
       </div>

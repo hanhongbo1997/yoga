@@ -30,9 +30,7 @@
           <th class="sorting" role="columnheader" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">分类名称</th>
           <th class="sorting" role="columnheader" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">所属分类ID</th>
           <th class="sorting" role="columnheader" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">所属路径</th>
-          <th class="sorting" role="columnheader" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">分类状态</th>
-          
-          <th class="sorting" role="columnheader" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">操作</th></tr>
+          <th class="sorting" role="columnheader" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="text-align: center;">操作</th></tr>
       </thead>
       <tfoot>
       
@@ -45,12 +43,6 @@
           <td class=" ">{{ $v->pid }}</td>
 
           <td class=" ">{{ $v->path }}</td>
-
-          <td class=" ">
-
-          {{ $v->status == 1 ? '激活' : '未激活' }}
-
-          </td>
           
           <td class="center ">
                      

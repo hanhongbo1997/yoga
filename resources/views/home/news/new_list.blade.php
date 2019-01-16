@@ -40,35 +40,10 @@
 <br>
 <br>
 <div class="xui-content">
-    <div class="xui-container">
-        <ul class="sui-breadcrumb xui-margin-0">
-            <li><a href="/index.html">首页</a></li>
-            <li class="active">资讯</li>
-        </ul>
-    </div>
+    <div class="bread" style="width:52.8rem;background: #f6f6f6;">
+    <a href="http://wakeyoga.com/" title="" style="color: black;">首页</a><span>|</span>
+    <a href="http://wakeyoga.com/2lessons/a1z2/" title="" style="color: black;">资讯</a>
 </div>
-<div class="xui-content xui-bg-white">
-    <div class="xui-container course-list">
-        <div class="course-nav-row" style="border:0;">
-            <span class="hd xui-pull-l">分类：</span>
-            <div class="bd">
-                <ul class="">
-                                                <li class="course-nav-item on" >
-                                <a href="/news/9.html">行业快报</a>
-                            </li>
-                                                    <li class="course-nav-item">
-                                <a href="/news/10.html">业界要闻</a>
-                            </li>
-                                                    <li class="course-nav-item">
-                                <a href="/news/11.html">明星瑜伽</a>
-                            </li>
-                                                    <li class="course-nav-item">
-                                <a href="/news/12.html">热点人物</a>
-                            </li>
-                                        </ul>
-            </div>
-        </div>
-    </div>
 </div>
 <div class="xui-container" style="margin:20px auto;">
     <div class="xui-content-left xui-pull-l">
@@ -124,12 +99,7 @@
 </script>
 <div class="xui-member-content" style="padding-left:240px;">
     <div class="xui-content xui-bg-white xui-padded-15 xui-padded-t-0">
-        <div class="xui-content course-list-header xui-margin-0 xui-padded-15 xui-border-b">
-            <div class="xui-pull-l">
-                <a href="/news/9.html" class="New on">最新</a> 
-                <a href="/news/9/hot.html" class="Hot">热门</a>
-            </div>
-        </div>
+        
         <div class="xui-content news-list">
 
         	@foreach($data as $k=>$v)
