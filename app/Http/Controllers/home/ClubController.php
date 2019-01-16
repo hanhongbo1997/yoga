@@ -152,4 +152,15 @@ class ClubController extends Controller
     {
         //
     }
+     /**
+     * 瑜伽馆搜索
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function add(Request $request)
+    {
+        //
+        echo 'aaaa';
+    }
 }
