@@ -33,7 +33,7 @@ class VideoController extends Controller
     public function index()
     {
         $data = Video::get();
-        return view('home.video.video_list',['data'=>$data]);
+        return view('home.video.video_list',['data'=>$data,'title'=>'瑜伽视频']);
     }
 
     /**
@@ -97,7 +97,10 @@ class VideoController extends Controller
         }else{
             $info = null; 
         }
-        return view('home.video.video_info',['data'=>$data,'comment'=>$comment,'info'=>$info]); 
+        $video = Video::orderBy(\DB::raw('RAND()'))
+        ->take(4)
+        ->get();
+        return view('home.video.video_info',['data'=>$data,'comment'=>$comment,'info'=>$info,'title'=>$data->vname,'video'=>$video]); 
     }
 
     /**

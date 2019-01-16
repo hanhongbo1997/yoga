@@ -1619,54 +1619,23 @@
         <div class="fl heartTitle"><img src="/home/picture/lovefor.png"/></div>
         <ul>
             
-                
-                        <li class="starList">
-                            <a href="http://wakeyoga.com/2articlelifed1083.html">
-                                <dl>
-                                    <dt>
-                                        <img src="/home/picture/adab87791caf4c028476e3f751bbd1ad.jpg"/>
-                                    </dt>
-                                    <dd><span>这些最重要的体式，往往被我们忽略了...</span></dd>
-                                </dl>
-                            </a>
-                        </li>
-                
-                        <li class="starList">
-                            <a href="http://wakeyoga.com/2articlelifed1080.html">
-                                <dl>
-                                    <dt>
-                                        <img src="/home/picture/728f539d78a2496284d464211f82d265.jpg"/>
-                                    </dt>
-                                    <dd><span>对不起，我背着你高潮了。</span></dd>
-                                </dl>
-                            </a>
-                        </li>
-                
-                        <li class="starList">
-                            <a href="http://wakeyoga.com/2vediolifed1079.html">
-                                <dl>
-                                    <dt>
-                                        <img src="/home/picture/9384b91e910741f1877d5552a8e8ab2d.jpg"/>
-                                    </dt>
-                                    <dd><span>浪漫的四月，陪你踏上一段幸福的旅程</span></dd>
-                                </dl>
-                            </a>
-                        </li>
-                
-            
+            @foreach($new as $k=>$v)    
+            <li class="starList">
+                <a href="/home/news/{{ $v->id }}/edit">
+                    <dl>
+                        <dt>
+                            <img src="/uploads/{{ $v->img }}"/>
+                        </dt>
+                        <dd><span>{{ $v->nname }}</span></dd>
+                    </dl>
+                </a>
+            </li>
+            @endforeach    
             <li class="articleList">
                 <div class="oh falseOl">
-                    
-                    <var><a href="http://wakeyoga.com/2vediolifed1084.html"><span>跳绳没新意？看完你会对跳绳充满了兴趣</span></a></var>
-                
-                    <var><a href="http://wakeyoga.com/2articlelifed1076.html"><span>19张瑜伽漫画，让你重新认识瑜伽...</span></a></var>
-                
-                    <var><a href="http://wakeyoga.com/2articlelifed1061.html"><span>高低肩？脊柱侧弯？10个小动作帮你找回好气质！</span></a></var>
-                
-                    <var><a href="http://wakeyoga.com/2vediolifed1074.html"><span>清晨，唤醒你内在的力量</span></a></var>
-                
-                    <var><a href="http://wakeyoga.com/2vediolifed938.html"><span>跟着《YOGA》的节拍，舞动岁月，不惧未来</span></a></var>
-                    
+                    @foreach($video as $k=>$v)
+                    <var><a href="/home/video/{{ $v->id }}/edit"><span>{{$v->vname}}</span></a></var>
+                    @endforeach
                 </div>
             </li>
             <div class="clear">&nbsp;</div>

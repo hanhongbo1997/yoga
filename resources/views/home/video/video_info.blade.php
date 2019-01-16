@@ -163,28 +163,22 @@
             </div>
             <div class="suggseDiv">
                 <ul class="courseList">
-                    
+                    @foreach($video as $k=>$v)
                         
                             <li class="fl">
                                 
                                 
                                     <dl>
-                                        <a href="http://www.wakeyoga.com/2meditationlesd385.html" title="">
+                                        <a href="/home/video/{{ $v->id }}/edit" title="">
                                             <dt>
-                                                <img src="/home/picture/13b3208c546946d68e14d0bd7de960c8.jpg" alt=""/>
+                                                <img src="/uploads/{{ $v->img }}" alt=""/>
                                             </dt>
                                             <dd class="courseName">
                                                 <div class="fireCourse oh">
-                                                    <var class="fl">冥想音乐</var>
+                                                    <var class="fl">{{ $v->vname }}</var>
                                                     
                                                 </div>
-                                                <div class="seeNum">
-                                                    <i><img src="/home/picture/see.png"
-                                                            alt=""/>6345395</i>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <i class="fireTime"><img src="/home/picture/jie.png"
-                                                                             alt=""/>26节</i>
-                                                </div>
+                                
                                                 <div class="yellow_blue">
                                                     
                                                     
@@ -193,90 +187,7 @@
                                         </a>
                                     </dl>    
                             </li>         
-                            <li class="fl">
-                                    <dl>
-                                        <a href="http://www.wakeyoga.com/auth/2comprehensivelesd378.html"
-                                           title="">
-                                            <dt>
-                                                <img src="/home/picture/7a1c6cad1a2d425980b5b85322cc7eb6.jpg" alt=""/>
-                                            </dt>
-                                            <dd class="courseName">
-                                                <div class="fireCourse oh">
-                                                    <var class="fl">流动中的冥想流瑜伽</var>   
-                                                </div>
-                                                <div class="seeNum">
-                                                    <i><img src="/home/picture/see.png"
-                                                            alt=""/>388772</i>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <i class="fireTime"><img src="static/picture/jie.png"
-                                                                             alt=""/>3节</i>
-                                                </div>
-                                                <div class="yellow_blue">
-                                                    <img src="/home/picture/vip.png" alt="" class="yellowVip">
-                                                </div>
-                                            </dd>
-                                        </a>
-                                    </dl>
-                                
-                                
-                            </li>
-                            <li class="fl">
-                                
-                                
-                                    <dl>
-                                        <a href="http://www.wakeyoga.com/2meditationlesd114.html" title="">
-                                            <dt>
-                                                <img src="/home/picture/98777cae43dd49a08abcb26c5390b12b.jpg" alt=""/>
-                                            </dt>
-                                            <dd class="courseName">
-                                                <div class="fireCourse oh">
-                                                    <var class="fl">冥想本质</var>
-                                                    
-                                                </div>
-                                                <div class="seeNum">
-                                                    <i><img src="/home/picture/see.png"
-                                                            alt=""/>1123311</i>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <i class="fireTime"><img src="/home/picture/jie.png"
-                                                                             alt=""/>15节</i>
-                                                </div>
-                                                <div class="yellow_blue">   
-                                                </div>
-                                            </dd>
-                                        </a>
-                                    </dl>  
-                            </li>
-                            <li class="fl">
-                                    <dl>
-                                        <a href="http://www.wakeyoga.com/auth/2pland4452.html" title="">
-                                            <dt>
-                                                <img src="/home/picture/8735023eda5f4bc59843f31cd5eb0e61.jpg" alt=""/>
-                                            </dt>
-                                            <dd class="courseName">
-                                                <div class="fireCourse oh">
-                                                    <var class="fl">7天正念冥想计划</var>
-                                                    
-                                                </div>
-                                                <div class="seeNum">
-                                                    <i><img src="/home/picture/see.png"
-                                                            alt=""/>333410</i>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <i class="fireTime"><img src="/home/picture/jie.png"
-                                                                             alt=""/>7节</i>
-                                                </div>
-                                                <div class="yellow_blue"> 
-                                                    <img
-                                                            src="/home/picture/vip.png" alt=""
-                                                            class="yellowVip">
-                                                </div>
-                                            </dd>
-                                        </a>
-                                    </dl>
-                                
-                            </li>
-                        
-                        
-                    
+                      @endforeach     
                     <div class="clear">&nbsp;</div>
                 </ul>
             </div>

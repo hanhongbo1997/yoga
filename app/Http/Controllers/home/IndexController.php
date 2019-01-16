@@ -4,6 +4,10 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\News;
+use App\Models\Lesson;
+use App\Models\Teacher;
+use App\Models\Video;
 
 class IndexController extends Controller
 {
@@ -16,7 +20,13 @@ class IndexController extends Controller
     {
         $data = session('admin_login');
         //加载模板
-        return view('home.index.index',['title'=>'首页','data'=>$data]);
+        $new = News::orderBy(\DB::raw('RAND()'))
+        ->take(3)
+        ->get(); 
+        $video = Video::orderBy(\DB::raw('RAND()'))
+        ->take(5)
+        ->get();
+        return view('home.index.index',['title'=>'首页','data'=>$data,'new'=>$new,'video'=>$video]);
     }
 
     /**

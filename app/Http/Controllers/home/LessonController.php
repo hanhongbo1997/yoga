@@ -19,7 +19,7 @@ class LessonController extends Controller
     {
         //
         $data = Lesson::get();
-        return view('home.lesson.lesson_list',['data'=>$data]);
+        return view('home.lesson.lesson_list',['data'=>$data,'title'=>'瑜伽课程']);
     }
 
     /**
@@ -81,7 +81,7 @@ class LessonController extends Controller
         }else{
             $info = null; 
         }
-        return view('home.lesson.lesson_info',['data'=>$data,'comment'=>$comment,'info'=>$info]);
+        return view('home.lesson.lesson_info',['data'=>$data,'comment'=>$comment,'info'=>$info,'title'=>$data->lname]);
     }
 
     /**

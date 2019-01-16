@@ -29,19 +29,7 @@
 				<br>
 				<br>
 				<h3 class="title aui-margin-b-15">精品课程</h3>
-				<p class="aui-text-center channellist">
-					<a href="/pc/activity/double_egg.html" title="全部" class="active">全部</a>&nbsp;&nbsp;
-					&nbsp;&nbsp;/&nbsp;&nbsp;
-												<a href="/pc/activity/double_egg/channelId/28.html" title="名师课堂" class=''>名师课堂</a>
-						&nbsp;&nbsp;/&nbsp;&nbsp;
-												<a href="/pc/activity/double_egg/channelId/27.html" title="训练计划" class=''>训练计划</a>
-						&nbsp;&nbsp;/&nbsp;&nbsp;
-						
-						<a href="/vip/6935.html" title="vip服务" class=''>
-							<img src="/home/picture/vip_card.gif" alt="" style="width:60px;display:inline-block;position:relative;top:3px;">
-						</a>
-					<input type="hidden" name="channelId" value="">
-				</p>
+				
 				<ul class="classList" id="classList">
 					@foreach($data as $k=>$v)
 					<li style="position:relative;">

@@ -22,7 +22,7 @@ class NewsController extends Controller
         $lesson = Lesson::orderBy(\DB::raw('RAND()'))
         ->take(4)
         ->get();
-        return view('home.news.new_list',['data'=>$data,'lesson'=>$lesson]);
+        return view('home.news.new_list',['data'=>$data,'lesson'=>$lesson,'title'=>'资讯']);
     }
 
     /**
@@ -72,7 +72,7 @@ class NewsController extends Controller
         $video = Video::orderBy(\DB::raw('RAND()'))
         ->take(6)
         ->get();
-        return view('home.news.new_info',['data'=>$data,'teacher'=>$teacher,'video'=>$video]);
+        return view('home.news.new_info',['data'=>$data,'teacher'=>$teacher,'video'=>$video,'title'=>$data->nname]);
     }
 
     /**

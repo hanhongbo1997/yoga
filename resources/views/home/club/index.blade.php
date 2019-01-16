@@ -181,7 +181,7 @@
         <h3>课堂推荐</h3>
         @foreach ($lesson as $k=>$v)
                     <li>
-                <a href="/skip/5850.html" target="_blank">
+                <a href="/home/lesson/{{ $v->id }}/edit" target="_blank">
                     <img src="/uploads/{{ $v->img }}" style="width: 190px;height: 118px;">
                     <h4>{{ $v->lname }}  </h4>
                 </a>
