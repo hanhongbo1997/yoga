@@ -19,7 +19,7 @@ class LessonController extends Controller
     {
         //
         $data = Lesson::get();
-        return view('home.lesson.lesson_list',['data'=>$data]);
+        return view('home.lesson.lesson_list',['data'=>$data,'title'=>'瑜伽课程']);
     }
 
     /**

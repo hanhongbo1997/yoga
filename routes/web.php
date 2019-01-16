@@ -24,31 +24,31 @@ Route::post('home/userinfo/profile/{id}','home\UserinfoController@profile');
 Route::post('home/vip/updates/{id}','home\VipController@updates');
 //个人中心 VIP 支付中心
 Route::get('home/vip/order/{id}','home\VipController@order');
-
+//后台
 //视频资源控制器
-Route::resource('admin/videos','admin\VideosController');
+Route::resource('admin/videos','admin\VideosController')->middleware('Alogin');
 //视频详情资源控制器
-Route::resource('admin/videoinfo','admin\VideoinfoController');
+Route::resource('admin/videoinfo','admin\VideoinfoController')->middleware('Alogin');
 //视频评论控制器
-Route::resource('admin/videocomment','admin\VideocommentController');
+Route::resource('admin/videocomment','admin\VideocommentController')->middleware('Alogin');
 //课程资源控制器
-Route::resource('admin/class','admin\ClassController');
+Route::resource('admin/class','admin\ClassController')->middleware('Alogin');
 //课程详情资源控制器
-Route::resource('admin/classinfo','admin\ClassinfoController');
+Route::resource('admin/classinfo','admin\ClassinfoController')->middleware('Alogin');
 //课程评论控制器
-Route::resource('admin/lessoncomment','admin\LessoncommentController');
+Route::resource('admin/lessoncomment','admin\LessoncommentController')->middleware('Alogin');
 //资讯资源控制器
-Route::resource('admin/news','admin\NewsController');
+Route::resource('admin/news','admin\NewsController')->middleware('Alogin');
 //课程详情资源控制器
-Route::resource('admin/newinfo','admin\NewinfoController');
+Route::resource('admin/newinfo','admin\NewinfoController')->middleware('Alogin');
 //视频分类资源控制器
-Route::resource('admin/videosort','admin\VideosortController');
+Route::resource('admin/videosort','admin\VideosortController')->middleware('Alogin');
 //添加視頻子分類
-Route::get('admin/videosort/create/{id}','admin\VideosortController@create');
+Route::get('admin/videosort/create/{id}','admin\VideosortController@create')->middleware('Alogin');
 //課程分类资源控制器
-Route::resource('admin/lessonsort','admin\LessonsortController');
+Route::resource('admin/lessonsort','admin\LessonsortController')->middleware('Alogin');
 //添加課程子分類
-Route::get('admin/lessonsort/create/{id}','admin\LessonsortController@create');
+Route::get('admin/lessonsort/create/{id}','admin\LessonsortController@create')->middleware('Alogin');
 
 //前台控制器
 //视频页面控制器
@@ -110,13 +110,13 @@ Route::resource('home/cart','home\CartController');
 
 
 //后台主页
-Route::resource('admin/index','admin\IndexController');
+Route::resource('admin/index','admin\IndexController')->middleware('Alogin');
 
 //用户控制器
-Route::resource('admin/users','admin\UsersController');
+Route::resource('admin/users','admin\UsersController')->middleware('Alogin');
 
 // 轮播图控制
-Route::resource('admin/slideshow','admin\SlideshowController');
+Route::resource('admin/slideshow','admin\SlideshowController')->middleware('Alogin');
 
 //后台登录
 // Route::resource('admin/login','admin\LoginController');
@@ -200,18 +200,18 @@ Route::get('home/community','home\PagetailController@index2');
 Route::get('home/logon/Register','home\LogonController@Register');
 //admin 后台
 //会馆列表
-Route::resource('admin/club','admin\ClubController');
+Route::resource('admin/club','admin\ClubController')->middleware('Alogin');
 //添加详情提交
-Route::post('admin/club/add/{id}','admin\ClubController@add');
+Route::post('admin/club/add/{id}','admin\ClubController@add')->middleware('Alogin');
 //查看详情
-Route::get('admin/club/details/{id}','admin\ClubController@details');
+Route::get('admin/club/details/{id}','admin\ClubController@details')->middleware('Alogin');
 //会馆分类列表
-Route::resource('admin/clubsort','admin\ClubsortController');
+Route::resource('admin/clubsort','admin\ClubsortController')->middleware('Alogin');
 //添加子类
 Route::get('admin/clubsort/create/{id}','admin\ClubsortController@create');
 
 //添加老师列表
-Route::resource('admin/teacher','admin\TeacherController');
+Route::resource('admin/teacher','admin\TeacherController')->middleware('Alogin');
 Route::get('admin/teacher/details/{id}','admin\TeacherController@details');
 
 
@@ -257,4 +257,5 @@ Route::resource('home/register','home\RegisterController');
 Route::get('home/user/add',function(){
  dump('后台商品');
 })->middleware('logon');
+
 

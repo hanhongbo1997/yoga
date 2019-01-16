@@ -77,57 +77,57 @@
                     <ul class="">
                           <li class="course-nav-item  on">
                             <a href="">全部</a></li>
-                        <li class="course-nav-item labels" data-id="12">
+                        <li class="course-nav-item labels_q" data-id="12">
                             <a >A</a></li>
-                        <li class="course-nav-item labels" data-id="13">
+                        <li class="course-nav-item labels_q" data-id="13">
                              <a >B</a></li>
-                        <li class="course-nav-item labels" data-id="14">
+                        <li class="course-nav-item labels_q" data-id="14">
                               <a >C</a></li>
-                        <li class="course-nav-item labels" data-id="15">
+                        <li class="course-nav-item labels_q" data-id="15">
                               <a >D</a></li>
-                        <li class="course-nav-item labels" data-id="32">
+                        <li class="course-nav-item labels_q" data-id="32">
                               <a >E</a></li>
-                        <li class="course-nav-item labels" data-id="33">
+                        <li class="course-nav-item labels_q" data-id="33">
                               <a >F</a></li>
-                        <li class="course-nav-item labels" data-id="34">
+                        <li class="course-nav-item labels_q" data-id="34">
                              <a >G</a></li>
-                        <li class="course-nav-item labels" data-id="35">
+                        <li class="course-nav-item labels_q" data-id="35">
                               <a >H</a></li>
-                        <li class="course-nav-item labels" data-id="36">
+                        <li class="course-nav-item labels_q" data-id="36">
                               <a >I</a></li>
-                        <li class="course-nav-item labels" data-id="37">
+                        <li class="course-nav-item labels_q" data-id="37">
                              <a >J</a></li>
-                        <li class="course-nav-item labels" data-id="38">
+                        <li class="course-nav-item labels_q" data-id="38">
                               <a >K</a></li>
-                        <li class="course-nav-item labels" data-id="39">
+                        <li class="course-nav-item labels_q" data-id="39">
                              <a >L</a></li>
-                        <li class="course-nav-item labels" data-id="40">
+                        <li class="course-nav-item labels_q" data-id="40">
                               <a >M</a></li>
-                        <li class="course-nav-item labels" data-id="41">
+                        <li class="course-nav-item labels_q" data-id="41">
                               <a >N</a></li>
-                        <li class="course-nav-item labels" data-id="42">
+                        <li class="course-nav-item labels_q" data-id="42">
                              <a >O</a></li>
-                        <li class="course-nav-item labels" data-id="43">
+                        <li class="course-nav-item labels_q" data-id="43">
                              <a >P</a></li>
-                        <li class="course-nav-item labels" data-id="44">
+                        <li class="course-nav-item labels_q" data-id="44">
                              <a >Q</a></li>
-                        <li class="course-nav-item labels" data-id="45">
+                        <li class="course-nav-item labels_q" data-id="45">
                              <a >R</a></li>
-                        <li class="course-nav-item labels" data-id="46">
+                        <li class="course-nav-item labels_q" data-id="46">
                              <a >S</a></li>
-                        <li class="course-nav-item labels" data-id="47">
+                        <li class="course-nav-item labels_q" data-id="47">
                              <a >T</a></li>
-                        <li class="course-nav-item labels" data-id="48">
+                        <li class="course-nav-item labels_q" data-id="48">
                             <a >U</a></li>
-                        <li class="course-nav-item labels" data-id="49">
+                        <li class="course-nav-item labels_q" data-id="49">
                              <a >V</a></li>
-                        <li class="course-nav-item labels" data-id="50">
+                        <li class="course-nav-item labels_q" data-id="50">
                             <a >W</a></li>
-                        <li class="course-nav-item labels" data-id="51">
+                        <li class="course-nav-item labels_q" data-id="51">
                             <a >X</a></li>
-                        <li class="course-nav-item labels" data-id="52">
+                        <li class="course-nav-item labels_q" data-id="52">
                             <a >Y</a></li>
-                        <li class="course-nav-item labels" data-id="53">
+                        <li class="course-nav-item labels_q" data-id="53">
                              <a >Z</a></li>
                     </ul>
                     </button>
@@ -136,7 +136,7 @@
             </div>
 <script>
     $(function(){
-        $('.labels').mouseover(function(){
+        $('.labels_q').mouseover(function(){
             var letter = $(this).children(":first").html();
             console.log(letter);
             $('#letter').attr('value',letter);

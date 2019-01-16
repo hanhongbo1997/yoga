@@ -22,7 +22,7 @@ class NewsController extends Controller
         $lesson = Lesson::orderBy(\DB::raw('RAND()'))
         ->take(4)
         ->get();
-        return view('home.news.new_list',['data'=>$data,'lesson'=>$lesson]);
+        return view('home.news.new_list',['data'=>$data,'lesson'=>$lesson,'title'=>'资讯']);
     }
 
     /**

@@ -33,7 +33,7 @@ class VideoController extends Controller
     public function index()
     {
         $data = Video::get();
-        return view('home.video.video_list',['data'=>$data]);
+        return view('home.video.video_list',['data'=>$data,'title'=>'瑜伽视频']);
     }
 
     /**
