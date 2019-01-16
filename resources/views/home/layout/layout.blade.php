@@ -3,7 +3,7 @@
 </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wake-瑜伽减肥健身视频课程，瑜伽教练培训首选品牌</title>
+    <title>{{ $title }}</title>
     <meta name="description" content="Wake是中国具影响力的瑜伽品牌，拥有专业的瑜伽视频课程及瑜伽教练培训平台，包含多种精品瑜伽课程，如睡前瑜伽、哈他瑜伽、初级瑜伽、减肥瑜伽等，并拥多家线下瑜伽馆。">
     <meta name="keywords" content="瑜伽课程,瑜伽视频,瑜伽教练培训,瑜伽减肥,每日瑜伽">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -113,7 +113,7 @@ var _hmt = _hmt || [];
 	        </var>
             <a href="/home/userinfo/{{ session('admin_login')['uid'] }} " id="VIP" style="border: none;">
             
-            <img src="{{ session('admin_login')['uimg'] == 'null' ? session('admin_login')['uimg'] : '\home\images\1-14.jpg' }}" class="fl" id="userImage" alt="\home\images\1-14.jpg">
+            <img src="{{ session('admin_data')['uimg'] == 'null' ?  session('admin_data')->uimg  : '\home\images\1-14.jpg' }}" class="fl" id="userImage" alt="\home\images\1-14.jpg">
             </a>
             <span class="fl" id="user"></span>
             <a href="/home/logon" class="fl loginOutBtn" style="margin-left: 16px;list-style:none;" onclick="loginOuts()"  id="loginOut">退出</a>

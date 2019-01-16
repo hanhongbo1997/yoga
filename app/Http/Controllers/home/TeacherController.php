@@ -16,14 +16,26 @@ class TeacherController extends Controller
      */
     public function index(Request $request)
     {
+
         //获取数据     
        $data = new Teacher;
+       //搜索框
         $where = $data;
         if($request->search_nname){
             $where = $where->where('cname','like','%'.$request->search_nname.'%');
         }
+        //按照首字母查找
+        
+        // 条件搜索
+       //  if($request->status){
+       //      $where = $where->where('status',$request->status);
+               
+       //  }
+       // dump($request->status);
+       
 
         $data = $where->paginate(12);
+
         // foreach($data as $k=>$v){
         //     dump($v->teachinfoend->id);
         //     dump($v->teachinfoend->timg);
@@ -50,4 +62,32 @@ class TeacherController extends Controller
         //加载视图
         return view('home/teacher/show',['title'=>'名师详情','data'=>$data,'arr'=>$arr]);
     }
+    /**
+     * 搜索
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function add(Request $request)
+    {
+        //接收数据
+        $letter = $request->all();
+        
+
+
+       if(empty($letter['letter'])){
+            
+            return back()->with('error', '找找不能为空!');
+
+       }else{
+
+        
+                $data = Teacher::where('abc','=',$letter['letter'])->get();
+                return view('home.teacher.add',['title'=>'名师列表','data'=>$data]);
+        }
+       
+        
+       
+    }
+
+    
 }

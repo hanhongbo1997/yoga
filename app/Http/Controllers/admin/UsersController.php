@@ -139,7 +139,7 @@ class UsersController extends Controller
         // dd($data);
         $title = '用户修改';
 
-        return view('admin.users.edit',['data'=>$data]);
+        return view('admin.users.edit',['data'=>$data,'title'=>$title]);
 
     }
 

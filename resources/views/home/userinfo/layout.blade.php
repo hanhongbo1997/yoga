@@ -12,6 +12,7 @@
     <script src="/home/js/idangerous.swiper.min.js" type="text/javascript"></script>
     <script src="/home/js/require.js" type="text/javascript"></script>
     <script src="/home/js/suanfa.js" type="text/javascript"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}"> 
 </head>
 <body style="min-width:1280px;">
 
@@ -24,24 +25,76 @@
 <br>
 <div class="xui-container" style="margin:20px auto;">
     <div class="xui-content">
-        <ul class="sui-breadcrumb">
-            <li><a href="/pc/index/index.html">首页</a></li>
-            <li><a href="/pc/member/usercenter.html">个人中心</a></li>
+        <ul class="sui-breadcrumb" >
+            <li><a href="/pc/index/index.html" style="color: #f85f1c;">首页</a></li>
+            <li><a href="/pc/member/usercenter.html" style="color: #f85f1c;">个人中心</a></li>
             <li class="active">我的信息</li>
         </ul>
     </div>
     <div class="xui-member-menu xui-pull-l">
     <div class="sui-text-center xui-margin-b-15">
         <div class="xui-content" style="width:100px;height:100px;margin:0 auto;position:relative;border:4px solid #dbdbdb;border-radius:100%;overflow:hidden;">
-            <img src="/home/picture/user_moren.png">
-            <div style="width:100%;height:24px;line-height:20px;background:rgba(0,0,0,0.6);position:absolute;bottom:0;left:0;color:#fff;font-size:12px;cursor:pointer;" id="updateHeadimg">更换头像</div>
+            <img src="{{ session('admin_data')->uimg }}" alt="/home/picture/user_moren.png" id="info_file_img">
+            <div style="width:100%;height:24px;line-height:20px;background:rgba(0,0,0,0.6);position:absolute;bottom:0;left:0;color:#fff;font-size:12px;cursor:pointer;" id="updateHeadimg">
+
+  <form action="" id="info_file" method="post" enctype="multipart/form-data" >
+             <input type="file" id="profile" name="profile" value="" style="margin-left: 10px;width: 200px; position: absolute; top: 0; left: 0; opacity: 0; cursor: pointer; height: 40px; width: 88px;">点击更换          
+  </form>
+
+            </div>
         </div>
-        <p class="xui-font-size-16">yoga_5932ITW</p>
+
+
+        
+        <p class="xui-font-size-16">{{ session('admin_data')->uname }}</p>
         <p>
             <span style="cursor: pointer;" class="sui-icon icon-touch-phone sui-text-success xui-margin-r-15"  data-type="attention" data-original-title="已绑定手机" data-placement="bottom" data-toggle="tooltip"></span>
             <span id="authen" style="cursor: pointer;" class="sui-icon icon-touch-user3 sui-text-disabled" data-placement="bottom" data-toggle="tooltip" data-type="attention" data-original-title="未实名认证"></span>
         </p>
     </div>
+
+    <script>
+        $(function(){
+            $('#profile').change(function(){
+
+                // $.ajax({
+                //     url:'/home/userinfo/profile',
+                //     type:'post',
+                //     data:new FormData($('#info_file')[0]), //创建表单数据
+                //     processData:false, //不限定格式
+                //     contentType:false, //不进行特定格式编码
+                //     dataType:'html',
+                //     success:function(obj){
+                       
+                //         console.log(obj);
+                //     }
+                // });
+                $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+
+                $.ajax({
+                    url: "/home/userinfo/profile/{{ session('admin_login')->uid }}",
+                    type: "post",
+                    dataType: "json",
+                    cache: false,
+                    data: new FormData($("#info_file")[0]),
+                    processData: false,// 不处理数据
+                    contentType: false, // 不设置内容类型
+                    success: function(obj){
+                      // console.log(obj); 
+                      if(obj.msg == 'success'){
+                         // console.log(obj); 
+                        $('#info_file_img').attr('src',obj.path );
+                       
+                      }else{
+                        alert('头像修改失败!');
+                      } 
+                    }
+                });
+            });
+
+        });
+    </script>
+
     <ul>
         <h3>个人中心</h3>
         <li>
@@ -54,16 +107,7 @@
                 <span class="sui-icon icon-angle-right"></span>
             </a>
         </li>
-        <li>
-            <a href="/home/userinfo/allbuy">已购视频
-                <span class="sui-icon icon-angle-right"></span>
-            </a>
-        </li>
-        <li>
-            <a href="/home/userinfo/fav">收藏夹
-                <span class="sui-icon icon-angle-right"></span>
-            </a>
-        </li>
+       
         <li>
             <a href="/home/userinfo/common">我的评论
                 <span class="sui-icon icon-angle-right"></span>

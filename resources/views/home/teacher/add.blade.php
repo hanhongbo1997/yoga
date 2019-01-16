@@ -53,14 +53,7 @@
         </ul>
     </div>
 
- <!-- 搜索   -->
-          <div class="dataTables_filter" id="datatable_filter " style="float:right;">
-            <form action="/teacher">
-                <input type="text" aria-controls="datatable" name="search_nname" class="form-control input-large" placeholder="搜索" style="font-size: 16px;outline:none; width: 200px;padding-left: 20px;height: 35px;border-radius: 18px;outline: none; border: 1px solid #ccc;">
-            </form>
-            
-          </div>
- <!-- 搜索   -->
+ 
  </div>
 
 <!-- 头部  -->
@@ -76,7 +69,7 @@
                     <button style="border: none;background-color:rgba(0,0,0,0);">
                     <ul class="">
                           <li class="course-nav-item  on">
-                            <a href="">全部</a></li>
+                            <a href="/home/teacher/index">全部</a></li>
                         <li class="course-nav-item labels" data-id="12">
                             <a >A</a></li>
                         <li class="course-nav-item labels" data-id="13">
@@ -325,15 +318,7 @@
         </div>
 
 
-<!-- 分页  -->
 
-    <!--     <div class="row-">
-      <div class="col-lg-6 col-md-6 col-sm-12">
-       {!! $data->appends(['search_nname'=>$data->cname])->render() !!}
-        </div>
-      </div> -->
-    </div>
-<!-- 分页  -->
            </div>
 </div>
 <script>
