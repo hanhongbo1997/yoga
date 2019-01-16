@@ -167,14 +167,14 @@ var _hmt = _hmt || [];
         <li class="fl"><a href="/home/news" id="community">社区</a></li>
         <li class="fl"><a href="/home/club" id="clubYoga">瑜伽馆</a></li>
         <li class="fl"><a href="/home/teacher/index" >名师</a></li>
-        <li class="fl"><a href="http://wakeyoga.com/2enterprise.html" id="enterpriseYoga">企业瑜伽</a></li>
-        <li class="fl trainList">
+        <li class="fl"><a href="/home/enroll/create" id="enterpriseYoga">企业瑜伽</a></li>
+       <!--  <li class="fl trainList">
         	<a href="./toTraining.html" id="trainingCoach">瑜伽教培</a>
         	<div class="train_inner">
 	          <a href="javascript:;">培训课程一</a>
 	          <a href="javascript:;">培训课程一</a>
 	        </div>
-        </li>
+        </li> -->
         <div class="clear">&nbsp;</div>
         <script>
             $(function(){

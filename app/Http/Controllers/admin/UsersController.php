@@ -104,7 +104,7 @@ class UsersController extends Controller
                  return back()->with('error', '添加失败');
             }
 
-
+            session(['home_login'=>$home_login]);
 
            
 

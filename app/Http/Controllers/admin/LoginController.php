@@ -40,17 +40,17 @@ class LoginController extends Controller
         $params = $request->all();
 
         // dd($params);
-        $data = Users::where('uname',$params['uname'])->first();
-        if (!$data) {
+        $home_login = Users::where('uname',$params['uname'])->first();
+        if (!$home_login) {
              return back()->with('error','没有这个用户');
         }
           //验证密码
-         if (!Hash::check($params['pass'],$data['pass'] )) 
+         if (!Hash::check($params['pass'],$home_login['pass'] )) 
         {
             return back()->with('error','密码错误');
         }
        
-        session(['data'=>$data]);
+        session(['home_login'=>$home_login]);
         return redirect('/admin/index');
 
             

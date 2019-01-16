@@ -27,7 +27,7 @@ class EnrollController extends Controller
     public function create()
     {
         //
-        return view('home.enroll.create');
+        return view('home.enroll.create',['title'=>'企业瑜伽']);
     }
 
     /**
